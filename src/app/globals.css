@@ -123,6 +123,16 @@
   --circuit-node-alpha: 0.55;
 }
 
+/* Tailwind 4 remet le curseur par défaut sur les boutons : on rend la main au survol. */
+button:not(:disabled),
+[role="button"]:not([aria-disabled="true"]) {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
 html {
   background: var(--color-bg);
   scroll-behavior: smooth;

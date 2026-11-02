@@ -135,7 +135,7 @@ export function ContactForm() {
             ) : null}
           </div>
 
-          <div>
+          <div className="flex justify-end">
             <Button type="submit" size="lg" disabled={pending}>
               {pending ? t("sending") : t("submit")}
             </Button>
