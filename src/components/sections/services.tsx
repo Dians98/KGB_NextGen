@@ -124,12 +124,12 @@ function Flow({ steps, label }: { steps: FlowStep[]; label: string }) {
           <span
             className={[
               "flex h-8 items-center justify-center rounded-control border bg-bg px-2 font-mono text-caption whitespace-nowrap",
-              step.key === "n8n" ? "border-cyan text-cyan" : "border-line-strong text-fg",
+              step.key === "n8n" || step.key === "ai" ? "border-cyan text-cyan" : "border-line-strong text-fg",
             ].join(" ")}
           >
             {step.label}
           </span>
-          <span className="pt-1.5 text-small text-muted">{step.text}</span>
+          <span className="flex min-h-8 items-center text-small text-muted">{step.text}</span>
           {index < steps.length - 1 ? (
             <span
               aria-hidden="true"

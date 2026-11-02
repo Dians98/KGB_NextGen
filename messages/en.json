@@ -64,7 +64,7 @@
     "web": {
       "title": "Full-stack web applications",
       "text": "Front end, back end and database, from internal dashboards to public websites.",
-      "tags": "React · Next.js · TypeScript · Node.js · FastAPI · PostgreSQL"
+      "tags": "Next.js · TypeScript · Node.js · FastAPI · PostgreSQL"
     },
     "mobile": {
       "title": "Mobile apps and PWAs",
@@ -78,19 +78,19 @@
       "steps": {
         "trigger": {
           "label": "Trigger",
-          "text": "An event starts the workflow: a form, an incoming email, a set time."
+          "text": "A form, an email or a set time."
         },
         "n8n": {
           "label": "n8n",
-          "text": "The workflow fetches the data and puts it into shape."
+          "text": "Fetches the data and puts it into shape."
         },
         "ai": {
           "label": "AI",
-          "text": "Sorting, summarising, pulling data out of documents."
+          "text": "Sorts, summarises, extracts documents."
         },
         "result": {
           "label": "Result",
-          "text": "A record created in your tools, an email sent, a report ready."
+          "text": "Record created, email sent, report ready."
         }
       }
     },
