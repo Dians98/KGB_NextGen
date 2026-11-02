@@ -104,7 +104,6 @@
       "next": "Launching the application: payments, receipts, overdue fees, offline mode.",
       "coverAlt": "Dashboard of the IFSPA tuition management app, shown with sample data",
       "context": "IFSPA is a paramedical training institute in Toamasina, Madagascar. The project is a tuition management application: it takes payments in cash or by Mobile Money (MVola, Orange, Airtel), prints thermal receipts, produces statements and tracks overdue fees with export; the payment screen works offline.",
-      "shotsCaption": "Mockups approved by the client (sample data)",
       "shots": {
         "app-tableau-de-bord": "Application dashboard: headcount, collection rate and latest payments (sample data).",
         "app-encaissement-mobile-money": "Screen for collecting a monthly instalment by Mobile Money, with operator choice (sample data).",

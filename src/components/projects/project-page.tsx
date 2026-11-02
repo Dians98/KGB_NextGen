@@ -53,7 +53,8 @@ export function ProjectPage({ slug }: ProjectPageProps) {
   const sections: GallerySection[] = [
     {
       id: "all",
-      caption: t(`${slug}.shotsCaption`),
+      // IFSPA : pas de légende au-dessus des captures.
+      caption: slug === "heaven" ? t("heaven.shotsCaption") : undefined,
       shots: project.shots.map((shot) => ({ ...shot, alt: t(`${slug}.shots.${shot.key}` as "ifspa.shots.app-recu") })),
       video,
     },

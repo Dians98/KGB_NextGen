@@ -12,8 +12,8 @@ export type GallerySection = {
   id: string;
   /** Titre h3 ; omis quand la galerie n'a qu'un seul groupe. */
   title?: string;
-  /** Légende visible du groupe, par exemple « Données fictives ». */
-  caption: string;
+  /** Légende visible du groupe ; omise si le groupe n'en a pas. */
+  caption?: string;
   shots: GalleryShot[];
   /** Vidéo affichée avant les captures (la visite d'une page d'accueil, par exemple). */
   video?: ReactNode;
@@ -77,10 +77,12 @@ export function Gallery({ sections, labels }: GalleryProps) {
             </h3>
           ) : null}
           <figure className={section.title ? "mt-4" : undefined}>
-            <figcaption className="font-mono text-caption text-muted">{section.caption}</figcaption>
-            {section.video ? <Curtain className="mt-6">{section.video}</Curtain> : null}
+            {section.caption ? (
+              <figcaption className="mb-6 font-mono text-caption text-muted">{section.caption}</figcaption>
+            ) : null}
+            {section.video ? <Curtain>{section.video}</Curtain> : null}
             {section.shots.length ? (
-              <div className="mt-6 columns-1 gap-6 md:columns-2">
+              <div className={["columns-1 gap-6 md:columns-2", section.video ? "mt-6" : ""].join(" ")}>
                 {section.shots.map((shot) => {
                   const i = all.indexOf(shot);
                   const phone = shot.group === "mobile";
