@@ -48,3 +48,5 @@ next-env.d.ts
 **/.impeccable/hook.cache.json
 **/.impeccable/live/server.json
 .claude/skills/impeccable/scripts/bin/
+**/.impeccable/mocks/
+**/.impeccable/questions/

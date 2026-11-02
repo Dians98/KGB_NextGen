@@ -36,6 +36,13 @@ Validées par Diano le 2026-11-02 (séance de cadrage). Ce fichier fait foi ; un
 - Typographie : **Sora** (titres), **Manrope** (texte), **JetBrains Mono** (touches techniques).
 - Logo : PNG source détouré pour le hero ; **mini-logo SVG redessiné** (tête + circuits) pour l'en-tête et le favicon.
 
+## Direction visuelle (validée le 2026-11-02, page de décision impeccable)
+- Diano a choisi **le standard de la catégorie « agence tech »**, à exécuter avec une finition maximale, sans bizarrerie : en-tête, hero (titre à gauche, emblème KGB à droite avec circuits qui s'allument), services, projets, équipe, contact.
+- **Barre de finition : Netguru** (clarté d'agence, études de cas) **et Raycast** (sombre, précis, lueurs maîtrisées).
+- À éviter absolument : effets néon et gadgets ; template bâclé (dégradés gratuits, cartes interchangeables, textes creux).
+- Le logo et son univers dominent le premier écran.
+- Contrat de direction : `.impeccable/surfaces/src-app-locale-page-tsx.md` (seed:8cd0354337924567). Esquisse retenue : `.impeccable/mocks/decision/canon.html`.
+
 ## Animation (« tech IT, mais pas trop »)
 - Oui : pistes de circuit SVG qui s'allument dans le hero (reprises du logo), apparitions douces au défilement, lueur qui suit la souris sur les cartes projets, au plus une ligne de terminal tapée ou un compteur.
 - Non : 3D/WebGL, défilement détourné, curseur personnalisé.

@@ -46,6 +46,7 @@ Succès, à parts égales :
 - Logo existant : `docs/brand/logo-source.png` (tête de profil en circuits imprimés, lettres KGB).
 - Le site doit paraître **tech et intelligent, animé et interactif, mais sobre et simple à utiliser** (exigence de Diano).
 - Voix : directe, concrète, sans jargon creux ; mêmes idées en français et en anglais, pas une traduction mot à mot.
+- Forme choisie par Diano (2026-11-02) : la mise en page **standard d'une agence tech**, exécutée au niveau de finition de **Netguru** et **Raycast**. Pas de néon ni de gadget.
 
 ## Evidence on Hand
 
