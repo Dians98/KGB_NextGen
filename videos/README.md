@@ -1,11 +1,11 @@
 # Vidéos des projets (HyperFrames)
 
-Les pages `/projets/ifspa` et `/projets/heaven` montrent une visite muette de la page d'accueil de chaque site, d'environ 20 s, qui tourne en boucle. Ces vidéos sont des enregistrements réels : on y voit les animations des sites.
+La page `/projets/heaven` montre une visite muette de la page d'accueil du site, d'environ 20 s, qui tourne en boucle. Ces vidéos sont des enregistrements réels : on y voit les animations des sites.
 
 | Dossier | Source filmée | Vidéo publiée |
 |---|---|---|
 | `haeven-accueil/` | build statique de HAEVEN (`C:\Projets\HAEVEN\out`, servi sur le port 3300) | `public/projets/heaven/video-accueil.*` |
-| `ifspa-accueil/` | https://ifspa.mg/ en production | `public/projets/ifspa/video-accueil.*` |
+| `ifspa-accueil/` | https://ifspa.mg/ en production | non publiée : le site vitrine d'IFSPA a été retiré du portfolio |
 
 ## Refaire une vidéo
 

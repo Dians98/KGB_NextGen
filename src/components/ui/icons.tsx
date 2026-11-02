@@ -128,3 +128,14 @@ export function PauseIcon(props: IconProps) {
     </Icon>
   );
 }
+
+export function ExpandIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M15 4h5v5" />
+      <path d="M9 20H4v-5" />
+      <path d="m20 4-6 6" />
+      <path d="m4 20 6-6" />
+    </Icon>
+  );
+}

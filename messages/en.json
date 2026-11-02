@@ -3,8 +3,8 @@
     "titleTemplate": "%s · KGB NextGen Solutions",
     "homeTitle": "KGB NextGen Solutions — Apps and automation in Mauritius",
     "homeDescription": "KGB NextGen Solutions builds web and mobile applications, automates your processes with n8n and AI, and sets up Odoo. A team based in Mauritius.",
-    "ifspaTitle": "IFSPA: tuition management app and website",
-    "ifspaDescription": "KGB NextGen Solutions project for IFSPA, a paramedical institute in Toamasina: a live public website and a tuition management app (Mobile Money, receipts, overdue tracking, offline mode).",
+    "ifspaTitle": "IFSPA: tuition management app",
+    "ifspaDescription": "KGB NextGen Solutions project for IFSPA, a paramedical institute in Toamasina: a tuition management app (Mobile Money, receipts, overdue tracking, offline mode).",
     "heavenTitle": "HAEVEN: bilingual website for a design studio",
     "heavenDescription": "KGB NextGen Solutions project for HAEVEN, an interior design studio based in Mauritius: a bilingual website presenting its services, shop and artistic universe.",
     "ogImageLine": "Web and mobile apps · Automation and AI · Odoo"
@@ -83,12 +83,13 @@
     "delivered": "What is delivered",
     "next": "What comes next",
     "shots": "Preview",
-    "groupSite": "Public website",
-    "groupApp": "Management application",
-    "videoPlay": "Play the video",
-    "videoPause": "Pause the video",
     "ctaTitle": "Have a project to build?",
-    "ctaText": "Describe what you need in a few lines and we will get back to you."
+    "ctaText": "Describe what you need in a few lines and we will get back to you.",
+    "lightboxOpen": "Enlarge the screenshot",
+    "lightboxClose": "Close",
+    "lightboxPrevious": "Previous screenshot",
+    "lightboxNext": "Next screenshot",
+    "lightboxCounter": "{current} / {total}"
   },
   "Projects": {
     "title": "Projects in progress",
@@ -98,14 +99,12 @@
     "ifspa": {
       "name": "IFSPA",
       "client": "Paramedical training institute · Toamasina, Madagascar",
-      "summary": "Tuition management and public website for a paramedical institute: enrolment, cash and Mobile Money payments, receipts, overdue tracking.",
-      "delivered": "Public website live, and the application screens approved by the client.",
+      "summary": "Tuition management for a paramedical institute: enrolment, cash and Mobile Money payments, receipts, overdue tracking.",
+      "delivered": "Application screens approved by the client.",
       "next": "Launching the application: payments, receipts, overdue fees, offline mode.",
       "coverAlt": "Dashboard of the IFSPA tuition management app, shown with sample data",
-      "context": "IFSPA is a paramedical training institute in Toamasina, Madagascar. The project has two parts: the institute's public website, live at ifspa.mg, and a tuition management application. The application takes payments in cash or by Mobile Money (MVola, Orange, Airtel), prints thermal receipts, produces statements and tracks overdue fees with export; the payment screen works offline.",
+      "context": "IFSPA is a paramedical training institute in Toamasina, Madagascar. The project is a tuition management application: it takes payments in cash or by Mobile Money (MVola, Orange, Airtel), prints thermal receipts, produces statements and tracks overdue fees with export; the payment screen works offline.",
       "shotsCaption": "Mockups approved by the client (sample data)",
-      "siteCaption": "Tour of the live website's home page",
-      "videoDescription": "Silent video of the IFSPA website home page, scrolling from top to bottom: the institute and its key figures, the nursing and midwifery programmes, the official approvals, then contact details and the contact form.",
       "shots": {
         "app-tableau-de-bord": "Application dashboard: headcount, collection rate and latest payments (sample data).",
         "app-encaissement-mobile-money": "Screen for collecting a monthly instalment by Mobile Money, with operator choice (sample data).",

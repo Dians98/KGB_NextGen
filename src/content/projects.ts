@@ -24,11 +24,9 @@ export type ProjectVideo = {
 
 export type Project = {
   slug: "ifspa" | "heaven";
-  /** null tant que le site n'est pas en ligne : aucun lien affiché. */
-  liveUrl: string | null;
   cover: Shot;
-  /** Remplace les captures du site vitrine. */
-  video: ProjectVideo;
+  /** Visite du site vitrine, à la place de captures ; null si le projet n'en montre pas. */
+  video: ProjectVideo | null;
   shots: Shot[];
 };
 
@@ -49,7 +47,7 @@ const shot = (slug: string, file: string, width: number, height: number, group: 
   key: file,
 });
 
-// Le site vitrine d'IFSPA est montré en vidéo ; les captures restent pour l'application de gestion.
+// IFSPA : seule l'application de gestion est présentée (pas le site vitrine).
 const ifspaShots: Shot[] = [
   shot("ifspa", "app-tableau-de-bord", 1440, 1327, "app"),
   shot("ifspa", "app-encaissement-mobile-money", 1440, 1532, "app"),
@@ -64,14 +62,12 @@ const ifspaShots: Shot[] = [
 export const projects: Project[] = [
   {
     slug: "ifspa",
-    liveUrl: "https://ifspa.mg",
     cover: ifspaShots[0],
-    video: homeVideo("ifspa"),
+    video: null,
     shots: ifspaShots,
   },
   {
     slug: "heaven",
-    liveUrl: null,
     cover: shot("heaven", "couverture", 1200, 900, "site"),
     video: homeVideo("heaven"),
     shots: [],

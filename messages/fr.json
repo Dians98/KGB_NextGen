@@ -3,8 +3,8 @@
     "titleTemplate": "%s · KGB NextGen Solutions",
     "homeTitle": "KGB NextGen Solutions — Applications et automatisation à Maurice",
     "homeDescription": "KGB NextGen Solutions conçoit des applications web et mobiles, automatise vos processus avec n8n et l'IA, et configure Odoo. Une équipe basée à Maurice.",
-    "ifspaTitle": "IFSPA : gestion de l'écolage et site vitrine",
-    "ifspaDescription": "Projet de KGB NextGen Solutions pour IFSPA, institut paramédical à Toamasina : site vitrine en ligne et application de gestion de l'écolage (Mobile Money, reçus, impayés, mode hors ligne).",
+    "ifspaTitle": "IFSPA : application de gestion de l'écolage",
+    "ifspaDescription": "Projet de KGB NextGen Solutions pour IFSPA, institut paramédical à Toamasina : application de gestion de l'écolage (Mobile Money, reçus, impayés, mode hors ligne).",
     "heavenTitle": "HAEVEN : site vitrine bilingue d'un studio de design",
     "heavenDescription": "Projet de KGB NextGen Solutions pour HAEVEN, studio de design d'intérieur basé à Maurice : site vitrine bilingue présentant ses services, sa boutique et son univers.",
     "ogImageLine": "Applications web et mobiles · Automatisation et IA · Odoo"
@@ -83,12 +83,13 @@
     "delivered": "Ce qui est livré",
     "next": "La suite",
     "shots": "Aperçu",
-    "groupSite": "Site vitrine",
-    "groupApp": "Application de gestion",
-    "videoPlay": "Lire la vidéo",
-    "videoPause": "Mettre la vidéo en pause",
     "ctaTitle": "Un projet à construire ?",
-    "ctaText": "Décrivez votre besoin en quelques lignes : nous revenons vers vous."
+    "ctaText": "Décrivez votre besoin en quelques lignes : nous revenons vers vous.",
+    "lightboxOpen": "Agrandir la capture",
+    "lightboxClose": "Fermer",
+    "lightboxPrevious": "Capture précédente",
+    "lightboxNext": "Capture suivante",
+    "lightboxCounter": "{current} / {total}"
   },
   "Projects": {
     "title": "Projets en cours",
@@ -98,14 +99,12 @@
     "ifspa": {
       "name": "IFSPA",
       "client": "Institut de formation paramédicale · Toamasina, Madagascar",
-      "summary": "Gestion de l'écolage et site vitrine d'un institut paramédical : inscriptions, encaissements en espèces ou Mobile Money, reçus, suivi des impayés.",
-      "delivered": "Site vitrine en ligne et écrans de l'application validés par le client.",
+      "summary": "Gestion de l'écolage d'un institut paramédical : inscriptions, encaissements en espèces ou Mobile Money, reçus, suivi des impayés.",
+      "delivered": "Écrans de l'application validés par le client.",
       "next": "Mise en service de l'application : encaissement, reçus, impayés, mode hors ligne.",
       "coverAlt": "Tableau de bord de l'application de gestion de l'écolage d'IFSPA, avec données fictives",
-      "context": "IFSPA est un institut de formation paramédicale à Toamasina, à Madagascar. Le projet a deux volets : le site vitrine public de l'institut, en ligne sur ifspa.mg, et une application de gestion de l'écolage. L'application encaisse en espèces ou par Mobile Money (MVola, Orange, Airtel), imprime des reçus thermiques, produit des relevés et suit les impayés avec export ; l'écran d'encaissement fonctionne hors ligne.",
+      "context": "IFSPA est un institut de formation paramédicale à Toamasina, à Madagascar. Le projet est une application de gestion de l'écolage : elle encaisse en espèces ou par Mobile Money (MVola, Orange, Airtel), imprime des reçus thermiques, produit des relevés et suit les impayés avec export ; l'écran d'encaissement fonctionne hors ligne.",
       "shotsCaption": "Maquettes validées par le client (données fictives)",
-      "siteCaption": "Visite de la page d'accueil du site en ligne",
-      "videoDescription": "Vidéo muette de la page d'accueil du site d'IFSPA, qui défile du haut vers le bas : présentation de l'institut et chiffres clés, filières Infirmier(e)s et Sage-femmes, agréments officiels, puis coordonnées et formulaire de contact.",
       "shots": {
         "app-tableau-de-bord": "Tableau de bord de l'application : effectif, taux de recouvrement et derniers paiements (données fictives).",
         "app-encaissement-mobile-money": "Écran d'encaissement d'une mensualité par Mobile Money, avec choix de l'opérateur (données fictives).",

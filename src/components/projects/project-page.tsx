@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/motion/reveal";
-import { Gallery, type GallerySection } from "@/components/projects/gallery";
+import { Gallery, type GalleryLabels, type GallerySection } from "@/components/projects/gallery";
 import { ProjectVideo } from "@/components/projects/project-video";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonClasses } from "@/components/ui/button";
@@ -45,33 +45,27 @@ export function ProjectPage({ slug }: ProjectPageProps) {
   const project = getProject(slug);
   const name = t(`${slug}.name`);
 
-  const video = (
-    <ProjectVideo
-      video={project.video}
-      description={t(`${slug}.videoDescription`)}
-      playLabel={page("videoPlay")}
-      pauseLabel={page("videoPause")}
-    />
-  );
+  // Seul HAEVEN a une vidéo ; IFSPA ne montre que les captures de l'application.
+  const video = project.video ? (
+    <ProjectVideo video={project.video} description={t(`${slug}.videoDescription` as "heaven.videoDescription")} />
+  ) : undefined;
 
-  const sections: GallerySection[] =
-    slug === "ifspa"
-      ? [
-          {
-            id: "site",
-            title: page("groupSite"),
-            caption: t("ifspa.siteCaption"),
-            shots: [],
-            video,
-          },
-          {
-            id: "app",
-            title: page("groupApp"),
-            caption: t("ifspa.shotsCaption"),
-            shots: project.shots,
-          },
-        ]
-      : [{ id: "all", caption: t(`${slug}.shotsCaption`), shots: project.shots, video }];
+  const sections: GallerySection[] = [
+    {
+      id: "all",
+      caption: t(`${slug}.shotsCaption`),
+      shots: project.shots.map((shot) => ({ ...shot, alt: t(`${slug}.shots.${shot.key}` as "ifspa.shots.app-recu") })),
+      video,
+    },
+  ];
+
+  const labels: GalleryLabels = {
+    open: page("lightboxOpen"),
+    close: page("lightboxClose"),
+    previous: page("lightboxPrevious"),
+    next: page("lightboxNext"),
+    counter: page("lightboxCounter", { current: "{current}", total: "{total}" }),
+  };
 
   return (
     <main id="contenu" tabIndex={-1} className="flex-1 outline-none">
@@ -103,7 +97,7 @@ export function ProjectPage({ slug }: ProjectPageProps) {
         <section aria-labelledby="projet-captures" className="border-t border-line pt-10 lg:pt-12">
           <SectionHeading id="projet-captures" title={page("shots")} />
           <div className="mt-block">
-            <Gallery sections={sections} altFor={(key) => t(`${slug}.shots.${key}` as "ifspa.shots.app-recu")} />
+            <Gallery sections={sections} labels={labels} />
           </div>
         </section>
 
