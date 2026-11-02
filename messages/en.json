@@ -72,6 +72,18 @@
       "text": "Odoo set up around your processes: CRM, accounting, inventory and sales, connected to the tools you already use."
     }
   },
+  "ProjectPage": {
+    "metaTitle": "{name} project",
+    "back": "Back to home",
+    "context": "Context",
+    "delivered": "What is delivered",
+    "next": "What comes next",
+    "shots": "Screenshots",
+    "groupSite": "Public website",
+    "groupApp": "Management application",
+    "ctaTitle": "Have a project to build?",
+    "ctaText": "Describe what you need in a few lines and we will get back to you."
+  },
   "Projects": {
     "title": "Projects in progress",
     "intro": "Two real projects, delivered one step at a time.",
@@ -83,7 +95,22 @@
       "summary": "Tuition management and public website for a paramedical institute: enrolment, cash and Mobile Money payments, receipts, overdue tracking.",
       "delivered": "Public website live, and the application screens approved by the client.",
       "next": "Launching the application: payments, receipts, overdue fees, offline mode.",
-      "coverAlt": "Dashboard of the IFSPA tuition management app, shown with sample data"
+      "coverAlt": "Dashboard of the IFSPA tuition management app, shown with sample data",
+      "context": "IFSPA is a paramedical training institute in Toamasina, Madagascar. The project has two parts: the institute's public website, live at ifspa.mg, and a tuition management application. The application takes payments in cash or by Mobile Money (MVola, Orange, Airtel), prints thermal receipts, produces statements and tracks overdue fees with export; the payment screen works offline.",
+      "shotsCaption": "Mockups approved by the client (sample data)",
+      "siteCaption": "Screenshots of the live website",
+      "shots": {
+        "site-agrements": "Official approvals section of the IFSPA website: four ministerial decrees listed by year.",
+        "site-filieres": "Programmes section of the IFSPA website: the nursing course, with an illustration photo.",
+        "site-institut": "Institute presentation section of the IFSPA website, with its logo and motto.",
+        "site-contact": "Contact section of the IFSPA website: the secretariat's details and a message form.",
+        "app-tableau-de-bord": "Application dashboard: headcount, collection rate and latest payments (sample data).",
+        "app-encaissement-mobile-money": "Screen for collecting a monthly instalment by Mobile Money, with operator choice (sample data).",
+        "app-encaissement-hors-ligne": "Payment screen in offline mode: payments waiting to be sent and synced later (sample data).",
+        "app-recu": "Preview of a payment receipt in thermal ticket format (sample data).",
+        "app-impayes": "List of students with overdue payments, with filters and Excel export (sample data).",
+        "app-mobile-encaissement": "The application's payment screen on a phone (sample data)."
+      }
     },
     "heaven": {
       "name": "HAEVEN",
@@ -91,7 +118,16 @@
       "summary": "Bilingual website for a creative studio: interior design services, shop and artistic universe.",
       "delivered": "Home and Services pages designed and built, in English and French.",
       "next": "Shop, portfolio, universe, then launch.",
-      "coverAlt": "Home page of the HAEVEN website, an interior design studio"
+      "coverAlt": "Home page of the HAEVEN website, an interior design studio",
+      "context": "HAEVEN is a creative studio between Mauritius and Estonia, specialising in interior design. The project is a bilingual website, in French and English, presenting its services, its shop and its artistic universe. The home page and the Services page are done; the shop, the portfolio and the universe are still to come.",
+      "shotsCaption": "Work in progress, before launch",
+      "shots": {
+        "accueil": "Top of the HAEVEN home page: the headline \"Bienvenue chez HAEVEN\" and a Start a project button.",
+        "intro": "HAEVEN introduction text: \"Chez Haeven, nous sommes designers dans l'âme\".",
+        "univers": "Our world section: three entry points, Services, Shop and Universe, each with a photo.",
+        "cta": "\"Une idée à transformer ?\" call to action and the site footer.",
+        "mobile": "HAEVEN home page on a phone."
+      }
     }
   },
   "Team": {

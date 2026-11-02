@@ -28,7 +28,7 @@ const shot = (slug: string, file: string, width: number, height: number, group: 
   key: file,
 });
 
-// site-accueil (IFSPA) est volontairement absent : photo d'illustration d'une autre école.
+// site-accueil et site-mobile (IFSPA) sont volontairement absents : photo d'illustration d'une autre école.
 const ifspaShots: Shot[] = [
   shot("ifspa", "app-tableau-de-bord", 1440, 1327, "app"),
   shot("ifspa", "app-encaissement-mobile-money", 1440, 1532, "app"),
@@ -40,7 +40,6 @@ const ifspaShots: Shot[] = [
   shot("ifspa", "site-filieres", 1440, 900, "site"),
   shot("ifspa", "site-institut", 1440, 900, "site"),
   shot("ifspa", "site-contact", 1440, 840, "site"),
-  shot("ifspa", "site-mobile", 780, 1688, "mobile"),
 ];
 
 // Portfolio et Univers de HAEVEN contiennent encore des textes provisoires : non capturés.
