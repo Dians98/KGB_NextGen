@@ -1,8 +1,13 @@
 {
   "Metadata": {
     "titleTemplate": "%s · KGB NextGen Solutions",
-    "homeTitle": "KGB NextGen Solutions — applications web, mobiles, automatisation et Odoo à Maurice",
-    "homeDescription": "KGB NextGen Solutions conçoit des applications web et mobiles, automatise vos processus avec n8n et l'IA, et configure Odoo. Une équipe basée à Maurice."
+    "homeTitle": "KGB NextGen Solutions — Applications et automatisation à Maurice",
+    "homeDescription": "KGB NextGen Solutions conçoit des applications web et mobiles, automatise vos processus avec n8n et l'IA, et configure Odoo. Une équipe basée à Maurice.",
+    "ifspaTitle": "IFSPA : gestion de l'écolage et site vitrine",
+    "ifspaDescription": "Projet de KGB NextGen Solutions pour IFSPA, institut paramédical à Toamasina : site vitrine en ligne et application de gestion de l'écolage (Mobile Money, reçus, impayés, mode hors ligne).",
+    "heavenTitle": "HAEVEN : site vitrine bilingue d'un studio de design",
+    "heavenDescription": "Projet de KGB NextGen Solutions pour HAEVEN, studio de design d'intérieur basé à Maurice : site vitrine bilingue présentant ses services, sa boutique et son univers.",
+    "ogImageLine": "Applications web et mobiles · Automatisation et IA · Odoo"
   },
   "Common": {
     "skipToContent": "Aller au contenu",
@@ -45,7 +50,7 @@
     "text": "Les sections arrivent. En attendant, le contact reste à un clic."
   },
   "Hero": {
-    "title": "Vos outils métier, conçus, construits et suivis par une seule équipe.",
+    "title": "Vos outils métier, de l'idée à la mise en ligne.",
     "subtitle": "Applications web et mobiles, automatisation avec n8n et l'IA, configuration d'Odoo. Depuis Maurice, pour les entreprises de l'océan Indien et d'ailleurs.",
     "primaryCta": "Parler de votre projet",
     "secondaryCta": "Voir nos projets",
@@ -73,7 +78,6 @@
     }
   },
   "ProjectPage": {
-    "metaTitle": "Projet {name}",
     "back": "Retour à l'accueil",
     "context": "Contexte",
     "delivered": "Ce qui est livré",
@@ -114,12 +118,12 @@
     },
     "heaven": {
       "name": "HAEVEN",
-      "client": "Studio de design d'intérieur · Maurice et Estonie",
+      "client": "Studio de design d'intérieur · Maurice",
       "summary": "Site vitrine bilingue d'un studio créatif : services de design d'intérieur, boutique et univers artistique.",
       "delivered": "Accueil et page Services conçus et développés, en français et en anglais.",
       "next": "Boutique, portfolio, univers, puis mise en ligne.",
       "coverAlt": "Page d'accueil du site vitrine de HAEVEN, studio de design d'intérieur",
-      "context": "HAEVEN est un studio créatif entre Maurice et l'Estonie, spécialisé en design d'intérieur. Le projet est une vitrine bilingue, en français et en anglais, qui présente ses services, sa boutique et son univers artistique. L'accueil et la page Services sont faits ; la boutique, le portfolio et l'univers sont à venir.",
+      "context": "HAEVEN est un studio créatif basé à Maurice, spécialisé en design d'intérieur. Le projet est une vitrine bilingue, en français et en anglais, qui présente ses services, sa boutique et son univers artistique. L'accueil et la page Services sont faits ; la boutique, le portfolio et l'univers sont à venir.",
       "shotsCaption": "Version de travail, avant mise en ligne",
       "shots": {
         "accueil": "Haut de la page d'accueil de HAEVEN : titre « Bienvenue chez HAEVEN » et bouton Démarrer un projet.",
@@ -132,22 +136,22 @@
   },
   "Team": {
     "title": "L'équipe",
-    "intro": "Une petite équipe, des interlocuteurs que vous connaissez par leur nom.",
+    "intro": "Les personnes derrière vos projets.",
+    "cv": "Télécharger le CV",
+    "cvOwner": " de {name}",
     "kevin": {
       "role": "Fondateur & Directeur",
       "bio": "Plus de 15 ans dans l'IT à Maurice, du support à la direction des opérations. Il pilote les projets et suit chaque client.",
       "point1": "Opérations et pilotage par indicateurs",
       "point2": "Certifié AWS SysOps et Siemens Teamcenter",
       "point3": "Ex-Accenture, ex-LINKBYNET",
-      "photoAlt": "Portrait de Kevin GOOLJAR",
-      "link": "Profil LinkedIn de Kevin GOOLJAR"
+      "photoAlt": "Portrait de Kevin GOOLJAR"
     },
     "diano": {
       "role": "Lead Developer",
       "bio": "Plus de 3 ans à concevoir et livrer des applications web et mobiles, des automatisations n8n et des configurations Odoo.",
       "stack": "React · Next.js · TypeScript · Node.js · FastAPI · PostgreSQL · n8n · Odoo",
-      "photoAlt": "Portrait de Diano ANDRIANTSALAMA",
-      "link": "Portfolio de Diano ANDRIANTSALAMA"
+      "photoAlt": "Portrait de Diano ANDRIANTSALAMA"
     }
   },
   "Contact": {

@@ -23,11 +23,13 @@ export const site = {
       name: "Kevin GOOLJAR",
       linkedin: "https://www.linkedin.com/in/gooljar-kevin-20912951/",
       photo: "/team/kevin-gooljar.jpg",
+      cv: "/cv/CV_Kevin_Gooljar.pdf",
     },
     diano: {
       name: "Diano ANDRIANTSALAMA",
       portfolio: "https://dians98.vercel.app",
       photo: "/team/diano-andriantsalama-portrait.webp",
+      cv: "/cv/CV_Diano_Andriantsalama.pdf",
     },
   },
 } as const;

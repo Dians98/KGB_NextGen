@@ -1,8 +1,13 @@
 {
   "Metadata": {
     "titleTemplate": "%s · KGB NextGen Solutions",
-    "homeTitle": "KGB NextGen Solutions — web and mobile apps, automation and Odoo in Mauritius",
-    "homeDescription": "KGB NextGen Solutions builds web and mobile applications, automates your processes with n8n and AI, and sets up Odoo. A team based in Mauritius."
+    "homeTitle": "KGB NextGen Solutions — Apps and automation in Mauritius",
+    "homeDescription": "KGB NextGen Solutions builds web and mobile applications, automates your processes with n8n and AI, and sets up Odoo. A team based in Mauritius.",
+    "ifspaTitle": "IFSPA: tuition management app and website",
+    "ifspaDescription": "KGB NextGen Solutions project for IFSPA, a paramedical institute in Toamasina: a live public website and a tuition management app (Mobile Money, receipts, overdue tracking, offline mode).",
+    "heavenTitle": "HAEVEN: bilingual website for a design studio",
+    "heavenDescription": "KGB NextGen Solutions project for HAEVEN, an interior design studio based in Mauritius: a bilingual website presenting its services, shop and artistic universe.",
+    "ogImageLine": "Web and mobile apps · Automation and AI · Odoo"
   },
   "Common": {
     "skipToContent": "Skip to content",
@@ -45,7 +50,7 @@
     "text": "The sections are on their way. In the meantime, contact is one click away."
   },
   "Hero": {
-    "title": "Business tools designed, built and supported by one team.",
+    "title": "Your business tools, from idea to launch.",
     "subtitle": "Web and mobile apps, automation with n8n and AI, Odoo setup. Based in Mauritius, working with companies across the Indian Ocean and beyond.",
     "primaryCta": "Talk about your project",
     "secondaryCta": "See our projects",
@@ -73,7 +78,6 @@
     }
   },
   "ProjectPage": {
-    "metaTitle": "{name} project",
     "back": "Back to home",
     "context": "Context",
     "delivered": "What is delivered",
@@ -114,12 +118,12 @@
     },
     "heaven": {
       "name": "HAEVEN",
-      "client": "Interior design studio · Mauritius and Estonia",
+      "client": "Interior design studio · Mauritius",
       "summary": "Bilingual website for a creative studio: interior design services, shop and artistic universe.",
       "delivered": "Home and Services pages designed and built, in English and French.",
       "next": "Shop, portfolio, universe, then launch.",
       "coverAlt": "Home page of the HAEVEN website, an interior design studio",
-      "context": "HAEVEN is a creative studio between Mauritius and Estonia, specialising in interior design. The project is a bilingual website, in French and English, presenting its services, its shop and its artistic universe. The home page and the Services page are done; the shop, the portfolio and the universe are still to come.",
+      "context": "HAEVEN is a creative studio based in Mauritius, specialising in interior design. The project is a bilingual website, in French and English, presenting its services, its shop and its artistic universe. The home page and the Services page are done; the shop, the portfolio and the universe are still to come.",
       "shotsCaption": "Work in progress, before launch",
       "shots": {
         "accueil": "Top of the HAEVEN home page: the headline \"Bienvenue chez HAEVEN\" and a Start a project button.",
@@ -132,22 +136,22 @@
   },
   "Team": {
     "title": "The team",
-    "intro": "A small team, people you know by name.",
+    "intro": "The people behind your projects.",
+    "cv": "Download CV",
+    "cvOwner": " of {name}",
     "kevin": {
       "role": "Founder & Director",
       "bio": "Over 15 years in IT in Mauritius, from support to running operations. He leads the projects and follows every client.",
       "point1": "Operations and KPI-driven management",
       "point2": "AWS SysOps and Siemens Teamcenter certified",
       "point3": "Formerly at Accenture and LINKBYNET",
-      "photoAlt": "Portrait of Kevin GOOLJAR",
-      "link": "Kevin GOOLJAR's LinkedIn profile"
+      "photoAlt": "Portrait of Kevin GOOLJAR"
     },
     "diano": {
       "role": "Lead Developer",
       "bio": "Over 3 years designing and shipping web and mobile apps, n8n automations and Odoo setups.",
       "stack": "React · Next.js · TypeScript · Node.js · FastAPI · PostgreSQL · n8n · Odoo",
-      "photoAlt": "Portrait of Diano ANDRIANTSALAMA",
-      "link": "Diano ANDRIANTSALAMA's portfolio"
+      "photoAlt": "Portrait of Diano ANDRIANTSALAMA"
     }
   },
   "Contact": {

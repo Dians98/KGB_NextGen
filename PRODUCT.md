@@ -9,7 +9,7 @@ web
 ## Users
 
 - **Primaires** : dirigeants et responsables de PME à **Maurice** qui ont besoin d'une application, d'une automatisation ou d'un ERP, et qui cherchent un prestataire fiable.
-- **Aussi** : organisations de l'**océan Indien et de Madagascar** (comme IFSPA, institut de formation à Toamasina) et **clients internationaux** qui externalisent du développement (comme HAEVEN, studio entre Maurice et l'Estonie).
+- **Aussi** : organisations de l'**océan Indien et de Madagascar** (comme IFSPA, institut de formation à Toamasina) et **clients internationaux** qui externalisent du développement (comme HAEVEN, studio basé à Maurice).
 - Situation : ils découvrent KGB par recommandation, LinkedIn ou recherche, souvent sur téléphone ; certains arrivent après un premier échange et viennent vérifier le sérieux de l'entreprise.
 
 ## Product Purpose

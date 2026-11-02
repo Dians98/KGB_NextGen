@@ -27,8 +27,9 @@ export function Services() {
             <Reveal
               as="li"
               key={key}
-              delay={index * 0.05}
-              className="group flex gap-5 border-b border-line py-8 sm:gap-6"
+              delay={index * 0.1}
+              rule="bottom"
+              className="group flex gap-5 py-8 sm:gap-6"
             >
               <span className="flex size-12 shrink-0 items-center justify-center rounded-control border border-line-strong bg-surface text-cyan transition-colors duration-(--duration-base) group-hover:border-cyan">
                 <Icon width={22} height={22} />

@@ -13,12 +13,8 @@ export function Projects() {
         <SectionHeading id="projets-titre" title={t("title")} description={t("intro")} />
       </Reveal>
       <div className="mt-block flex flex-col gap-8 lg:gap-10">
-        <Reveal>
-          <ProjectCard slug="ifspa" imageSide="start" />
-        </Reveal>
-        <Reveal>
-          <ProjectCard slug="heaven" imageSide="end" />
-        </Reveal>
+        <ProjectCard slug="ifspa" imageSide="start" />
+        <ProjectCard slug="heaven" imageSide="end" />
       </div>
     </Section>
   );

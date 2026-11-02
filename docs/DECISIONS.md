@@ -25,8 +25,8 @@ Validées par Diano le 2026-11-02 (séance de cadrage). Ce fichier fait foi ; un
 
 | Rôle | Valeur | Origine dans le logo |
 |---|---|---|
-| Fond | `#05070F` | fond noir |
-| Surface (cartes) | `#0B1224` | |
+| Fond | `#0A1226` (noir bleuté, choisi par Diano le 2026-11-02 ; avant `#05070F`) | fond du logo, adouci |
+| Surface (cartes) | `#111C38` | |
 | Bleu nuit (marque) | `#0B2A7A` | « NextGen Solutions Ltd » |
 | Bleu roi (primaire, boutons) | `#1F5BFF` | lettres « KGB » |
 | Cyan (accent, liens, lueurs) | `#22C3FF` | biseau du K, circuits |
@@ -60,7 +60,7 @@ Validées par Diano le 2026-11-02 (séance de cadrage). Ce fichier fait foi ; un
 ### Projets (statut « En cours »)
 Chaque projet : badge « En cours », ce qui est livré, ce qui vient ensuite, lien vers le site en ligne. Les clients ont donné leur accord.
 - **IFSPA** — https://ifspa.mg — gestion de l'écolage + vitrine d'un institut paramédical à Toamasina (Madagascar). Captures : vitrine publique en direct + maquettes validées par le client (`C:\wamp64\www\ifspa\prototype\captures\`). **Aucune vraie donnée d'étudiant.**
-- **HAEVEN** — https://inhaeven.com — vitrine bilingue d'un studio créatif (Maurice / Estonie), design d'intérieur. Captures : page d'accueil en ligne, desktop et mobile.
+- **HAEVEN** — https://inhaeven.com — vitrine bilingue d'un studio créatif (Maurice ; ne pas mentionner l'Estonie sur le site, demande de Diano), design d'intérieur. Captures : page d'accueil en ligne, desktop et mobile.
 
 ### Équipe
 - **Kevin GOOLJAR — Fondateur & Directeur.** Dirige l'entreprise, pilote les projets, suit les clients. Points forts : plus de 15 ans dans l'IT à Maurice ; opérations et pilotage par indicateurs ; certifications AWS SysOps et Siemens Teamcenter ; ex-Accenture, ex-LINKBYNET. **Ne pas nommer son employeur actuel.** Photo : `public/team/kevin-gooljar.jpg`. Lien LinkedIn. Détails : `docs/profils/kevin-gooljar.md`.
@@ -83,6 +83,18 @@ Chaque projet : badge « En cours », ce qui est livré, ce qui vient ensuite, l
 - **IFSPA, application** (maquettes validées par le client, données fictives) : `app-tableau-de-bord`, `app-encaissement-mobile-money`, `app-encaissement-hors-ligne`, `app-recu`, `app-impayes`, `app-mobile-encaissement`. Légende à prévoir : « Maquettes validées par le client ».
 - **HAEVEN** (build local `C:\Projets\HAEVEN\out`, version FR, car inhaeven.com affiche encore la page « Site en construction » d'OVH) : `accueil`, `intro`, `univers`, `cta`, `mobile`. Ne pas utiliser les sections Portfolio et Univers de HAEVEN : elles contiennent encore des textes provisoires (« [NOM DU PROJET] »).
 - Le lien « voir le site » de HAEVEN ne doit pas être affiché tant que inhaeven.com n'est pas déployé.
+
+## Mises à jour du 2026-11-02 (après la première version)
+- Accroche du hero : FR « Vos outils métier, de l'idée à la mise en ligne. » / EN « Your business tools, from idea to launch. »
+- Accroche de l'équipe : FR « Les personnes derrière vos projets. » / EN « The people behind your projects. »
+- Aucun lien « Voir le site en ligne » sur les projets (ni IFSPA ni HAEVEN).
+- Équipe : bouton « Télécharger le CV » (PDF) à la place des liens LinkedIn / portfolio. CV unifiés dans `public/cv/` (sources : `docs/cv-sources/`), **employeurs inclus** (choix de Diano) ; le CV de Kevin est construit d'après LinkedIn, à faire valider par Kevin.
+- Hero en plein écran (100 svh) avec fond animé « réseau de circuits vivant » (canvas : impulsions cyan sur les pistes, nœuds qui s'allument près de la souris).
+- Animations inspirées de HAEVEN : titre mot par mot, sortie du hero au défilement, cascades, images en rideau, en-tête réactif.
+- Titres de section dans une couleur d'accent, décorés d'un tiret + nœud de circuit (demande explicite de Diano).
+- Thème clair essayé puis **abandonné** : site en sombre uniquement, sur un **noir bleuté `#0A1226`** (surface `#111C38`, filets `#1E2A4A`, contours de champs `#5A6EA0`). Contrastes : texte 16,6:1, secondaire 7,3:1, cyan 9,2:1, contours 3,7:1, blanc sur bleu roi 5,3:1.
+- SEO : titre d'accueil raccourci ; `areaServed` = Maurice, Madagascar ; `og:locale` anglais en `en_GB` ; **pas de fiche Google Business**.
+- À faire par Diano et Kevin : choisir le domaine, puis `SITE_INDEXABLE=true` en production ; Google Search Console + sitemap ; page LinkedIn de l'entreprise (URL à mettre dans `site.companyLinkedin`).
 
 ## À trancher
 Tant qu'un point n'est pas tranché, on utilise l'emplacement provisoire indiqué, sans inventer de valeur.

@@ -5,8 +5,10 @@ import { Reveal } from "@/components/motion/reveal";
 import { Gallery, type GallerySection } from "@/components/projects/gallery";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonClasses } from "@/components/ui/button";
+import { CircuitMark } from "@/components/motion/circuit-mark";
 import { Container } from "@/components/ui/container";
 import { ArrowRightIcon } from "@/components/ui/icons";
+import { SectionHeading } from "@/components/ui/section-heading";
 import { getProject, type Project } from "@/content/projects";
 
 type ProjectPageProps = {
@@ -21,11 +23,14 @@ type CaseBlockProps = {
 
 function CaseBlock({ id, title, children }: CaseBlockProps) {
   return (
-    <Reveal className="border-t border-line py-10 lg:py-12">
+    <Reveal rule="top" className="py-10 lg:py-12">
       <section aria-labelledby={id} className="grid gap-4 lg:grid-cols-12 lg:gap-10">
-        <h2 id={id} className="font-display text-heading font-semibold text-fg lg:col-span-4">
-          {title}
-        </h2>
+        <div className="lg:col-span-4">
+          <CircuitMark className="mb-3" />
+          <h2 id={id} className="font-display text-heading font-semibold text-cyan">
+            {title}
+          </h2>
+        </div>
         <div className="max-w-prose text-lead text-fg lg:col-span-8">{children}</div>
       </section>
     </Reveal>
@@ -85,9 +90,7 @@ export function ProjectPage({ slug }: ProjectPageProps) {
         </div>
 
         <section aria-labelledby="projet-captures" className="border-t border-line pt-10 lg:pt-12">
-          <h2 id="projet-captures" className="font-display text-title font-semibold text-fg">
-            {page("shots")}
-          </h2>
+          <SectionHeading id="projet-captures" title={page("shots")} />
           <div className="mt-block">
             <Gallery sections={sections} altFor={(key) => t(`${slug}.shots.${key}` as "ifspa.shots.site-agrements")} />
           </div>
@@ -99,10 +102,7 @@ export function ProjectPage({ slug }: ProjectPageProps) {
             className="flex flex-col gap-6 rounded-card border border-line-strong bg-surface p-8 shadow-card sm:p-10 lg:flex-row lg:items-center lg:justify-between"
           >
             <div className="max-w-xl">
-              <h2 id="projet-cta" className="font-display text-title font-semibold text-fg">
-                {page("ctaTitle")}
-              </h2>
-              <p className="mt-3 text-body text-muted">{page("ctaText")}</p>
+              <SectionHeading id="projet-cta" title={page("ctaTitle")} description={page("ctaText")} />
             </div>
             <Button href="/#contact" size="lg" arrow>
               {common("contactCta")}

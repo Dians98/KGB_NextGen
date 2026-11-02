@@ -10,7 +10,7 @@ const eslintConfig = defineConfig([
     // Tout texte visible passe par messages/*.json (FR et EN).
     rules: { "react/jsx-no-literals": "error" },
   },
-  globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts", ".claude/**", ".impeccable/**"]),
+  globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts", ".claude/**", ".impeccable/**", "docs/**", "video/**"]),
 ]);
 
 export default eslintConfig;

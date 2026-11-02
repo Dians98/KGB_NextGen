@@ -1,60 +1,88 @@
 "use client";
 
-import { animate, inView, useReducedMotion } from "motion/react";
-import { useEffect, useRef, type ElementType, type ReactNode } from "react";
+import { animate } from "motion/react";
+import { useCallback, useRef, type ElementType, type ReactNode } from "react";
+import { REVEAL_EASE, useReveal } from "./use-reveal";
 
 type RevealProps = {
   as?: ElementType;
   className?: string;
-  /** Retard en secondes, pour échelonner quelques éléments voisins. */
+  /** Retard en secondes, pour échelonner des éléments voisins. */
   delay?: number;
+  /** Distance de montée, en px. */
+  y?: number;
+  /** Filet qui se dessine (scaleX de 0 à 1) en haut ou en bas de l'élément. */
+  rule?: "top" | "bottom";
+  ruleTone?: "line" | "strong";
   children: ReactNode;
 };
 
-const DISTANCE = 12;
-const DURATION = 0.4;
-const EASE_OUT_EXPO = [0.16, 1, 0.3, 1] as const;
+const DURATION = 0.8;
+const RULE_DURATION = 1;
 
-// Le contenu est visible par défaut (rendu serveur, sans JS) : seul ce qui est sous la
-// ligne de flottaison est masqué après l'hydratation, puis révélé une fois à l'entrée dans l'écran.
-export function Reveal({ as: Tag = "div", className, delay = 0, children }: RevealProps) {
+// Fondu et montée une seule fois à l'entrée dans l'écran ; le filet se dessine juste après le contenu.
+export function Reveal({
+  as: Tag = "div",
+  className,
+  delay = 0,
+  y = 18,
+  rule,
+  ruleTone = "line",
+  children,
+}: RevealProps) {
   const ref = useRef<HTMLElement>(null);
-  const reduceMotion = useReducedMotion();
+  const ruleRef = useRef<HTMLSpanElement>(null);
 
-  useEffect(() => {
-    const element = ref.current;
-    if (!element || reduceMotion) return;
-    if (element.getBoundingClientRect().top < window.innerHeight) return;
-
-    element.style.opacity = "0";
-    element.style.transform = `translateY(${DISTANCE}px)`;
-
-    const stop: () => void = inView(
-      element,
-      () => {
-        stop();
-        animate(
-          element,
-          { opacity: 1, transform: "translateY(0px)" },
-          { duration: DURATION, delay, ease: EASE_OUT_EXPO },
-        ).then(() => {
-          element.style.opacity = "";
-          element.style.transform = "";
-        });
-      },
-      { margin: "0px 0px -10% 0px" },
-    );
-
-    return () => {
-      stop();
-      element.style.opacity = "";
-      element.style.transform = "";
-    };
-  }, [reduceMotion, delay]);
+  const build = useCallback(
+    (element: HTMLElement) => {
+      const line = ruleRef.current;
+      const reset = () => {
+        element.style.opacity = "";
+        element.style.transform = "";
+        if (line) line.style.transform = "";
+      };
+      return {
+        hide: () => {
+          element.style.opacity = "0";
+          element.style.transform = `translateY(${y}px)`;
+          if (line) line.style.transform = "scaleX(0)";
+        },
+        show: () => {
+          animate(element, { opacity: 1, transform: "translateY(0px)" }, { duration: DURATION, delay, ease: REVEAL_EASE }).then(
+            () => {
+              element.style.opacity = "";
+              element.style.transform = "";
+            },
+          );
+          if (line) {
+            animate(line, { transform: "scaleX(1)" }, { duration: RULE_DURATION, delay: delay + 0.1, ease: REVEAL_EASE }).then(
+              () => {
+                line.style.transform = "";
+              },
+            );
+          }
+        },
+        reset,
+      };
+    },
+    [y, delay],
+  );
+  useReveal(ref, build);
 
   return (
-    <Tag ref={ref} className={className}>
+    <Tag ref={ref} className={[rule ? "relative" : "", className].filter(Boolean).join(" ")}>
       {children}
+      {rule ? (
+        <span
+          ref={ruleRef}
+          aria-hidden="true"
+          className={[
+            "pointer-events-none absolute inset-x-0 h-px origin-left",
+            rule === "top" ? "top-0" : "bottom-0",
+            ruleTone === "strong" ? "bg-line-strong" : "bg-line",
+          ].join(" ")}
+        />
+      ) : null}
     </Tag>
   );
 }

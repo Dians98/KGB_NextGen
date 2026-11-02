@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Curtain } from "@/components/motion/curtain";
 import type { Shot } from "@/content/projects";
 
 export type GallerySection = {
@@ -34,7 +35,7 @@ export function Gallery({ sections, altFor }: GalleryProps) {
             <figcaption className="font-mono text-caption text-muted">{section.caption}</figcaption>
             <div className="mt-6 columns-1 gap-6 md:columns-2">
               {section.shots.map((shot) => (
-                <div key={shot.key} className="mb-6 break-inside-avoid">
+                <Curtain key={shot.key} className="mb-6 break-inside-avoid">
                   {shot.group === "mobile" ? (
                     <div className="mx-auto w-full max-w-72 rounded-device border border-line-strong bg-surface p-2 shadow-card">
                       <Image
@@ -58,7 +59,7 @@ export function Gallery({ sections, altFor }: GalleryProps) {
                       />
                     </div>
                   )}
-                </div>
+                </Curtain>
               ))}
             </div>
           </figure>

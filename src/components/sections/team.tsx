@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { useTranslations } from "next-intl";
 import { Reveal } from "@/components/motion/reveal";
 import { Button } from "@/components/ui/button";
+import { DownloadIcon } from "@/components/ui/icons";
 import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { site } from "@/config/site";
@@ -16,10 +17,27 @@ type PersonProps = {
   children: ReactNode;
 };
 
+type CvButtonProps = {
+  href: string;
+  name: string;
+};
+
+// Le nom de la personne est dans le nom accessible : deux boutons « Télécharger le CV » ne doivent pas se ressembler.
+function CvButton({ href, name }: CvButtonProps) {
+  const t = useTranslations("Team");
+  return (
+    <Button href={href} download variant="secondary" size="md" icon={<DownloadIcon width={18} height={18} />}>
+      {t("cv")}
+      <span className="sr-only">{t("cvOwner", { name })}</span>
+      <span className="font-mono text-caption text-muted">{"PDF"}</span>
+    </Button>
+  );
+}
+
 // Les deux portraits sont carrés à la source et rognés en cercle de même taille : la paire reste cohérente.
 function Person({ id, name, role, photo, photoAlt, children }: PersonProps) {
   return (
-    <article aria-labelledby={id} className="flex flex-col gap-6 border-t border-line-strong pt-8">
+    <article aria-labelledby={id} className="flex flex-col gap-6 pt-8">
       <div className="flex items-center gap-5 sm:gap-6">
         <Image
           src={photo}
@@ -57,7 +75,7 @@ export function Team() {
       </Reveal>
 
       <div className="mt-block grid gap-x-16 gap-y-14 md:grid-cols-2">
-        <Reveal>
+        <Reveal rule="top" ruleTone="strong">
           <Person
             id="equipe-kevin"
             name={kevin.name}
@@ -74,14 +92,12 @@ export function Team() {
               ))}
             </ul>
             <div>
-              <Button href={kevin.linkedin} external variant="link" size="md">
-                {t("kevin.link")}
-              </Button>
+              <CvButton href={kevin.cv} name={kevin.name} />
             </div>
           </Person>
         </Reveal>
 
-        <Reveal delay={0.05}>
+        <Reveal delay={0.12} rule="top" ruleTone="strong">
           <Person
             id="equipe-diano"
             name={diano.name}
@@ -101,9 +117,7 @@ export function Team() {
               ))}
             </ul>
             <div>
-              <Button href={diano.portfolio} external variant="link" size="md">
-                {t("diano.link")}
-              </Button>
+              <CvButton href={diano.cv} name={diano.name} />
             </div>
           </Person>
         </Reveal>

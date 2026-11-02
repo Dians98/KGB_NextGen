@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { site } from "@/config/site";
 import { Link } from "@/i18n/navigation";
+import { HeaderShell } from "./header-shell";
 import { LocaleSwitcher } from "./locale-switcher";
 import { MobileNav } from "./mobile-nav";
 import { navItems } from "./nav-items";
@@ -11,7 +12,7 @@ import { navItems } from "./nav-items";
 export function SiteHeader() {
   const t = useTranslations();
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-bg/85 backdrop-blur-md">
+    <HeaderShell>
       <Container className="flex h-header items-center justify-between gap-6">
         <Link
           href="/"
@@ -45,6 +46,6 @@ export function SiteHeader() {
 
         <MobileNav />
       </Container>
-    </header>
+    </HeaderShell>
   );
 }

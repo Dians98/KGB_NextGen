@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { CircuitMark } from "@/components/motion/circuit-mark";
 
 type SectionHeadingProps = {
   /** Id du titre, à passer à `Section` via `labelledBy`. */
@@ -14,7 +15,8 @@ export function SectionHeading({ id, title, description, level = 2, className }:
   const Tag = level === 2 ? "h2" : "h3";
   return (
     <div className={["max-w-prose", className].filter(Boolean).join(" ")}>
-      <Tag id={id} className="font-display text-title font-semibold text-fg">
+      <CircuitMark className="mb-4" />
+      <Tag id={id} className="font-display text-title font-semibold text-cyan">
         {title}
       </Tag>
       {description ? <p className="mt-4 text-lead text-muted">{description}</p> : null}
