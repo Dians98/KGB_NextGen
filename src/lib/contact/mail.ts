@@ -46,5 +46,6 @@ export async function sendContactEmail(input: ContactInput, locale: string): Pro
     `,
   });
 
-  if (error) throw new Error(`Resend : ${error.name}`);
+  // Le message de Resend dit pourquoi l'envoi est refusé (destinataire non autorisé, domaine non vérifié…).
+  if (error) throw new Error(`Resend : ${error.name} — ${error.message}`);
 }
