@@ -80,9 +80,7 @@
       "title": "Odoo et ERP",
       "text": "Paramétrage d'Odoo pour vos processus, connecté à vos outils existants.",
       "modules": "CRM · Comptabilité · Stock · Ventes"
-    },
-    "proof": "Vu dans le projet IFSPA",
-    "proofAlt": "Capture de l'application IFSPA (données fictives)"
+    }
   },
   "ProjectPage": {
     "back": "Retour à l'accueil",

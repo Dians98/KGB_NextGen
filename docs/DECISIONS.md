@@ -57,7 +57,7 @@ Validées par Diano le 2026-11-02 (séance de cadrage). Ce fichier fait foi ; un
 3. **Automatisation et IA** — connecter les outils (CRM, formulaires, bases de données) avec n8n, enrichis par l'IA (assistants, traitement de documents) pour supprimer les tâches répétitives. Ne rien promettre au-delà de ce qui est livré.
 4. **Configuration Odoo et ERP** — CRM, comptabilité, inventaire et ventes, intégration aux outils existants.
 
-Présentation (2026-11-02) : mosaïque de quatre cartes, chacune avec sa preuve. Web : capture du tableau de bord IFSPA. Mobile : écran mobile IFSPA dans un cadre de téléphone. Les deux captures mènent à la page IFSPA. Automatisation : schéma de flux animé (Formulaire → n8n → IA → CRM). Odoo : les quatre modules.
+Présentation (2026-11-02) : grille 2 × 2 de cartes, sans capture (demande de Diano). Chaque carte se termine par du concret : technologies (web, mobile), schéma de flux animé Formulaire → n8n → IA → CRM (automatisation), les quatre modules (Odoo).
 
 ### Projets (statut « En cours »)
 Chaque projet : badge « En cours », ce qui est livré, ce qui vient ensuite, lien vers le site en ligne. Les clients ont donné leur accord.

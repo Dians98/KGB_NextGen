@@ -1,12 +1,10 @@
-import Image from "next/image";
 import type { ComponentType, ReactNode, SVGProps } from "react";
 import { useTranslations } from "next-intl";
 import { PointerGlow } from "@/components/motion/pointer-glow";
 import { Reveal } from "@/components/motion/reveal";
-import { ArrowRightIcon, CodeIcon, ModulesIcon, SmartphoneIcon, WorkflowIcon } from "@/components/ui/icons";
+import { CodeIcon, ModulesIcon, SmartphoneIcon, WorkflowIcon } from "@/components/ui/icons";
 import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { Link } from "@/i18n/navigation";
 
 type ServiceKey = "web" | "mobile" | "automation" | "odoo";
 
@@ -16,7 +14,7 @@ const split = (value: string) =>
     .map((item) => item.trim())
     .filter(Boolean);
 
-// Mosaïque : chaque service montre une preuve (captures IFSPA, flux n8n, modules Odoo) plutôt qu'une icône seule.
+// Grille 2 × 2 : chaque carte se termine par du concret (technologies, flux n8n, modules Odoo).
 export function Services() {
   const t = useTranslations("Services");
 
@@ -26,55 +24,20 @@ export function Services() {
         <SectionHeading id="services-titre" title={t("title")} description={t("intro")} />
       </Reveal>
 
-      <ul className="mt-block grid gap-5 lg:grid-cols-6 lg:grid-rows-[auto_auto] lg:gap-6">
-        <ServiceCard
-          serviceKey="web"
-          Icon={CodeIcon}
-          className="lg:col-span-4"
-          layout="split"
-          delay={0}
-          visual={
-            <ProofShot
-              src="/projets/ifspa/app-tableau-de-bord.webp"
-              width={1440}
-              height={1327}
-              sizes="(min-width: 1024px) 26rem, 100vw"
-              className="aspect-4/3 lg:aspect-auto lg:h-full"
-            />
-          }
-        >
+      <ul className="mt-block grid gap-5 md:grid-cols-2 lg:gap-6">
+        <ServiceCard serviceKey="web" Icon={CodeIcon} delay={0}>
           <Chips items={split(t("web.tags"))} />
         </ServiceCard>
 
-        <ServiceCard
-          serviceKey="mobile"
-          Icon={SmartphoneIcon}
-          className="lg:col-span-2 lg:row-span-2"
-          layout="stack"
-          delay={0.08}
-          visual={
-            <div className="flex justify-center px-6 pt-2">
-              <div className="w-full max-w-56 rounded-t-device border border-b-0 border-line-strong bg-bg p-2 pb-0">
-                <ProofShot
-                  src="/projets/ifspa/app-mobile-encaissement.webp"
-                  width={780}
-                  height={1688}
-                  sizes="14rem"
-                  className="aspect-9/14 rounded-t-3xl"
-                  bare
-                />
-              </div>
-            </div>
-          }
-        >
+        <ServiceCard serviceKey="mobile" Icon={SmartphoneIcon} delay={0.08}>
           <Chips items={split(t("mobile.tags"))} />
         </ServiceCard>
 
-        <ServiceCard serviceKey="automation" Icon={WorkflowIcon} className="lg:col-span-2" delay={0.16}>
+        <ServiceCard serviceKey="automation" Icon={WorkflowIcon} delay={0.16}>
           <Flow steps={split(t("automation.flow"))} label={t("automation.flowLabel")} />
         </ServiceCard>
 
-        <ServiceCard serviceKey="odoo" Icon={ModulesIcon} className="lg:col-span-2" delay={0.24}>
+        <ServiceCard serviceKey="odoo" Icon={ModulesIcon} delay={0.24}>
           <ul className="grid grid-cols-2 gap-2">
             {split(t("odoo.modules")).map((module) => (
               <li
@@ -95,86 +58,34 @@ export function Services() {
 type ServiceCardProps = {
   serviceKey: ServiceKey;
   Icon: ComponentType<SVGProps<SVGSVGElement>>;
-  className?: string;
-  /** split : texte et visuel côte à côte sur grand écran ; stack : visuel collé en bas. */
-  layout?: "split" | "stack";
   delay: number;
-  visual?: ReactNode;
   children: ReactNode;
 };
 
-function ServiceCard({ serviceKey, Icon, className, layout, delay, visual, children }: ServiceCardProps) {
+function ServiceCard({ serviceKey, Icon, delay, children }: ServiceCardProps) {
   const t = useTranslations("Services");
   const titleId = `service-${serviceKey}`;
 
   return (
-    <Reveal as="li" delay={delay} className={["flex", className].filter(Boolean).join(" ")}>
+    <Reveal as="li" delay={delay} className="flex">
       <PointerGlow className="flex w-full rounded-card">
         <article
           aria-labelledby={titleId}
-          className={[
-            "group/service flex w-full overflow-hidden rounded-card border border-line bg-surface shadow-card transition-[border-color,box-shadow] duration-(--duration-base) ease-out-expo hover:border-line-strong hover:shadow-card-hover",
-            layout === "split" ? "flex-col lg:flex-row" : "flex-col",
-          ].join(" ")}
+          className="group/service flex w-full flex-col gap-5 rounded-card border border-line bg-surface p-6 shadow-card transition-[border-color,box-shadow] duration-(--duration-base) ease-out-expo hover:border-line-strong hover:shadow-card-hover sm:p-8"
         >
-          <div className={["flex flex-col gap-5 p-6 sm:p-8", layout === "split" ? "lg:w-1/2" : "flex-1"].join(" ")}>
-            <span className="flex size-11 items-center justify-center rounded-control border border-line-strong bg-bg text-cyan transition-colors duration-(--duration-base) group-hover/service:border-cyan">
-              <Icon width={22} height={22} />
-            </span>
-            <div>
-              <h3 id={titleId} className="font-display text-heading font-semibold text-fg">
-                {t(`${serviceKey}.title`)}
-              </h3>
-              <p className="mt-2 text-body text-muted">{t(`${serviceKey}.text`)}</p>
-            </div>
-            <div className="mt-auto pt-1">{children}</div>
+          <span className="flex size-11 items-center justify-center rounded-control border border-line-strong bg-bg text-cyan transition-colors duration-(--duration-base) group-hover/service:border-cyan">
+            <Icon width={22} height={22} />
+          </span>
+          <div>
+            <h3 id={titleId} className="font-display text-heading font-semibold text-fg">
+              {t(`${serviceKey}.title`)}
+            </h3>
+            <p className="mt-2 text-body text-muted">{t(`${serviceKey}.text`)}</p>
           </div>
-          {visual ? (
-            <div className={layout === "split" ? "relative lg:w-1/2 lg:pt-8" : "relative mt-auto"}>{visual}</div>
-          ) : null}
+          <div className="mt-auto pt-1">{children}</div>
         </article>
       </PointerGlow>
     </Reveal>
-  );
-}
-
-type ProofShotProps = {
-  src: string;
-  width: number;
-  height: number;
-  sizes: string;
-  className?: string;
-  /** Sans cadre propre : le cadre est fourni par le parent (téléphone). */
-  bare?: boolean;
-};
-
-// La capture mène au projet : le service est démontré par un travail réel.
-function ProofShot({ src, width, height, sizes, className, bare }: ProofShotProps) {
-  const t = useTranslations("Services");
-  return (
-    <Link
-      href="/projets/ifspa"
-      className={[
-        "group/proof relative block overflow-hidden",
-        bare ? "" : "border-t border-line lg:rounded-tl-card lg:border-l",
-        className,
-      ]
-        .filter(Boolean)
-        .join(" ")}
-    >
-      <Image
-        src={src}
-        alt={t("proofAlt")}
-        width={width}
-        height={height}
-        sizes={sizes}
-        className="h-full w-full object-cover object-top transition-transform duration-1200 ease-out-expo motion-safe:group-hover/service:scale-103"
-      />
-      <span className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 rounded-pill border border-line-strong bg-bg/85 px-3 py-1.5 text-caption font-medium text-fg backdrop-blur-sm transition-colors duration-(--duration-base) group-hover/proof:border-cyan">
-        {t("proof")}
-        <ArrowRightIcon width={14} height={14} />
-      </span>
-    </Link>
   );
 }
 
