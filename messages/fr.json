@@ -1,0 +1,36 @@
+{
+  "Metadata": {
+    "titleTemplate": "%s · KGB NextGen Solutions",
+    "homeTitle": "KGB NextGen Solutions — applications web, mobiles, automatisation et Odoo à Maurice",
+    "homeDescription": "KGB NextGen Solutions conçoit des applications web et mobiles, automatise vos processus avec n8n et l'IA, et configure Odoo. Une équipe basée à Maurice."
+  },
+  "Common": {
+    "skipToContent": "Aller au contenu",
+    "contactCta": "Parler de votre projet"
+  },
+  "Nav": {
+    "label": "Navigation principale",
+    "home": "Accueil",
+    "services": "Services",
+    "projects": "Projets",
+    "team": "Équipe",
+    "contact": "Contact"
+  },
+  "LocaleSwitcher": {
+    "label": "Langue",
+    "fr": "Français",
+    "en": "English"
+  },
+  "Footer": {
+    "location": "Maurice",
+    "rights": "Tous droits réservés."
+  },
+  "NotFound": {
+    "title": "Page introuvable",
+    "text": "Cette adresse ne mène à aucune page du site.",
+    "back": "Retour à l'accueil"
+  },
+  "Placeholder": {
+    "title": "Site en cours de construction"
+  }
+}

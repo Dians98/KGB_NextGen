@@ -17,6 +17,8 @@ Validées par Diano le 2026-11-02 (séance de cadrage). Ce fichier fait foi ; un
 ## Stack
 - Next.js 16 (App Router), React 19, Tailwind CSS 4, Motion, next-intl, Resend (formulaire), **pnpm**.
 - Hébergement : Vercel. Dépôt : https://github.com/Dians98/KGB_NextGen
+- i18n et cache (tâche 2.1, 2026-11-02) : on **garde `cacheComponents`**. La langue est lue avec `next/root-params` dans `src/i18n/request.ts`, `generateStaticParams` + `setRequestLocale` dans `src/app/[locale]/layout.tsx` ; `/` et `/en` sont prérendues en statique. `localeDetection: false`, mêmes slugs dans les deux langues.
+- pnpm 11 : les scripts d'installation de `@parcel/watcher`, `@swc/core`, `sharp` et `unrs-resolver` sont refusés (`pnpm-workspace.yaml`).
 
 ## Charte
 - **Thème sombre uniquement** (v1), tiré du logo (`docs/brand/logo-source.png`).

@@ -1,0 +1,36 @@
+{
+  "Metadata": {
+    "titleTemplate": "%s · KGB NextGen Solutions",
+    "homeTitle": "KGB NextGen Solutions — web and mobile apps, automation and Odoo in Mauritius",
+    "homeDescription": "KGB NextGen Solutions builds web and mobile applications, automates your processes with n8n and AI, and sets up Odoo. A team based in Mauritius."
+  },
+  "Common": {
+    "skipToContent": "Skip to content",
+    "contactCta": "Talk about your project"
+  },
+  "Nav": {
+    "label": "Main navigation",
+    "home": "Home",
+    "services": "Services",
+    "projects": "Projects",
+    "team": "Team",
+    "contact": "Contact"
+  },
+  "LocaleSwitcher": {
+    "label": "Language",
+    "fr": "Français",
+    "en": "English"
+  },
+  "Footer": {
+    "location": "Mauritius",
+    "rights": "All rights reserved."
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "text": "This address does not lead to any page on the site.",
+    "back": "Back to home"
+  },
+  "Placeholder": {
+    "title": "Site under construction"
+  }
+}
