@@ -225,6 +225,22 @@ html {
   animation: scroll-cue 2.6s var(--ease-out-quart) 1.6s infinite;
 }
 
+/* Impulsion du schéma de flux (section Services) : traverse une liaison, puis attend son tour. */
+@keyframes flow-pulse {
+  0% {
+    left: -1rem;
+  }
+  35%,
+  100% {
+    left: 100%;
+  }
+}
+
+.flow-pulse {
+  left: -1rem;
+  animation: flow-pulse 1.8s var(--ease-out-quart) infinite backwards;
+}
+
 /* Lueur des cartes projets : le script ne règle que --glow-x/--glow-y et data-glow, jamais de rendu React. */
 .glow-layer {
   opacity: 0;
@@ -244,6 +260,7 @@ html {
   .hero-word,
   .hero-rise,
   .scroll-cue-bar,
+  .flow-pulse,
   .glow-layer {
     animation: none;
   }

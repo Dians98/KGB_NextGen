@@ -62,20 +62,27 @@
     "intro": "Quatre métiers, un seul interlocuteur : l'outil et les processus qu'il sert avancent ensemble.",
     "web": {
       "title": "Applications web full-stack",
-      "text": "Interfaces en React, Next.js et TypeScript, back-end en Node.js ou FastAPI, base PostgreSQL. Du tableau de bord interne au site public."
+      "text": "Interfaces, back-end et base de données, du tableau de bord interne au site public.",
+      "tags": "React · Next.js · TypeScript · Node.js · FastAPI · PostgreSQL"
     },
     "mobile": {
       "title": "Applications mobiles et PWA",
-      "text": "Applications React Native et PWA pour iOS et Android, pensées pour une connexion lente, avec un mode hors ligne quand le métier l'exige."
+      "text": "Pensées pour une connexion lente, avec un mode hors ligne quand le métier l'exige.",
+      "tags": "React Native · PWA · iOS · Android"
     },
     "automation": {
       "title": "Automatisation et IA",
-      "text": "Nous relions vos outils (CRM, formulaires, bases de données) avec n8n et ajoutons l'IA là où elle fait gagner du temps : tri, résumé, extraction de documents."
+      "text": "Nous relions vos outils avec n8n et ajoutons l'IA là où elle fait gagner du temps : tri, résumé, extraction de documents.",
+      "flow": "Formulaire · n8n · IA · CRM",
+      "flowLabel": "Exemple de flux : un formulaire passe par n8n et l'IA, puis arrive dans le CRM."
     },
     "odoo": {
       "title": "Odoo et ERP",
-      "text": "Paramétrage d'Odoo pour vos processus : CRM, comptabilité, stock et ventes, connecté à vos outils existants."
-    }
+      "text": "Paramétrage d'Odoo pour vos processus, connecté à vos outils existants.",
+      "modules": "CRM · Comptabilité · Stock · Ventes"
+    },
+    "proof": "Vu dans le projet IFSPA",
+    "proofAlt": "Capture de l'application IFSPA (données fictives)"
   },
   "ProjectPage": {
     "back": "Retour à l'accueil",

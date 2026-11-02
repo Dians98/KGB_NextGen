@@ -22,7 +22,8 @@ export async function SiteFooter() {
 
   return (
     <footer className="border-t border-line">
-      <Container className="grid gap-10 py-block md:grid-cols-[1.5fr_1fr_1fr]">
+      {/* Marque à gauche, liens à droite ; le copyright est centré dessous. */}
+      <Container className="flex flex-col gap-10 py-block md:flex-row md:items-start md:justify-between">
         <div>
           <div>
             <Logo />
@@ -37,43 +38,45 @@ export async function SiteFooter() {
           </p>
         </div>
 
-        <nav aria-label={t("Footer.navLabel")}>
-          <ul className="flex flex-col">
-            {navItems.map((item) => (
-              <li key={item.key}>
-                <Link
-                  href={item.href}
-                  className="inline-flex min-h-11 items-center rounded-control text-small text-muted transition-colors duration-(--duration-base) hover:text-fg md:min-h-8"
-                >
-                  {t(`Nav.${item.key}`)}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <div className="flex flex-col gap-4 md:items-end">
+          <nav aria-label={t("Footer.navLabel")}>
+            <ul className="flex flex-col md:flex-row md:flex-wrap md:justify-end md:gap-x-8">
+              {navItems.map((item) => (
+                <li key={item.key}>
+                  <Link
+                    href={item.href}
+                    className="inline-flex min-h-11 items-center rounded-control text-small text-muted transition-colors duration-(--duration-base) hover:text-fg md:min-h-8"
+                  >
+                    {t(`Nav.${item.key}`)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-        {hasContactLinks ? (
-          <ul className="flex flex-col items-start">
-            {site.companyLinkedin ? (
-              <li>
-                <Button href={site.companyLinkedin} external variant="link" size="sm" className="md:min-h-8">
-                  {t("Footer.linkedin")}
-                </Button>
-              </li>
-            ) : null}
-            {site.whatsapp ? (
-              <li>
-                <Button href={whatsappHref(site.whatsapp)} external variant="link" size="sm" className="md:min-h-8">
-                  {t("Footer.whatsapp")}
-                </Button>
-              </li>
-            ) : null}
-          </ul>
-        ) : null}
+          {hasContactLinks ? (
+            <ul className="flex flex-col items-start md:flex-row md:gap-x-6">
+              {site.companyLinkedin ? (
+                <li>
+                  <Button href={site.companyLinkedin} external variant="link" size="sm" className="md:min-h-8">
+                    {t("Footer.linkedin")}
+                  </Button>
+                </li>
+              ) : null}
+              {site.whatsapp ? (
+                <li>
+                  <Button href={whatsappHref(site.whatsapp)} external variant="link" size="sm" className="md:min-h-8">
+                    {t("Footer.whatsapp")}
+                  </Button>
+                </li>
+              ) : null}
+            </ul>
+          ) : null}
+        </div>
       </Container>
 
       <div className="border-t border-line">
-        <Container className="flex flex-col gap-2 py-6 text-caption text-muted sm:flex-row sm:justify-between">
+        <Container className="flex flex-col items-center gap-1 py-6 text-center text-caption text-muted">
           <p>{t("Footer.copyright", { year, name: site.name })}</p>
           {site.brn ? <p>{t("Footer.brn", { brn: site.brn })}</p> : null}
         </Container>

@@ -11,7 +11,8 @@ type HeroScrollProps = {
   children: ReactNode;
 };
 
-// Sortie au défilement : le contenu rétrécit un peu, monte et s'estompe ; le fond glisse d'environ 10 %.
+// Sortie au défilement : le contenu monte et s'estompe, sans rétrécir (un rétrécissement décalait
+// les textes vers le centre) ; le fond glisse d'environ 10 %.
 // Les styles restent branchés en mouvement réduit, mais les valeurs ne bougent pas.
 export function HeroScroll({ id, labelledBy, background, children }: HeroScrollProps) {
   const ref = useRef<HTMLElement>(null);
@@ -19,7 +20,6 @@ export function HeroScroll({ id, labelledBy, background, children }: HeroScrollP
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const p = (value: number) => (reduce ? 0 : value);
   const backgroundY = useTransform(scrollYProgress, (v) => `${p(v) * 10}%`);
-  const scale = useTransform(scrollYProgress, (v) => 1 - Math.min(p(v) / 0.6, 1) * 0.06);
   const y = useTransform(scrollYProgress, (v) => Math.min(p(v) / 0.6, 1) * -48);
   const opacity = useTransform(scrollYProgress, (v) => 1 - Math.min(p(v) / 0.6, 1));
 
@@ -37,7 +37,7 @@ export function HeroScroll({ id, labelledBy, background, children }: HeroScrollP
       >
         {background}
       </motion.div>
-      <motion.div style={{ scale, y, opacity }} className="relative flex flex-1 flex-col justify-center">
+      <motion.div style={{ y, opacity }} className="relative flex flex-1 flex-col justify-center">
         {children}
       </motion.div>
     </section>

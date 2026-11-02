@@ -57,6 +57,8 @@ Validées par Diano le 2026-11-02 (séance de cadrage). Ce fichier fait foi ; un
 3. **Automatisation et IA** — connecter les outils (CRM, formulaires, bases de données) avec n8n, enrichis par l'IA (assistants, traitement de documents) pour supprimer les tâches répétitives. Ne rien promettre au-delà de ce qui est livré.
 4. **Configuration Odoo et ERP** — CRM, comptabilité, inventaire et ventes, intégration aux outils existants.
 
+Présentation (2026-11-02) : mosaïque de quatre cartes, chacune avec sa preuve. Web : capture du tableau de bord IFSPA. Mobile : écran mobile IFSPA dans un cadre de téléphone. Les deux captures mènent à la page IFSPA. Automatisation : schéma de flux animé (Formulaire → n8n → IA → CRM). Odoo : les quatre modules.
+
 ### Projets (statut « En cours »)
 Chaque projet : badge « En cours », ce qui est livré, ce qui vient ensuite, lien vers le site en ligne. Les clients ont donné leur accord.
 - **IFSPA** — https://ifspa.mg — gestion de l'écolage + vitrine d'un institut paramédical à Toamasina (Madagascar). Captures : vitrine publique en direct + maquettes validées par le client (`C:\wamp64\www\ifspa\prototype\captures\`). **Aucune vraie donnée d'étudiant.**
@@ -65,6 +67,8 @@ Chaque projet : badge « En cours », ce qui est livré, ce qui vient ensuite, l
 ### Équipe
 - **Kevin GOOLJAR — Fondateur & Directeur.** Dirige l'entreprise, pilote les projets, suit les clients. Points forts : plus de 15 ans dans l'IT à Maurice ; opérations et pilotage par indicateurs ; certifications AWS SysOps et Siemens Teamcenter ; ex-Accenture, ex-LINKBYNET. **Ne pas nommer son employeur actuel.** Photo : `public/team/kevin-gooljar.jpg`. Lien LinkedIn. Détails : `docs/profils/kevin-gooljar.md`.
 - **Diano ANDRIANTSALAMA — Lead Developer** (pas fondateur). Fiche sobre : rôle, plus de 3 ans d'expérience, stack, lien vers https://dians98.vercel.app. **Ne pas détailler son parcours ni les projets de son employeur actuel.** Photo : `public/team/diano-andriantsalama.webp`.
+
+Présentation (2026-11-02) : deux cartes de même hauteur, bouton CV aligné en bas ; sur mobile, la photo passe au-dessus du nom.
 
 ### Contact
 - Formulaire envoyé par Resend, anti-spam simple (champ piège + 3 envois / 10 min), sans captcha.

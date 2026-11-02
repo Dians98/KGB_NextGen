@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { useTranslations } from "next-intl";
+import { PointerGlow } from "@/components/motion/pointer-glow";
 import { Reveal } from "@/components/motion/reveal";
 import { Button } from "@/components/ui/button";
 import { DownloadIcon } from "@/components/ui/icons";
@@ -34,28 +35,34 @@ function CvButton({ href, name }: CvButtonProps) {
   );
 }
 
-// Les deux portraits sont carrés à la source et rognés en cercle de même taille : la paire reste cohérente.
+// Deux cartes de même hauteur ; le bouton CV est calé en bas pour s'aligner d'une carte à l'autre.
+// Les deux portraits sont carrés à la source et rognés en cercle de même taille.
 function Person({ id, name, role, photo, photoAlt, children }: PersonProps) {
   return (
-    <article aria-labelledby={id} className="flex flex-col gap-6 pt-8">
-      <div className="flex items-center gap-5 sm:gap-6">
-        <Image
-          src={photo}
-          alt={photoAlt}
-          width={160}
-          height={160}
-          sizes="(min-width: 640px) 8rem, 6rem"
-          className="size-24 shrink-0 rounded-pill border border-line-strong object-cover sm:size-32"
-        />
-        <div>
-          <h3 id={id} className="font-display text-heading font-semibold text-fg">
-            {name}
-          </h3>
-          <p className="mt-1 text-body font-medium text-muted">{role}</p>
+    <PointerGlow className="flex h-full w-full min-w-0 rounded-card">
+      <article
+        aria-labelledby={id}
+        className="flex w-full min-w-0 flex-col gap-6 rounded-card border border-line bg-surface p-6 shadow-card transition-[border-color,box-shadow] duration-(--duration-base) ease-out-expo hover:border-line-strong hover:shadow-card-hover sm:p-8"
+      >
+        <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-6">
+          <Image
+            src={photo}
+            alt={photoAlt}
+            width={160}
+            height={160}
+            sizes="(min-width: 640px) 8rem, 5rem"
+            className="size-20 shrink-0 rounded-pill border border-line-strong object-cover sm:size-32"
+          />
+          <div className="min-w-0">
+            <h3 id={id} className="font-display text-heading font-semibold break-words text-fg">
+              {name}
+            </h3>
+            <p className="mt-1 text-body font-medium text-muted">{role}</p>
+          </div>
         </div>
-      </div>
-      {children}
-    </article>
+        {children}
+      </article>
+    </PointerGlow>
   );
 }
 
@@ -74,8 +81,8 @@ export function Team() {
         <SectionHeading id="equipe-titre" title={t("title")} description={t("intro")} />
       </Reveal>
 
-      <div className="mt-block grid gap-x-16 gap-y-14 md:grid-cols-2">
-        <Reveal rule="top" ruleTone="strong">
+      <div className="mt-block grid gap-5 md:grid-cols-2 lg:gap-6">
+        <Reveal className="flex min-w-0">
           <Person
             id="equipe-kevin"
             name={kevin.name}
@@ -91,13 +98,13 @@ export function Team() {
                 </li>
               ))}
             </ul>
-            <div>
+            <div className="mt-auto pt-2">
               <CvButton href={kevin.cv} name={kevin.name} />
             </div>
           </Person>
         </Reveal>
 
-        <Reveal delay={0.12} rule="top" ruleTone="strong">
+        <Reveal delay={0.12} className="flex min-w-0">
           <Person
             id="equipe-diano"
             name={diano.name}
@@ -116,7 +123,7 @@ export function Team() {
                 </li>
               ))}
             </ul>
-            <div>
+            <div className="mt-auto pt-2">
               <CvButton href={diano.cv} name={diano.name} />
             </div>
           </Person>
