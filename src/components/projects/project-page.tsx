@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/motion/reveal";
 import { Gallery, type GallerySection } from "@/components/projects/gallery";
+import { ProjectVideo } from "@/components/projects/project-video";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonClasses } from "@/components/ui/button";
 import { CircuitMark } from "@/components/motion/circuit-mark";
@@ -44,6 +45,15 @@ export function ProjectPage({ slug }: ProjectPageProps) {
   const project = getProject(slug);
   const name = t(`${slug}.name`);
 
+  const video = (
+    <ProjectVideo
+      video={project.video}
+      description={t(`${slug}.videoDescription`)}
+      playLabel={page("videoPlay")}
+      pauseLabel={page("videoPause")}
+    />
+  );
+
   const sections: GallerySection[] =
     slug === "ifspa"
       ? [
@@ -51,16 +61,17 @@ export function ProjectPage({ slug }: ProjectPageProps) {
             id: "site",
             title: page("groupSite"),
             caption: t("ifspa.siteCaption"),
-            shots: project.shots.filter((shot) => shot.key.startsWith("site-")),
+            shots: [],
+            video,
           },
           {
             id: "app",
             title: page("groupApp"),
             caption: t("ifspa.shotsCaption"),
-            shots: project.shots.filter((shot) => shot.key.startsWith("app-")),
+            shots: project.shots,
           },
         ]
-      : [{ id: "all", caption: t(`${slug}.shotsCaption`), shots: project.shots }];
+      : [{ id: "all", caption: t(`${slug}.shotsCaption`), shots: project.shots, video }];
 
   return (
     <main id="contenu" tabIndex={-1} className="flex-1 outline-none">
@@ -92,7 +103,7 @@ export function ProjectPage({ slug }: ProjectPageProps) {
         <section aria-labelledby="projet-captures" className="border-t border-line pt-10 lg:pt-12">
           <SectionHeading id="projet-captures" title={page("shots")} />
           <div className="mt-block">
-            <Gallery sections={sections} altFor={(key) => t(`${slug}.shots.${key}` as "ifspa.shots.site-agrements")} />
+            <Gallery sections={sections} altFor={(key) => t(`${slug}.shots.${key}` as "ifspa.shots.app-recu")} />
           </div>
         </section>
 

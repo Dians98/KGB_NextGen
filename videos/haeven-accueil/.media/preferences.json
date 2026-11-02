@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "preferences": {
+    "destination": {
+      "value": "embed",
+      "confirmed_in": [
+        "haeven-accueil"
+      ],
+      "updated_at": "2026-11-02T13:33:29.197Z"
+    },
+    "language": {
+      "value": "fr",
+      "confirmed_in": [
+        "haeven-accueil"
+      ],
+      "updated_at": "2026-11-02T13:33:29.375Z"
+    },
+    "flow": {
+      "value": "automation",
+      "confirmed_in": [
+        "haeven-accueil"
+      ],
+      "updated_at": "2026-11-02T13:33:29.555Z"
+    },
+    "storyboard": {
+      "value": "no",
+      "confirmed_in": [
+        "haeven-accueil"
+      ],
+      "updated_at": "2026-11-02T13:33:29.731Z"
+    },
+    "style_preset.product-launch-video": {
+      "value": "cartesian",
+      "confirmed_in": [
+        "haeven-accueil"
+      ],
+      "updated_at": "2026-11-02T13:36:33.053Z"
+    }
+  },
+  "sightings": {}
+}

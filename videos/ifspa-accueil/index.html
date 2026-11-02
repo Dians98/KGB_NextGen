@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1080">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js" integrity="sha384-sG0Hv1tP1lZCk9KQmrIbY/XNwi+OY84GQqhMscbnsoBFqAz8KNCil1kvfL3Hbbk2" crossorigin="anonymous"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #000;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #FFFFFF;
+      }
+      .layer {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .layer video,
+      .layer img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+      Real-time Chrome recording of https://ifspa.mg/ (enregistrement/brut.mp4, 1920x1080, 30 fps CFR),
+      played at 1x — no overlay, no text, no zoom. Source cuts:
+        A1  0.00–11.60 s  ← source 0.00–11.60  (hero entrance, institut + counters, filières, sage-femmes)
+        A2 11.60–14.40 s  ← source 12.20–15.00 (invisible cut inside the static sage-femmes hold; Admission)
+        B  14.00–20.00 s  ← source 15.34–21.34 (Agréments + contact; starts at the first fully rendered
+                            frame after the scroll jump, n=460; 0.4 s crossfade hides the jump)
+      Loop: the recording's first frame fades in over 19.50–19.95 s.
+    -->
+    <div id="root" data-composition-id="main" data-start="0" data-duration="20" data-width="1920" data-height="1080">
+      <div id="layer-a" class="layer">
+        <video
+          id="clip-a1"
+          class="clip"
+          src="enregistrement/brut.mp4"
+          muted
+          playsinline
+          data-start="0"
+          data-duration="11.6"
+          data-media-start="0"
+          data-track-index="0"
+        ></video>
+        <video
+          id="clip-a2"
+          class="clip"
+          src="enregistrement/brut.mp4"
+          muted
+          playsinline
+          data-start="11.6"
+          data-duration="2.8"
+          data-media-start="12.2"
+          data-track-index="0"
+        ></video>
+      </div>
+
+      <div id="layer-b" class="layer">
+        <video
+          id="clip-b"
+          class="clip"
+          src="enregistrement/brut.mp4"
+          muted
+          playsinline
+          data-start="14"
+          data-duration="6"
+          data-media-start="15.34"
+          data-track-index="1"
+        ></video>
+      </div>
+
+      <div id="layer-loop" class="layer">
+        <img id="loop-first-frame" src="assets/ifspa-premiere-image.png" alt="" width="1920" height="1080">
+      </div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // Crossfade over the scroll jump: B fades in on top of A2 (A2 stays opaque underneath).
+      tl.fromTo("#layer-b", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "sine.inOut", immediateRender: true }, 14);
+      // Loop: fade into the recording's first frame, fully opaque before the last rendered frame.
+      tl.fromTo("#layer-loop", { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "sine.inOut", immediateRender: true }, 19.5);
+      tl.set({}, {}, 20);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

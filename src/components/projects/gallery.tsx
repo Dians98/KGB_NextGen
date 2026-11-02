@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Image from "next/image";
 import { Curtain } from "@/components/motion/curtain";
 import type { Shot } from "@/content/projects";
@@ -9,6 +10,8 @@ export type GallerySection = {
   /** Légende visible du groupe, par exemple « Données fictives ». */
   caption: string;
   shots: Shot[];
+  /** Vidéo affichée avant les captures (la visite d'une page d'accueil, par exemple). */
+  video?: ReactNode;
 };
 
 type GalleryProps = {
@@ -33,35 +36,38 @@ export function Gallery({ sections, altFor }: GalleryProps) {
           ) : null}
           <figure className={section.title ? "mt-4" : undefined}>
             <figcaption className="font-mono text-caption text-muted">{section.caption}</figcaption>
-            <div className="mt-6 columns-1 gap-6 md:columns-2">
-              {section.shots.map((shot) => (
-                <Curtain key={shot.key} className="mb-6 break-inside-avoid">
-                  {shot.group === "mobile" ? (
-                    <div className="mx-auto w-full max-w-72 rounded-device border border-line-strong bg-surface p-2 shadow-card">
-                      <Image
-                        src={shot.src}
-                        alt={altFor(shot.key)}
-                        width={shot.width}
-                        height={shot.height}
-                        sizes={PHONE_SIZES}
-                        className="h-auto w-full rounded-3xl"
-                      />
-                    </div>
-                  ) : (
-                    <div className="overflow-hidden rounded-card border border-line bg-surface shadow-card">
-                      <Image
-                        src={shot.src}
-                        alt={altFor(shot.key)}
-                        width={shot.width}
-                        height={shot.height}
-                        sizes={DESKTOP_SIZES}
-                        className="h-auto w-full"
-                      />
-                    </div>
-                  )}
-                </Curtain>
-              ))}
-            </div>
+            {section.video ? <Curtain className="mt-6">{section.video}</Curtain> : null}
+            {section.shots.length ? (
+              <div className="mt-6 columns-1 gap-6 md:columns-2">
+                {section.shots.map((shot) => (
+                  <Curtain key={shot.key} className="mb-6 break-inside-avoid">
+                    {shot.group === "mobile" ? (
+                      <div className="mx-auto w-full max-w-72 rounded-device border border-line-strong bg-surface p-2 shadow-card">
+                        <Image
+                          src={shot.src}
+                          alt={altFor(shot.key)}
+                          width={shot.width}
+                          height={shot.height}
+                          sizes={PHONE_SIZES}
+                          className="h-auto w-full rounded-3xl"
+                        />
+                      </div>
+                    ) : (
+                      <div className="overflow-hidden rounded-card border border-line bg-surface shadow-card">
+                        <Image
+                          src={shot.src}
+                          alt={altFor(shot.key)}
+                          width={shot.width}
+                          height={shot.height}
+                          sizes={DESKTOP_SIZES}
+                          className="h-auto w-full"
+                        />
+                      </div>
+                    )}
+                  </Curtain>
+                ))}
+              </div>
+            ) : null}
           </figure>
         </section>
       ))}

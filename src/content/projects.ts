@@ -12,13 +12,34 @@ export type Shot = {
   key: string;
 };
 
+/** Visite de la page d'accueil, rendue avec HyperFrames (sources dans videos/). Muette, en boucle. */
+export type ProjectVideo = {
+  id: string;
+  mp4: string;
+  webm: string | null;
+  poster: string;
+  width: number;
+  height: number;
+};
+
 export type Project = {
   slug: "ifspa" | "heaven";
   /** null tant que le site n'est pas en ligne : aucun lien affiché. */
   liveUrl: string | null;
   cover: Shot;
+  /** Remplace les captures du site vitrine. */
+  video: ProjectVideo;
   shots: Shot[];
 };
+
+const homeVideo = (slug: string): ProjectVideo => ({
+  id: `video-${slug}`,
+  mp4: `/projets/${slug}/video-accueil.mp4`,
+  webm: `/projets/${slug}/video-accueil.webm`,
+  poster: `/projets/${slug}/video-accueil-poster.webp`,
+  width: 1280,
+  height: 720,
+});
 
 const shot = (slug: string, file: string, width: number, height: number, group: ShotGroup): Shot => ({
   src: `/projets/${slug}/${file}.webp`,
@@ -28,7 +49,7 @@ const shot = (slug: string, file: string, width: number, height: number, group: 
   key: file,
 });
 
-// site-accueil et site-mobile (IFSPA) sont volontairement absents : photo d'illustration d'une autre école.
+// Le site vitrine d'IFSPA est montré en vidéo ; les captures restent pour l'application de gestion.
 const ifspaShots: Shot[] = [
   shot("ifspa", "app-tableau-de-bord", 1440, 1327, "app"),
   shot("ifspa", "app-encaissement-mobile-money", 1440, 1532, "app"),
@@ -36,33 +57,24 @@ const ifspaShots: Shot[] = [
   shot("ifspa", "app-recu", 1440, 900, "app"),
   shot("ifspa", "app-impayes", 1440, 900, "app"),
   shot("ifspa", "app-mobile-encaissement", 780, 1688, "mobile"),
-  shot("ifspa", "site-agrements", 1440, 450, "site"),
-  shot("ifspa", "site-filieres", 1440, 900, "site"),
-  shot("ifspa", "site-institut", 1440, 900, "site"),
-  shot("ifspa", "site-contact", 1440, 840, "site"),
 ];
 
-// Portfolio et Univers de HAEVEN contiennent encore des textes provisoires : non capturés.
-const heavenShots: Shot[] = [
-  shot("heaven", "accueil", 1440, 900, "site"),
-  shot("heaven", "intro", 1440, 900, "site"),
-  shot("heaven", "univers", 1440, 900, "site"),
-  shot("heaven", "cta", 1440, 900, "site"),
-  shot("heaven", "mobile", 780, 1688, "mobile"),
-];
+// HAEVEN : seule la vidéo de l'accueil est montrée ; la couverture (4:3) en est tirée.
 
 export const projects: Project[] = [
   {
     slug: "ifspa",
     liveUrl: "https://ifspa.mg",
     cover: ifspaShots[0],
+    video: homeVideo("ifspa"),
     shots: ifspaShots,
   },
   {
     slug: "heaven",
     liveUrl: null,
-    cover: heavenShots[0],
-    shots: heavenShots,
+    cover: shot("heaven", "couverture", 1200, 900, "site"),
+    video: homeVideo("heaven"),
+    shots: [],
   },
 ];
 

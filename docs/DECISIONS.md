@@ -78,11 +78,15 @@ Chaque projet : badge « En cours », ce qui est livré, ce qui vient ensuite, l
 - `kgb-logo-complet.{png,webp}` : emblème + « NextGen Solutions Ltd » + devise. Le texte « NextGen » est bleu nuit : peu lisible sur le fond, à doubler par du vrai texte HTML.
 - Favicons (`src/app/icon.png`, `favicon.ico`, `apple-icon.png`) : « B » + tête en circuits recadrés du vrai logo. Le mini-logo redessiné a été supprimé.
 
-### Captures — `public/projets/` (WebP)
-- **IFSPA, vitrine** (ifspa.mg en production, capturée le 2026-11-02) : `site-accueil`, `site-institut`, `site-filieres`, `site-agrements`, `site-contact` (1440 × 900 ou moins), `site-mobile` (390 px @2x). La photo du hero d'IFSPA est une **photo d'illustration** (élèves d'une autre école) : ne pas en faire l'image principale de la carte projet ; préférer `site-agrements`, `site-filieres` ou les écrans de l'application.
-- **IFSPA, application** (maquettes validées par le client, données fictives) : `app-tableau-de-bord`, `app-encaissement-mobile-money`, `app-encaissement-hors-ligne`, `app-recu`, `app-impayes`, `app-mobile-encaissement`. Légende à prévoir : « Maquettes validées par le client ».
-- **HAEVEN** (build local `C:\Projets\HAEVEN\out`, version FR, car inhaeven.com affiche encore la page « Site en construction » d'OVH) : `accueil`, `intro`, `univers`, `cta`, `mobile`. Ne pas utiliser les sections Portfolio et Univers de HAEVEN : elles contiennent encore des textes provisoires (« [NOM DU PROJET] »).
-- Le lien « voir le site » de HAEVEN ne doit pas être affiché tant que inhaeven.com n'est pas déployé.
+### Projets — `public/projets/`
+- **Vitrines en vidéo** (demande de Diano, 2026-11-02) : le site d'IFSPA et celui de HAEVEN sont montrés par une vidéo muette d'environ 20 s de leur page d'accueil, filmée en temps réel (animations comprises) et montée avec HyperFrames. Fichiers : `video-accueil.mp4`, `video-accueil.webm` et `video-accueil-poster.webp`, en 1280 px. Lecture automatique en boucle quand la vidéo est à l'écran, bouton pause, aucune lecture automatique avec « réduire les animations ». Sources et méthode : `videos/README.md`.
+- **IFSPA, vitrine** (ifspa.mg en production) : la vidéo ne montre ni la Galerie ni la photo du hero en affiche, car ce sont des photos d'illustration d'une autre école. L'affiche est la section « L'institut / L'IFSPA en chiffres ». Le widget Cloudflare du formulaire est masqué à l'image.
+- **IFSPA, application** (maquettes validées par le client, données fictives) : on garde les captures `app-tableau-de-bord`, `app-encaissement-mobile-money`, `app-encaissement-hors-ligne`, `app-recu`, `app-impayes` et `app-mobile-encaissement`, légendées « Maquettes validées par le client ». `app-tableau-de-bord` sert de couverture à la carte projet.
+- **HAEVEN** (build local `C:\Projets\HAEVEN\out`, version FR, car inhaeven.com affiche encore la page « Site en construction » d'OVH) :
+  - la vidéo seule, sans capture ;
+  - la couverture de la carte (`couverture.webp`, 4:3) est la section « Trois façons d'entrer », tirée de l'enregistrement ;
+  - on ne montre jamais les sections Portfolio et Univers, qui contiennent encore des textes provisoires (« [NOM DU PROJET] ») ;
+  - aucun lien « voir le site » tant que inhaeven.com n'est pas déployé.
 
 ## Mises à jour du 2026-11-02 (après la première version)
 - Accroche du hero : FR « Vos outils métier, de l'idée à la mise en ligne. » / EN « Your business tools, from idea to launch. »

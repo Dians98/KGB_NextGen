@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1080">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #000;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #4A6677;
+      }
+      .plein-cadre {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1920px;
+        height: 1080px;
+        display: block;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+      Visite réelle de la page d'accueil HAEVEN, montée depuis l'enregistrement temps réel
+      enregistrement/brut.mp4 (1920×1080, 30 i/s, muet).
+      Clip A : images #3 → #401 (0,105 → 13,395 s du média) — entrée du hero, manifeste, trois façons.
+      Clip B : images #420 → fin (14,005 s → 20,715 s) — arrivée sur « Une idée à transformer ? ».
+      Le défilement rapide #402 → #419 (Portfolio / Univers, textes provisoires) est coupé ;
+      fondu enchaîné de 0,4 s de 12,89 à 13,29 s.
+      Boucle : l'image #3 (haeven-rec-debut.png) revient en fondu de 18,9 à 19,5 s.
+    -->
+    <div id="root" data-composition-id="main" data-start="0" data-duration="19.6" data-width="1920" data-height="1080">
+      <video
+        id="rec-a"
+        class="clip plein-cadre"
+        src="enregistrement/brut.mp4"
+        muted
+        playsinline
+        data-start="0"
+        data-duration="13.29"
+        data-media-start="0.105"
+        data-track-index="0"
+      ></video>
+
+      <video
+        id="rec-b"
+        class="clip plein-cadre"
+        src="enregistrement/brut.mp4"
+        muted
+        playsinline
+        data-start="12.89"
+        data-duration="6.71"
+        data-media-start="14.005"
+        data-track-index="1"
+      ></video>
+
+      <img
+        id="boucle"
+        class="clip plein-cadre"
+        src="assets/haeven-rec-debut.png"
+        alt=""
+        data-start="18.9"
+        data-duration="0.7"
+        data-track-index="2"
+      />
+    </div>
+
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      // Fondu enchaîné A → B : B monte par-dessus A pendant que A tient « Trois façons d'entrer. ».
+      tl.fromTo("#rec-b", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power1.inOut" }, 12.89);
+      // Boucle : retour en fondu sur la toute première image de l'enregistrement.
+      tl.fromTo("#boucle", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "sine.inOut" }, 18.9);
+      tl.to({}, { duration: 19.6 }, 0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

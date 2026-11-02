@@ -82,9 +82,11 @@
     "context": "Context",
     "delivered": "What is delivered",
     "next": "What comes next",
-    "shots": "Screenshots",
+    "shots": "Preview",
     "groupSite": "Public website",
     "groupApp": "Management application",
+    "videoPlay": "Play the video",
+    "videoPause": "Pause the video",
     "ctaTitle": "Have a project to build?",
     "ctaText": "Describe what you need in a few lines and we will get back to you."
   },
@@ -102,12 +104,9 @@
       "coverAlt": "Dashboard of the IFSPA tuition management app, shown with sample data",
       "context": "IFSPA is a paramedical training institute in Toamasina, Madagascar. The project has two parts: the institute's public website, live at ifspa.mg, and a tuition management application. The application takes payments in cash or by Mobile Money (MVola, Orange, Airtel), prints thermal receipts, produces statements and tracks overdue fees with export; the payment screen works offline.",
       "shotsCaption": "Mockups approved by the client (sample data)",
-      "siteCaption": "Screenshots of the live website",
+      "siteCaption": "Tour of the live website's home page",
+      "videoDescription": "Silent video of the IFSPA website home page, scrolling from top to bottom: the institute and its key figures, the nursing and midwifery programmes, the official approvals, then contact details and the contact form.",
       "shots": {
-        "site-agrements": "Official approvals section of the IFSPA website: four ministerial decrees listed by year.",
-        "site-filieres": "Programmes section of the IFSPA website: the nursing course, with an illustration photo.",
-        "site-institut": "Institute presentation section of the IFSPA website, with its logo and motto.",
-        "site-contact": "Contact section of the IFSPA website: the secretariat's details and a message form.",
         "app-tableau-de-bord": "Application dashboard: headcount, collection rate and latest payments (sample data).",
         "app-encaissement-mobile-money": "Screen for collecting a monthly instalment by Mobile Money, with operator choice (sample data).",
         "app-encaissement-hors-ligne": "Payment screen in offline mode: payments waiting to be sent and synced later (sample data).",
@@ -122,16 +121,10 @@
       "summary": "Bilingual website for a creative studio: interior design services, shop and artistic universe.",
       "delivered": "Home and Services pages designed and built, in English and French.",
       "next": "Shop, portfolio, universe, then launch.",
-      "coverAlt": "Home page of the HAEVEN website, an interior design studio",
+      "coverAlt": "\"Trois façons d'entrer\" section of the HAEVEN home page: Services, Shop and Universe, each with a photo",
       "context": "HAEVEN is a creative studio based in Mauritius, specialising in interior design. The project is a bilingual website, in French and English, presenting its services, its shop and its artistic universe. The home page and the Services page are done; the shop, the portfolio and the universe are still to come.",
       "shotsCaption": "Work in progress, before launch",
-      "shots": {
-        "accueil": "Top of the HAEVEN home page: the headline \"Bienvenue chez HAEVEN\" and a Start a project button.",
-        "intro": "HAEVEN introduction text: \"Chez Haeven, nous sommes designers dans l'âme\".",
-        "univers": "Our world section: three entry points, Services, Shop and Universe, each with a photo.",
-        "cta": "\"Une idée à transformer ?\" call to action and the site footer.",
-        "mobile": "HAEVEN home page on a phone."
-      }
+      "videoDescription": "Silent video of the HAEVEN website home page, scrolling from top to bottom: the headline \"Bienvenue chez HAEVEN\", the studio introduction, the \"Trois façons d'entrer\" section (Services, Shop, Universe), then the \"Une idée à transformer ?\" call to action."
     }
   },
   "Team": {

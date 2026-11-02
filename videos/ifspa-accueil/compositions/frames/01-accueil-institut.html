@@ -1,0 +1,84 @@
+<template>
+  <div data-hf-id="hf-oh7f" id="root" data-composition-id="01-accueil-institut" data-width="1920" data-height="1080" data-start="0" data-duration="5.2">
+    <style>
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+      }
+      #f01-accueil-institut-scene {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #FFFFFF;
+      }
+      #f01-accueil-institut-world {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1920px;
+        height: 7309px;
+        transform-origin: 50% 50%;
+        will-change: transform;
+      }
+      #f01-accueil-institut-plate {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1920px;
+        height: 7309px;
+        max-width: none;
+        display: block;
+      }
+    </style>
+
+    <div data-hf-id="hf-1sd5" id="f01-accueil-institut-scene" class="clip" data-start="0" data-duration="5.2" data-track-index="0">
+      <div data-hf-id="hf-bfa0" id="f01-accueil-institut-world" data-layout-allow-overflow="">
+        <img data-hf-id="hf-n3ky" id="f01-accueil-institut-plate" src="assets/full-page.png" width="1920" height="7309" alt="">
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      (function () {
+        var FRAME_ID = "01-accueil-institut";
+        var DURATION = 5.2;
+        var CAM_START = 0;      // Scene 1: header + hero, held
+        var CAM_END = 1088;     // Scene 3: agrément band + institut + chiffres (handoff_out)
+        var PAN_START = 0.4;
+        var PAN_DUR = 1.3;
+
+        var root = document.querySelector('[data-composition-id="' + FRAME_ID + '"]');
+        var world = root.querySelector('#f01-accueil-institut-world');
+
+        // Single camera state, one writer: pure vertical pan, scale locked at 1.
+        var cam = { scale: 1, x: 0, y: -CAM_START };
+        function applyCamera() {
+          world.style.transform = "translate(" + cam.x + "px, " + cam.y + "px) scale(" + cam.scale + ")";
+        }
+        applyCamera();
+
+        window.__timelines = window.__timelines || {};
+        var tl = gsap.timeline({ paused: true });
+
+        // Scene 1 (0.0–0.4s): hold at camY 0.
+        // Scene 2 (0.4–1.7s): one soft long in-out glide camY 0 → 1088.
+        tl.fromTo(
+          cam,
+          { y: -CAM_START },
+          { y: -CAM_END, duration: PAN_DUR, ease: "power2.inOut", onUpdate: applyCamera },
+          PAN_START
+        );
+
+        // Scene 3 (1.7–5.2s): still hold at camY 1088, no drift (velocity 0 at the cut).
+        tl.set({}, {}, DURATION);
+
+        window.__timelines[FRAME_ID] = tl;
+      })();
+    </script>
+  </div>
+</template>

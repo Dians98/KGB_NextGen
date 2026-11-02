@@ -1,0 +1,96 @@
+<template id="f03-agrements-contact-template">
+  <div data-hf-id="hf-3k3s" id="root" data-composition-id="03-agrements-contact" data-width="1920" data-height="1080" data-start="0" data-duration="8.6">
+    <style>
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+      }
+    </style>
+
+    <!-- Layer A: scrolling capture, Nos filières → Admission (never below camY 3060, so no part of the Galerie section (plate y 4146+) enters the frame) -->
+    <div data-hf-id="hf-r55k" id="f03-agrements-contact-scene" class="clip" data-start="0" data-duration="8.6" data-track-index="0" style="position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden;">
+      <div data-hf-id="hf-bayu" id="f03-agrements-contact-cam" data-layout-allow-overflow="" style="position: absolute; left: 0; top: 0; width: 1920px; height: 7309px; will-change: transform;">
+        <img data-hf-id="hf-mxrj" src="assets/full-page.png" alt="" width="1920" height="7309" style="position: absolute; left: 0; top: 0; display: block; width: 1920px; height: 7309px; max-width: none;">
+      </div>
+    </div>
+
+    <!-- Layer B: same plate from Agréments officiels down (camY 5420 → 5792), dissolved in over layer A — the Galerie section is skipped -->
+    <div id="f03-agrements-contact-lower" class="clip" data-start="0" data-duration="8.6" data-track-index="1" style="position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; pointer-events: none;">
+      <div id="f03-agrements-contact-lower-fade" style="position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; opacity: 0;">
+        <div id="f03-agrements-contact-cam2" data-layout-allow-overflow="" style="position: absolute; left: 0; top: 0; width: 1920px; height: 7309px; will-change: transform; background-image: url('assets/full-page.png'); background-repeat: no-repeat; background-position: 0 0; background-size: 1920px 7309px;"></div>
+      </div>
+    </div>
+
+    <!-- Layer C: loop plate, static copy at camY 0, faded in on a child for the loop back to frame 01 -->
+    <div data-hf-id="hf-j0up" id="f03-agrements-contact-loop" class="clip" data-start="0" data-duration="8.6" data-track-index="2" style="position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; pointer-events: none;">
+      <div data-hf-id="hf-7cn6" id="f03-agrements-contact-loop-fade" style="position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; opacity: 0; background-image: url('assets/full-page.png'); background-repeat: no-repeat; background-position: 0 0; background-size: 1920px 7309px;"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      (function () {
+        var cam = document.getElementById("f03-agrements-contact-cam");
+        var cam2 = document.getElementById("f03-agrements-contact-cam2");
+        var lowerFade = document.getElementById("f03-agrements-contact-lower-fade");
+        var loopFade = document.getElementById("f03-agrements-contact-loop-fade");
+
+        // Seed the handoff state (frame 02 ends at camY 2531, still).
+        gsap.set(cam, { x: 0, y: -2531, scale: 1 });
+        gsap.set(cam2, { x: 0, y: -5420, scale: 1 });
+        gsap.set(lowerFade, { opacity: 0 });
+        gsap.set(loopFade, { opacity: 0 });
+
+        var tl = gsap.timeline({ paused: true });
+
+        // Scene 1 (0.0–0.2s): hold at camY 2531 — set explicitly at t=0 for seek safety.
+        tl.set(cam, { x: 0, y: -2531, scale: 1 }, 0);
+        tl.set(cam2, { x: 0, y: -5420, scale: 1 }, 0);
+        tl.set(lowerFade, { opacity: 0 }, 0);
+        tl.set(loopFade, { opacity: 0 }, 0);
+
+        // Scene 2 (0.2–1.2s): soft glide down to « Admission et études » (camY 3060, frame bottom = plate y 4140, above the Galerie section).
+        tl.fromTo(
+          cam,
+          { y: -2531 },
+          { y: -3060, duration: 1.0, ease: "power2.inOut", immediateRender: false },
+          0.2
+        );
+
+        // Scene 3 (1.2–1.9s): short hold on Admission.
+
+        // Scene 4 (1.9–2.4s): dissolve straight to « Agréments officiels » (camY 5420) — Galerie skipped.
+        tl.fromTo(
+          lowerFade,
+          { opacity: 0 },
+          { opacity: 1, duration: 0.5, ease: "sine.inOut", immediateRender: false },
+          1.9
+        );
+
+        // Scene 5 (2.4–4.3s): hold on « Agréments officiels » (camY 5420).
+
+        // Scene 6 (4.3–5.3s): gentle settle down to the full « Nous contacter » section.
+        tl.fromTo(
+          cam2,
+          { y: -5420 },
+          { y: -5792, duration: 1.0, ease: "power2.inOut", immediateRender: false },
+          4.3
+        );
+
+        // Scene 7 (5.3–7.9s): hold at camY 5792.
+
+        // Scene 8 (7.9–8.52s): loop dissolve to the static plate at camY 0, opacity 1 before the last frame.
+        tl.fromTo(
+          loopFade,
+          { opacity: 0 },
+          { opacity: 1, duration: 0.62, ease: "sine.inOut", immediateRender: false },
+          7.9
+        );
+
+        window.__timelines = window.__timelines || {};
+        window.__timelines["03-agrements-contact"] = tl;
+      })();
+    </script>
+  </div>
+</template>

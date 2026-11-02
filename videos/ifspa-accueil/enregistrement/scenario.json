@@ -1,0 +1,60 @@
+{
+  "url": "https://ifspa.mg/",
+  "width": 1920,
+  "height": 1080,
+  "warmupMs": 12000,
+  "settleMs": 600,
+  "steps": [
+    {
+      "hold": 1000
+    },
+    {
+      "scrollTo": "#institut",
+      "offset": -70,
+      "ms": 1300
+    },
+    {
+      "hold": 3200
+    },
+    {
+      "scrollTo": "#filieres",
+      "offset": -70,
+      "ms": 1300
+    },
+    {
+      "hold": 2200
+    },
+    {
+      "scrollTo": "#admission",
+      "offset": -1080,
+      "ms": 1000
+    },
+    {
+      "hold": 2000
+    },
+    {
+      "scrollTo": "#galerie",
+      "offset": -1080,
+      "ms": 1000
+    },
+    {
+      "hold": 1200
+    },
+    {
+      "jumpTo": "#agrements",
+      "offset": -70
+    },
+    {
+      "hold": 2400
+    },
+    {
+      "scrollTo": "#contact",
+      "offset": -70,
+      "ms": 1200
+    },
+    {
+      "hold": 3500
+    }
+  ],
+  "injectCss": "div:has(> input[name=\"cf-turnstile-response\"]) { visibility: hidden !important; }"
+}

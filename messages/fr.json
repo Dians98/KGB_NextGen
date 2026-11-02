@@ -82,9 +82,11 @@
     "context": "Contexte",
     "delivered": "Ce qui est livré",
     "next": "La suite",
-    "shots": "Captures",
+    "shots": "Aperçu",
     "groupSite": "Site vitrine",
     "groupApp": "Application de gestion",
+    "videoPlay": "Lire la vidéo",
+    "videoPause": "Mettre la vidéo en pause",
     "ctaTitle": "Un projet à construire ?",
     "ctaText": "Décrivez votre besoin en quelques lignes : nous revenons vers vous."
   },
@@ -102,12 +104,9 @@
       "coverAlt": "Tableau de bord de l'application de gestion de l'écolage d'IFSPA, avec données fictives",
       "context": "IFSPA est un institut de formation paramédicale à Toamasina, à Madagascar. Le projet a deux volets : le site vitrine public de l'institut, en ligne sur ifspa.mg, et une application de gestion de l'écolage. L'application encaisse en espèces ou par Mobile Money (MVola, Orange, Airtel), imprime des reçus thermiques, produit des relevés et suit les impayés avec export ; l'écran d'encaissement fonctionne hors ligne.",
       "shotsCaption": "Maquettes validées par le client (données fictives)",
-      "siteCaption": "Captures du site en ligne",
+      "siteCaption": "Visite de la page d'accueil du site en ligne",
+      "videoDescription": "Vidéo muette de la page d'accueil du site d'IFSPA, qui défile du haut vers le bas : présentation de l'institut et chiffres clés, filières Infirmier(e)s et Sage-femmes, agréments officiels, puis coordonnées et formulaire de contact.",
       "shots": {
-        "site-agrements": "Section Agréments officiels du site d'IFSPA : quatre arrêtés ministériels classés par année.",
-        "site-filieres": "Section Nos filières du site d'IFSPA : la formation Infirmier(e)s, avec une photo d'illustration.",
-        "site-institut": "Section de présentation de l'institut sur le site d'IFSPA, avec son logo et sa devise.",
-        "site-contact": "Section Nous contacter du site d'IFSPA : coordonnées du secrétariat et formulaire de message.",
         "app-tableau-de-bord": "Tableau de bord de l'application : effectif, taux de recouvrement et derniers paiements (données fictives).",
         "app-encaissement-mobile-money": "Écran d'encaissement d'une mensualité par Mobile Money, avec choix de l'opérateur (données fictives).",
         "app-encaissement-hors-ligne": "Écran d'encaissement en mode hors ligne : des paiements en attente d'envoi, à synchroniser plus tard (données fictives).",
@@ -122,16 +121,10 @@
       "summary": "Site vitrine bilingue d'un studio créatif : services de design d'intérieur, boutique et univers artistique.",
       "delivered": "Accueil et page Services conçus et développés, en français et en anglais.",
       "next": "Boutique, portfolio, univers, puis mise en ligne.",
-      "coverAlt": "Page d'accueil du site vitrine de HAEVEN, studio de design d'intérieur",
+      "coverAlt": "Section « Trois façons d'entrer » de l'accueil du site de HAEVEN : Services, Boutique et Univers, chacun illustré d'une photo",
       "context": "HAEVEN est un studio créatif basé à Maurice, spécialisé en design d'intérieur. Le projet est une vitrine bilingue, en français et en anglais, qui présente ses services, sa boutique et son univers artistique. L'accueil et la page Services sont faits ; la boutique, le portfolio et l'univers sont à venir.",
       "shotsCaption": "Version de travail, avant mise en ligne",
-      "shots": {
-        "accueil": "Haut de la page d'accueil de HAEVEN : titre « Bienvenue chez HAEVEN » et bouton Démarrer un projet.",
-        "intro": "Texte de présentation de HAEVEN : « Chez Haeven, nous sommes designers dans l'âme ».",
-        "univers": "Section Notre monde : trois entrées, Services, Boutique et Univers, chacune illustrée d'une photo.",
-        "cta": "Appel à l'action « Une idée à transformer ? » et pied de page du site.",
-        "mobile": "Page d'accueil du site de HAEVEN sur téléphone."
-      }
+      "videoDescription": "Vidéo muette de la page d'accueil du site de HAEVEN, qui défile du haut vers le bas : le titre « Bienvenue chez HAEVEN », la présentation du studio, la section « Trois façons d'entrer » (Services, Boutique, Univers), puis l'appel « Une idée à transformer ? »."
     }
   },
   "Team": {

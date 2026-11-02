@@ -1,0 +1,123 @@
+<template id="af02-template">
+  <style>
+    #root {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+    }
+    #af02-viewport {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+    }
+    #af02-plate {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1920px;
+      height: 5518px;
+      display: block;
+      max-width: none;
+    }
+    #af02-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1920px;
+      height: 77px;
+      z-index: 2;
+    }
+    #af02-header-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1920px;
+      height: 76px;
+      background: rgba(244, 242, 238, 0.70);
+      -webkit-backdrop-filter: blur(18px);
+      backdrop-filter: blur(18px);
+    }
+    #af02-header-rule {
+      position: absolute;
+      top: 76px;
+      left: 0;
+      width: 1920px;
+      height: 1px;
+      background: rgba(226, 222, 213, 0.9);
+    }
+    #af02-header-fg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1920px;
+      height: 76px;
+      display: block;
+      max-width: none;
+    }
+    #af02-hero-wrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1920px;
+      height: 1080px;
+      z-index: 3;
+    }
+    #af02-hero {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1920px;
+      height: 1080px;
+      display: block;
+      max-width: none;
+    }
+  </style>
+
+  <div data-hf-id="hf-f1x8" id="root" data-composition-id="02-appel-final" data-width="1920" data-height="1080" data-duration="7">
+    <div data-hf-id="hf-ekzr" id="af02-viewport" class="clip" data-start="0" data-duration="7" data-track-index="0">
+      <img data-hf-id="hf-yaqq" id="af02-plate" data-layout-allow-overflow="" src="assets/haeven-plate.png" alt="">
+
+      <div data-hf-id="hf-lcl4" id="af02-header">
+        <div data-hf-id="hf-uufs" id="af02-header-bar"></div>
+        <div data-hf-id="hf-jha3" id="af02-header-rule"></div>
+        <img data-hf-id="hf-ud7j" id="af02-header-fg" src="assets/haeven-header-fg.png" alt="">
+      </div>
+
+      <div data-hf-id="hf-fchs" id="af02-hero-wrap">
+        <img data-hf-id="hf-myk9" id="af02-hero" src="assets/haeven-hero.png" alt="">
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+
+      var plate = '#af02-plate';
+      var hero = '#af02-hero';
+
+      var tl = gsap.timeline({ paused: true });
+
+      // Scene 1 (0.0–0.9s): arrival scroll 4398 → 4418, settled under the 0.6s crossfade.
+      // 4418 = CTA top (plate row 4495) minus the 77px header: the CTA starts right under it.
+      tl.fromTo(plate, { y: -4398 }, { y: -4418, duration: 0.9, ease: "power2.out" }, 0);
+
+      // Scene 2 (0.9–5.6s): still hold at scrollY 4418 — nothing moves.
+
+      // Scene 3 (5.6–6.8s): hero dissolves in above plate and header (final-frame exit).
+      tl.fromTo(hero, { opacity: 0 }, { opacity: 1, duration: 1.2, ease: "sine.inOut" }, 5.6);
+
+      // Scene 4 (6.8–7.0s): hero held at opacity 1, identical to the loop's first image.
+      tl.set(hero, { opacity: 1 }, 7.0);
+
+      window.__timelines["02-appel-final"] = tl;
+    })();
+  </script>
+</template>

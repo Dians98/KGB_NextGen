@@ -51,3 +51,15 @@ next-env.d.ts
 **/.impeccable/mocks/
 **/.impeccable/questions/
 !.env.example
+
+# vidéos HyperFrames : fichiers lourds régénérables (voir videos/README.md)
+videos/*/renders/
+videos/*/snapshots/
+videos/*/capture/
+videos/*/.thumbnails/
+videos/*/.hyperframes/
+videos/*/assets/*.png
+videos/*/enregistrement/*.mp4
+videos/*/enregistrement/*.jpg
+videos/*/enregistrement/*.png
+videos/*/assets/fonts/

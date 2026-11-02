@@ -1,0 +1,16 @@
+{
+  "url": "http://localhost:3300/fr/",
+  "width": 1920,
+  "height": 1080,
+  "warmupMs": 3000,
+  "settleMs": 600,
+  "steps": [
+    { "hold": 2600 },
+    { "scrollTo": "#about", "offset": -40, "ms": 1600 },
+    { "hold": 3000 },
+    { "scrollTo": "#about + section", "offset": -100, "ms": 1500 },
+    { "hold": 4000 },
+    { "jumpTo": "#contact", "offset": -77 },
+    { "hold": 4500 }
+  ]
+}
