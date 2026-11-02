@@ -61,7 +61,13 @@ Chaque projet : badge « En cours », ce qui est livré, ce qui vient ensuite, l
 - En attendant le domaine et l'email de l'entreprise : réception sur l'adresse de Diano, expéditeur de test Resend. Variables dans `.env.local`, jamais en dur.
 - Aussi affichés : WhatsApp et LinkedIn.
 
-## Points ouverts
-- Nom de domaine et email de l'entreprise.
-- BRN (numéro d'enregistrement), si on veut l'afficher.
-- Validation par Kevin de sa fiche (textes, anciens employeurs cités).
+## À trancher
+Tant qu'un point n'est pas tranché, on utilise l'emplacement provisoire indiqué, sans inventer de valeur.
+
+| Point | Qui tranche | Provisoire en attendant |
+|---|---|---|
+| Nom de domaine du site | Diano / Kevin | URL Vercel (`*.vercel.app`) ; `metadataBase` lu depuis une variable d'environnement |
+| Email de l'entreprise (réception du formulaire, affichage) | Diano / Kevin | réception sur l'adresse de Diano, expéditeur de test Resend ; aucun email affiché |
+| BRN (numéro d'enregistrement) | Kevin | non affiché |
+| Fiche de Kevin (textes, « ex-Accenture, ex-LINKBYNET ») | Kevin | textes de `docs/profils/kevin-gooljar.md`, marqués « à valider » |
+| Photo de Kevin en noir et blanc : on la garde telle quelle ou on la recolore aux couleurs de la marque ? | Diano | gardée telle quelle |
