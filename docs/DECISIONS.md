@@ -57,7 +57,7 @@ Validées par Diano le 2026-11-02 (séance de cadrage). Ce fichier fait foi ; un
 3. **Automatisation et IA** — connecter les outils (CRM, formulaires, bases de données) avec n8n, enrichis par l'IA (assistants, traitement de documents) pour supprimer les tâches répétitives. Ne rien promettre au-delà de ce qui est livré.
 4. **Configuration Odoo et ERP** — CRM, comptabilité, inventaire et ventes, intégration aux outils existants.
 
-Présentation (2026-11-02) : grille 2 × 2 de cartes, sans capture (demande de Diano). Chaque carte se termine par du concret : technologies (web, mobile), schéma de flux animé Trigger → Workflow n8n → IA → Résultats (automatisation), les quatre modules (Odoo).
+Présentation (2026-11-02) : grille 2 × 2 de cartes, sans capture (demande de Diano). Chaque carte se termine par du concret : technologies (web, mobile), les étapes expliquées d'un workflow n8n, Trigger → n8n → IA → Résultat, avec une impulsion animée (automatisation), les quatre modules (Odoo).
 
 ### Projets
 Chaque projet : badge de statut, ce qui est livré, et pour un projet en cours ce qui vient ensuite. **IFSPA : terminé** (2026-11-02, badge « Terminé », pas de bloc « La suite ») ; **HAEVEN : en cours**. Titre de section : « Nos projets ». Les clients ont donné leur accord.

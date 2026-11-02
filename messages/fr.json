@@ -73,9 +73,26 @@
     },
     "automation": {
       "title": "Automatisation et IA",
-      "text": "Nous relions vos outils avec n8n et ajoutons l'IA là où elle fait gagner du temps : tri, résumé, extraction de documents.",
-      "flow": "Trigger · Workflow n8n · IA · Résultats",
-      "flowLabel": "Exemple de flux : un trigger lance un workflow n8n, l'IA traite les données, puis les résultats arrivent dans vos outils."
+      "text": "Nous relions vos outils avec n8n et ajoutons l'IA là où elle fait gagner du temps.",
+      "flowLabel": "Les étapes d'un workflow n8n",
+      "steps": {
+        "trigger": {
+          "label": "Trigger",
+          "text": "Un événement lance le workflow : formulaire, email reçu, heure fixe."
+        },
+        "n8n": {
+          "label": "n8n",
+          "text": "Le workflow récupère les données et les met en forme."
+        },
+        "ai": {
+          "label": "IA",
+          "text": "Tri, résumé, extraction des documents."
+        },
+        "result": {
+          "label": "Résultat",
+          "text": "Fiche créée dans vos outils, email envoyé, rapport prêt."
+        }
+      }
     },
     "odoo": {
       "title": "Odoo et ERP",

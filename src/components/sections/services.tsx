@@ -8,6 +8,8 @@ import { SectionHeading } from "@/components/ui/section-heading";
 
 type ServiceKey = "web" | "mobile" | "automation" | "odoo";
 
+const FLOW_STEPS = ["trigger", "n8n", "ai", "result"] as const;
+
 const split = (value: string) =>
   value
     .split("·")
@@ -34,7 +36,14 @@ export function Services() {
         </ServiceCard>
 
         <ServiceCard serviceKey="automation" Icon={WorkflowIcon} delay={0.16}>
-          <Flow steps={split(t("automation.flow"))} label={t("automation.flowLabel")} />
+          <Flow
+            label={t("automation.flowLabel")}
+            steps={FLOW_STEPS.map((step) => ({
+              key: step,
+              label: t(`automation.steps.${step}.label`),
+              text: t(`automation.steps.${step}.text`),
+            }))}
+          />
         </ServiceCard>
 
         <ServiceCard serviceKey="odoo" Icon={ModulesIcon} delay={0.24}>
@@ -104,30 +113,29 @@ function Chips({ items }: { items: string[] }) {
   );
 }
 
-// Schéma d'un flux n8n : une impulsion parcourt chaque liaison, l'une après l'autre.
-// Sur petit écran, le flux passe à la verticale pour ne pas déborder ; l'étape n8n (la 2e) est mise en avant.
-function Flow({ steps, label }: { steps: string[]; label: string }) {
+type FlowStep = { key: string; label: string; text: string };
+
+// Les étapes d'un workflow n8n, de haut en bas : une impulsion descend d'une étape à la suivante.
+function Flow({ steps, label }: { steps: FlowStep[]; label: string }) {
   return (
-    <ol aria-label={label} className="flex flex-col items-start sm:flex-row sm:items-center">
+    <ol aria-label={label} className="flex flex-col gap-4">
       {steps.map((step, index) => (
-        <li key={step} className="flex flex-col items-start sm:flex-1 sm:flex-row sm:items-center sm:last:flex-none">
+        <li key={step.key} className="relative grid grid-cols-[5.5rem_1fr] items-start gap-4">
           <span
             className={[
-              "rounded-control border bg-bg px-2.5 py-1.5 font-mono text-caption whitespace-nowrap",
-              index === 1 ? "border-cyan text-cyan" : "border-line-strong text-fg",
+              "flex h-8 items-center justify-center rounded-control border bg-bg px-2 font-mono text-caption whitespace-nowrap",
+              step.key === "n8n" ? "border-cyan text-cyan" : "border-line-strong text-fg",
             ].join(" ")}
           >
-            {step}
+            {step.label}
           </span>
+          <span className="pt-1.5 text-small text-muted">{step.text}</span>
           {index < steps.length - 1 ? (
             <span
               aria-hidden="true"
-              className="relative ml-4 h-4 w-px overflow-hidden bg-line-strong sm:mx-1 sm:ml-1 sm:h-px sm:w-auto sm:min-w-3 sm:flex-1"
+              className="absolute top-8 -bottom-4 left-[2.75rem] w-px overflow-hidden bg-line-strong"
             >
-              <span
-                className="flow-pulse absolute inset-y-0 hidden w-4 bg-cyan sm:block"
-                style={{ animationDelay: `${index * 0.6}s` }}
-              />
+              <span className="flow-pulse absolute inset-x-0 h-2 bg-cyan" style={{ animationDelay: `${index * 0.6}s` }} />
             </span>
           ) : null}
         </li>

@@ -225,19 +225,19 @@ html {
   animation: scroll-cue 2.6s var(--ease-out-quart) 1.6s infinite;
 }
 
-/* Impulsion du schéma de flux (section Services) : traverse une liaison, puis attend son tour. */
+/* Impulsion du schéma de flux (section Services) : descend une liaison, puis attend son tour. */
 @keyframes flow-pulse {
   0% {
-    left: -1rem;
+    top: -0.5rem;
   }
   35%,
   100% {
-    left: 100%;
+    top: 100%;
   }
 }
 
 .flow-pulse {
-  left: -1rem;
+  top: -0.5rem;
   animation: flow-pulse 1.8s var(--ease-out-quart) infinite backwards;
 }
 

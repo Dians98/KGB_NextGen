@@ -73,9 +73,26 @@
     },
     "automation": {
       "title": "Automation and AI",
-      "text": "We connect your tools with n8n and add AI where it saves time: sorting, summarising, pulling data out of documents.",
-      "flow": "Trigger · n8n workflow · AI · Results",
-      "flowLabel": "Example flow: a trigger starts an n8n workflow, AI processes the data, then the results land in your tools."
+      "text": "We connect your tools with n8n and add AI where it saves time.",
+      "flowLabel": "The steps of an n8n workflow",
+      "steps": {
+        "trigger": {
+          "label": "Trigger",
+          "text": "An event starts the workflow: a form, an incoming email, a set time."
+        },
+        "n8n": {
+          "label": "n8n",
+          "text": "The workflow fetches the data and puts it into shape."
+        },
+        "ai": {
+          "label": "AI",
+          "text": "Sorting, summarising, pulling data out of documents."
+        },
+        "result": {
+          "label": "Result",
+          "text": "A record created in your tools, an email sent, a report ready."
+        }
+      }
     },
     "odoo": {
       "title": "Odoo and ERP",
