@@ -49,7 +49,8 @@
     "subtitle": "Web and mobile apps, automation with n8n and AI, Odoo setup. Based in Mauritius, working with companies across the Indian Ocean and beyond.",
     "primaryCta": "Talk about your project",
     "secondaryCta": "See our projects",
-    "emblemAlt": "KGB NextGen Solutions emblem: the letters KGB and a head profile traced with circuits"
+    "emblemAlt": "KGB NextGen Solutions emblem: the letters KGB and a head profile traced with circuits",
+    "brandLine": "NextGen Solutions Ltd"
   },
   "Services": {
     "title": "What we build",
@@ -81,14 +82,16 @@
       "client": "Paramedical training institute · Toamasina, Madagascar",
       "summary": "Tuition management and public website for a paramedical institute: enrolment, cash and Mobile Money payments, receipts, overdue tracking.",
       "delivered": "Public website live, and the application screens approved by the client.",
-      "next": "Launching the application: payments, receipts, overdue fees, offline mode."
+      "next": "Launching the application: payments, receipts, overdue fees, offline mode.",
+      "coverAlt": "Dashboard of the IFSPA tuition management app, shown with sample data"
     },
     "heaven": {
       "name": "HAEVEN",
       "client": "Interior design studio · Mauritius and Estonia",
       "summary": "Bilingual website for a creative studio: interior design services, shop and artistic universe.",
       "delivered": "Home and Services pages designed and built, in English and French.",
-      "next": "Shop, portfolio, universe, then launch."
+      "next": "Shop, portfolio, universe, then launch.",
+      "coverAlt": "Home page of the HAEVEN website, an interior design studio"
     }
   },
   "Team": {

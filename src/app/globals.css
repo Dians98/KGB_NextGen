@@ -72,6 +72,19 @@
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 
   --animate-menu-in: menu-in var(--duration-base) var(--ease-out-expo) both;
+  --animate-ping-soft: ping-soft 2.4s var(--ease-out-quart) infinite;
+
+  @keyframes ping-soft {
+    0% {
+      transform: scale(1);
+      opacity: 0.55;
+    }
+    70%,
+    100% {
+      transform: scale(2.8);
+      opacity: 0;
+    }
+  }
 
   @keyframes menu-in {
     from {
@@ -142,7 +155,62 @@ html {
   scrollbar-width: thin;
 }
 
+/* Circuits du hero : l'état de base est l'état final, l'animation ne fait que le préparer. */
+@keyframes circuit-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+}
+
+@keyframes circuit-node {
+  from {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+}
+
+.circuit-path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+  animation: circuit-draw 1100ms var(--ease-out-quart) var(--circuit-delay, 0s) backwards;
+}
+
+.circuit-node {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: circuit-node var(--duration-slow) var(--ease-out-expo) var(--circuit-delay, 0s) backwards;
+}
+
+.hero-halo {
+  background-image: radial-gradient(
+    closest-side,
+    color-mix(in srgb, var(--color-royal) 22%, transparent),
+    transparent
+  );
+}
+
+/* Lueur des cartes projets : le script ne règle que --glow-x/--glow-y et data-glow, jamais de rendu React. */
+.glow-layer {
+  opacity: 0;
+  background-image: radial-gradient(
+    22rem circle at var(--glow-x, 50%) var(--glow-y, 50%),
+    color-mix(in srgb, var(--color-cyan) 13%, transparent),
+    transparent 70%
+  );
+  transition: opacity var(--duration-base) var(--ease-out-expo);
+}
+
+[data-glow="on"]:hover .glow-layer {
+  opacity: 1;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .circuit-path,
+  .circuit-node,
+  .glow-layer {
+    animation: none;
+  }
+
   html {
     scroll-behavior: auto;
   }

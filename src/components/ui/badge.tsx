@@ -32,7 +32,11 @@ export function Badge({ tone = "progress", className, children }: BadgeProps) {
         .filter(Boolean)
         .join(" ")}
     >
-      <span aria-hidden="true" className={`size-1.5 rounded-pill ${dots[tone]}`} />
+      <span aria-hidden="true" className={`relative size-1.5 rounded-pill ${dots[tone]}`}>
+        {tone === "progress" ? (
+          <span className="absolute inset-0 rounded-pill bg-cyan animate-ping-soft motion-reduce:hidden" />
+        ) : null}
+      </span>
       {children}
     </span>
   );

@@ -60,3 +60,44 @@ export function CloseIcon(props: IconProps) {
     </Icon>
   );
 }
+
+export function CodeIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="m8 8-4 4 4 4" />
+      <path d="m16 8 4 4-4 4" />
+      <path d="m13.5 5-3 14" />
+    </Icon>
+  );
+}
+
+export function SmartphoneIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <rect x="7" y="3" width="10" height="18" rx="2" />
+      <path d="M11 18h2" />
+    </Icon>
+  );
+}
+
+export function WorkflowIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <rect x="3" y="4" width="6" height="6" rx="1.5" />
+      <rect x="15" y="14" width="6" height="6" rx="1.5" />
+      <path d="M9 7h3a3 3 0 0 1 3 3v4" />
+    </Icon>
+  );
+}
+
+export function ModulesIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <rect x="3" y="3" width="7" height="7" rx="1.5" />
+      <rect x="14" y="3" width="7" height="7" rx="1.5" />
+      <rect x="3" y="14" width="7" height="7" rx="1.5" />
+      <path d="M14 17.5h7" />
+      <path d="M17.5 14v7" />
+    </Icon>
+  );
+}
