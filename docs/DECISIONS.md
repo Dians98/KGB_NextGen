@@ -31,7 +31,8 @@ Validées par Diano le 2026-11-02 (séance de cadrage). Ce fichier fait foi ; un
 | Texte principal / lueur | `#E8F3FF` | points lumineux |
 | Texte secondaire | `#8FA3C7` | |
 
-- Le cyan reste un accent, jamais un aplat large. Contrastes WCAG 2.2 AA vérifiés avant validation.
+- Le cyan reste un accent, jamais un aplat large.
+- Contrastes WCAG mesurés (2026-11-02) : texte `#E8F3FF` 17,9:1 ; secondaire `#8FA3C7` 7,9:1 ; cyan 9,9:1 ; blanc sur bouton bleu roi 5,3:1. **Bleu roi en texte sur le fond : 3,8:1** → seulement grands titres (≥ 24 px), contours et éléments d'interface, jamais du texte courant. **Bleu nuit `#0B2A7A` : 1,6:1** → décor uniquement.
 - Typographie : **Sora** (titres), **Manrope** (texte), **JetBrains Mono** (touches techniques).
 - Logo : PNG source détouré pour le hero ; **mini-logo SVG redessiné** (tête + circuits) pour l'en-tête et le favicon.
 
@@ -60,6 +61,18 @@ Chaque projet : badge « En cours », ce qui est livré, ce qui vient ensuite, l
 - Formulaire envoyé par Resend, anti-spam simple (champ piège + 3 envois / 10 min), sans captcha.
 - En attendant le domaine et l'email de l'entreprise : réception sur l'adresse de Diano, expéditeur de test Resend. Variables dans `.env.local`, jamais en dur.
 - Aussi affichés : WhatsApp et LinkedIn.
+
+## Ressources prêtes (étape 3)
+### Logo — `public/brand/`
+- `kgb-embleme.{png,webp}` : « KGB + tête », fond transparent, lueurs conservées. **Pour fond sombre uniquement** (les parties sombres deviennent transparentes).
+- `kgb-logo-complet.{png,webp}` : emblème + « NextGen Solutions Ltd » + devise. Le texte « NextGen » est bleu nuit : peu lisible sur le fond, à doubler par du vrai texte HTML.
+- `kgb-mark.svg` : mini-logo redessiné (tête + circuits), aussi utilisé pour `src/app/icon.svg`, `favicon.ico` et `apple-icon.png`.
+
+### Captures — `public/projets/` (WebP)
+- **IFSPA, vitrine** (ifspa.mg en production, capturée le 2026-11-02) : `site-accueil`, `site-institut`, `site-filieres`, `site-agrements`, `site-contact` (1440 × 900 ou moins), `site-mobile` (390 px @2x). La photo du hero d'IFSPA est une **photo d'illustration** (élèves d'une autre école) : ne pas en faire l'image principale de la carte projet ; préférer `site-agrements`, `site-filieres` ou les écrans de l'application.
+- **IFSPA, application** (maquettes validées par le client, données fictives) : `app-tableau-de-bord`, `app-encaissement-mobile-money`, `app-encaissement-hors-ligne`, `app-recu`, `app-impayes`, `app-mobile-encaissement`. Légende à prévoir : « Maquettes validées par le client ».
+- **HAEVEN** (build local `C:\Projets\HAEVEN\out`, version FR, car inhaeven.com affiche encore la page « Site en construction » d'OVH) : `accueil`, `intro`, `univers`, `cta`, `mobile`. Ne pas utiliser les sections Portfolio et Univers de HAEVEN : elles contiennent encore des textes provisoires (« [NOM DU PROJET] »).
+- Le lien « voir le site » de HAEVEN ne doit pas être affiché tant que inhaeven.com n'est pas déployé.
 
 ## À trancher
 Tant qu'un point n'est pas tranché, on utilise l'emplacement provisoire indiqué, sans inventer de valeur.
