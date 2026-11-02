@@ -70,14 +70,6 @@ export function ProjectPage({ slug }: ProjectPageProps) {
           <h1 className="mt-5 font-display text-display font-bold text-fg">{name}</h1>
           <p className="mt-3 font-mono text-small text-muted">{t(`${slug}.client`)}</p>
           <p className="mt-6 text-lead text-muted">{t(`${slug}.summary`)}</p>
-          {project.liveUrl ? (
-            <div className="mt-8">
-              <Button href={project.liveUrl} external variant="secondary" size="lg">
-                {t("visitSite")}
-                <span className="sr-only"> {name}</span>
-              </Button>
-            </div>
-          ) : null}
         </header>
 
         <div className="mt-block">

@@ -71,12 +71,6 @@ export function ProjectCard({ slug, imageSide = "start" }: ProjectCardProps) {
               {t("viewProject")}
               <span className="sr-only"> {name}</span>
             </Button>
-            {project.liveUrl ? (
-              <Button href={project.liveUrl} external variant="link" size="md">
-                {t("visitSite")}
-                <span className="sr-only"> {name}</span>
-              </Button>
-            ) : null}
           </div>
         </div>
       </article>
