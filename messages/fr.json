@@ -15,6 +15,7 @@
     "seeProjects": "Voir nos projets",
     "opensInNewTab": "(s'ouvre dans un nouvel onglet)",
     "inProgress": "En cours",
+    "done": "Terminé",
     "delivered": "Livré",
     "planned": "À venir"
   },
@@ -73,8 +74,8 @@
     "automation": {
       "title": "Automatisation et IA",
       "text": "Nous relions vos outils avec n8n et ajoutons l'IA là où elle fait gagner du temps : tri, résumé, extraction de documents.",
-      "flow": "Formulaire · n8n · IA · CRM",
-      "flowLabel": "Exemple de flux : un formulaire passe par n8n et l'IA, puis arrive dans le CRM."
+      "flow": "Trigger · Workflow n8n · IA · Résultats",
+      "flowLabel": "Exemple de flux : un trigger lance un workflow n8n, l'IA traite les données, puis les résultats arrivent dans vos outils."
     },
     "odoo": {
       "title": "Odoo et ERP",
@@ -97,7 +98,7 @@
     "lightboxCounter": "{current} / {total}"
   },
   "Projects": {
-    "title": "Projets en cours",
+    "title": "Nos projets",
     "intro": "Deux projets réels, livrés étape par étape.",
     "viewProject": "Voir le projet",
     "visitSite": "Voir le site en ligne",
@@ -105,8 +106,7 @@
       "name": "IFSPA",
       "client": "Institut de formation paramédicale · Toamasina, Madagascar",
       "summary": "Gestion de l'écolage d'un institut paramédical : inscriptions, encaissements en espèces ou Mobile Money, reçus, suivi des impayés.",
-      "delivered": "Écrans de l'application validés par le client.",
-      "next": "Mise en service de l'application : encaissement, reçus, impayés, mode hors ligne.",
+      "delivered": "L'application de gestion de l'écolage : encaissement en espèces ou par Mobile Money, reçus thermiques, relevés, suivi des impayés avec export, et encaissement hors ligne.",
       "coverAlt": "Tableau de bord de l'application de gestion de l'écolage d'IFSPA, avec données fictives",
       "context": "IFSPA est un institut de formation paramédicale à Toamasina, à Madagascar. Le projet est une application de gestion de l'écolage : elle encaisse en espèces ou par Mobile Money (MVola, Orange, Airtel), imprime des reçus thermiques, produit des relevés et suit les impayés avec export ; l'écran d'encaissement fonctionne hors ligne.",
       "shots": {

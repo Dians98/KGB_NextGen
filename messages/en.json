@@ -15,6 +15,7 @@
     "seeProjects": "See our projects",
     "opensInNewTab": "(opens in a new tab)",
     "inProgress": "In progress",
+    "done": "Completed",
     "delivered": "Delivered",
     "planned": "Planned"
   },
@@ -73,8 +74,8 @@
     "automation": {
       "title": "Automation and AI",
       "text": "We connect your tools with n8n and add AI where it saves time: sorting, summarising, pulling data out of documents.",
-      "flow": "Form · n8n · AI · CRM",
-      "flowLabel": "Example flow: a form goes through n8n and AI, then lands in the CRM."
+      "flow": "Trigger · n8n workflow · AI · Results",
+      "flowLabel": "Example flow: a trigger starts an n8n workflow, AI processes the data, then the results land in your tools."
     },
     "odoo": {
       "title": "Odoo and ERP",
@@ -97,7 +98,7 @@
     "lightboxCounter": "{current} / {total}"
   },
   "Projects": {
-    "title": "Projects in progress",
+    "title": "Our projects",
     "intro": "Two real projects, delivered one step at a time.",
     "viewProject": "View the project",
     "visitSite": "Visit the live site",
@@ -105,8 +106,7 @@
       "name": "IFSPA",
       "client": "Paramedical training institute · Toamasina, Madagascar",
       "summary": "Tuition management for a paramedical institute: enrolment, cash and Mobile Money payments, receipts, overdue tracking.",
-      "delivered": "Application screens approved by the client.",
-      "next": "Launching the application: payments, receipts, overdue fees, offline mode.",
+      "delivered": "The tuition management application: cash and Mobile Money payments, thermal receipts, statements, overdue tracking with export, and offline payment entry.",
       "coverAlt": "Dashboard of the IFSPA tuition management app, shown with sample data",
       "context": "IFSPA is a paramedical training institute in Toamasina, Madagascar. The project is a tuition management application: it takes payments in cash or by Mobile Money (MVola, Orange, Airtel), prints thermal receipts, produces statements and tracks overdue fees with export; the payment screen works offline.",
       "shots": {

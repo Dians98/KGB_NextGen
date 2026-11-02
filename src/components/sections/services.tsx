@@ -104,29 +104,34 @@ function Chips({ items }: { items: string[] }) {
   );
 }
 
-// Schéma d'un flux d'automatisation : une impulsion parcourt chaque liaison, l'une après l'autre.
+// Schéma d'un flux n8n : une impulsion parcourt chaque liaison, l'une après l'autre.
+// Sur petit écran, le flux passe à la verticale pour ne pas déborder ; l'étape n8n (la 2e) est mise en avant.
 function Flow({ steps, label }: { steps: string[]; label: string }) {
   return (
-    <div>
-      <ol aria-label={label} className="flex items-center">
-        {steps.map((step, index) => (
-          <li key={step} className="flex flex-1 items-center last:flex-none">
+    <ol aria-label={label} className="flex flex-col items-start sm:flex-row sm:items-center">
+      {steps.map((step, index) => (
+        <li key={step} className="flex flex-col items-start sm:flex-1 sm:flex-row sm:items-center sm:last:flex-none">
+          <span
+            className={[
+              "rounded-control border bg-bg px-2.5 py-1.5 font-mono text-caption whitespace-nowrap",
+              index === 1 ? "border-cyan text-cyan" : "border-line-strong text-fg",
+            ].join(" ")}
+          >
+            {step}
+          </span>
+          {index < steps.length - 1 ? (
             <span
-              className={[
-                "rounded-control border px-2.5 py-1.5 font-mono text-caption whitespace-nowrap",
-                step === "n8n" ? "border-cyan bg-bg text-cyan" : "border-line-strong bg-bg text-fg",
-              ].join(" ")}
+              aria-hidden="true"
+              className="relative ml-4 h-4 w-px overflow-hidden bg-line-strong sm:mx-1 sm:ml-1 sm:h-px sm:w-auto sm:min-w-3 sm:flex-1"
             >
-              {step}
+              <span
+                className="flow-pulse absolute inset-y-0 hidden w-4 bg-cyan sm:block"
+                style={{ animationDelay: `${index * 0.6}s` }}
+              />
             </span>
-            {index < steps.length - 1 ? (
-              <span aria-hidden="true" className="relative mx-1 h-px flex-1 overflow-hidden bg-line-strong">
-                <span className="flow-pulse absolute inset-y-0 w-4 bg-cyan" style={{ animationDelay: `${index * 0.6}s` }} />
-              </span>
-            ) : null}
-          </li>
-        ))}
-      </ol>
-    </div>
+          ) : null}
+        </li>
+      ))}
+    </ol>
   );
 }

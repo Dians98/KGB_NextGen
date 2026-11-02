@@ -4,7 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/motion/reveal";
 import { Gallery, type GalleryLabels, type GallerySection } from "@/components/projects/gallery";
 import { ProjectVideo } from "@/components/projects/project-video";
-import { Badge } from "@/components/ui/badge";
+import { StatusBadge } from "@/components/projects/status-badge";
 import { Button, buttonClasses } from "@/components/ui/button";
 import { CircuitMark } from "@/components/motion/circuit-mark";
 import { Container } from "@/components/ui/container";
@@ -77,7 +77,7 @@ export function ProjectPage({ slug }: ProjectPageProps) {
         </Link>
 
         <header className="mt-8 max-w-3xl">
-          <Badge tone="progress">{common("inProgress")}</Badge>
+          <StatusBadge status={project.status} />
           <h1 className="mt-5 font-display text-display font-bold text-fg">{name}</h1>
           <p className="mt-3 font-mono text-small text-muted">{t(`${slug}.client`)}</p>
           <p className="mt-6 text-lead text-muted">{t(`${slug}.summary`)}</p>
@@ -90,9 +90,11 @@ export function ProjectPage({ slug }: ProjectPageProps) {
           <CaseBlock id="projet-livre" title={page("delivered")}>
             <p>{t(`${slug}.delivered`)}</p>
           </CaseBlock>
-          <CaseBlock id="projet-suite" title={page("next")}>
-            <p>{t(`${slug}.next`)}</p>
-          </CaseBlock>
+          {project.status === "progress" ? (
+            <CaseBlock id="projet-suite" title={page("next")}>
+              <p>{t("heaven.next")}</p>
+            </CaseBlock>
+          ) : null}
         </div>
 
         <section aria-labelledby="projet-captures" className="border-t border-line pt-10 lg:pt-12">

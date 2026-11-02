@@ -22,8 +22,12 @@ export type ProjectVideo = {
   height: number;
 };
 
+/** done : terminé (pas de « La suite ») ; progress : en cours, avec la clé Projects.<slug>.next. */
+export type ProjectStatus = "done" | "progress";
+
 export type Project = {
   slug: "ifspa" | "heaven";
+  status: ProjectStatus;
   cover: Shot;
   /** Visite du site vitrine, à la place de captures ; null si le projet n'en montre pas. */
   video: ProjectVideo | null;
@@ -62,12 +66,14 @@ const ifspaShots: Shot[] = [
 export const projects: Project[] = [
   {
     slug: "ifspa",
+    status: "done",
     cover: ifspaShots[0],
     video: null,
     shots: ifspaShots,
   },
   {
     slug: "heaven",
+    status: "progress",
     cover: shot("heaven", "couverture", 1200, 900, "site"),
     video: homeVideo("heaven"),
     shots: [],

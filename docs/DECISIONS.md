@@ -57,10 +57,10 @@ Validées par Diano le 2026-11-02 (séance de cadrage). Ce fichier fait foi ; un
 3. **Automatisation et IA** — connecter les outils (CRM, formulaires, bases de données) avec n8n, enrichis par l'IA (assistants, traitement de documents) pour supprimer les tâches répétitives. Ne rien promettre au-delà de ce qui est livré.
 4. **Configuration Odoo et ERP** — CRM, comptabilité, inventaire et ventes, intégration aux outils existants.
 
-Présentation (2026-11-02) : grille 2 × 2 de cartes, sans capture (demande de Diano). Chaque carte se termine par du concret : technologies (web, mobile), schéma de flux animé Formulaire → n8n → IA → CRM (automatisation), les quatre modules (Odoo).
+Présentation (2026-11-02) : grille 2 × 2 de cartes, sans capture (demande de Diano). Chaque carte se termine par du concret : technologies (web, mobile), schéma de flux animé Trigger → Workflow n8n → IA → Résultats (automatisation), les quatre modules (Odoo).
 
-### Projets (statut « En cours »)
-Chaque projet : badge « En cours », ce qui est livré, ce qui vient ensuite, lien vers le site en ligne. Les clients ont donné leur accord.
+### Projets
+Chaque projet : badge de statut, ce qui est livré, et pour un projet en cours ce qui vient ensuite. **IFSPA : terminé** (2026-11-02, badge « Terminé », pas de bloc « La suite ») ; **HAEVEN : en cours**. Titre de section : « Nos projets ». Les clients ont donné leur accord.
 - **IFSPA** — https://ifspa.mg — gestion de l'écolage + vitrine d'un institut paramédical à Toamasina (Madagascar). Captures : vitrine publique en direct + maquettes validées par le client (`C:\wamp64\www\ifspa\prototype\captures\`). **Aucune vraie donnée d'étudiant.**
 - **HAEVEN** — https://inhaeven.com — vitrine bilingue d'un studio créatif (Maurice ; ne pas mentionner l'Estonie sur le site, demande de Diano), design d'intérieur. Captures : page d'accueil en ligne, desktop et mobile.
 

@@ -4,7 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { Curtain } from "@/components/motion/curtain";
 import { PointerGlow } from "@/components/motion/pointer-glow";
 import { Reveal } from "@/components/motion/reveal";
-import { Badge } from "@/components/ui/badge";
+import { StatusBadge } from "./status-badge";
 import { Button } from "@/components/ui/button";
 import { getProject, type Project } from "@/content/projects";
 
@@ -51,7 +51,7 @@ export function ProjectCard({ slug, imageSide = "start" }: ProjectCardProps) {
 
         <div className="flex flex-col gap-6 p-6 sm:p-8 lg:col-span-5 lg:py-10">
           <Reveal delay={0.1}>
-            <Badge tone="progress">{common("inProgress")}</Badge>
+            <StatusBadge status={project.status} />
             <h3 id={`projet-${slug}-titre`} className="mt-4 font-display text-heading font-semibold text-fg">
               {name}
             </h3>
@@ -64,10 +64,12 @@ export function ProjectCard({ slug, imageSide = "start" }: ProjectCardProps) {
               <dt className="font-mono text-caption font-medium text-cyan">{common("delivered")}</dt>
               <dd className="mt-1 text-muted">{t(`${slug}.delivered`)}</dd>
             </div>
-            <div>
-              <dt className="font-mono text-caption font-medium text-fg">{common("planned")}</dt>
-              <dd className="mt-1 text-muted">{t(`${slug}.next`)}</dd>
-            </div>
+            {project.status === "progress" ? (
+              <div>
+                <dt className="font-mono text-caption font-medium text-fg">{common("planned")}</dt>
+                <dd className="mt-1 text-muted">{t("heaven.next")}</dd>
+              </div>
+            ) : null}
           </Reveal>
 
           <Reveal delay={0.3} className="mt-auto flex flex-wrap items-center gap-x-6 gap-y-2">
