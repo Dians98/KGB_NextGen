@@ -27,7 +27,7 @@ export const site = {
     diano: {
       name: "Diano ANDRIANTSALAMA",
       portfolio: "https://dians98.vercel.app",
-      photo: "/team/diano-andriantsalama.webp",
+      photo: "/team/diano-andriantsalama-portrait.webp",
     },
   },
 } as const;

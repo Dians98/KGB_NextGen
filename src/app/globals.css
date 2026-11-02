@@ -15,6 +15,8 @@
   /* Texte sur bleu roi (5,3:1) ; royal-strong est le survol, plus sombre donc plus contrasté. */
   --color-on-royal: #ffffff;
   --color-royal-strong: #1749d6;
+  /* Erreurs de formulaire : 8,6:1 sur fond et surface ; l'erreur n'est jamais signalée par la couleur seule. */
+  --color-danger: #ff9a9a;
   /* Couleurs des drapeaux du sélecteur de langue, hors charte de marque. */
   --color-flag-blue: #1d3a8f;
   --color-flag-red: #d6283a;
@@ -53,6 +55,7 @@
   --radius-control: 0.5rem;
   --radius-card: 0.75rem;
   --radius-pill: 999px;
+  --radius-device: 2rem;
 
   /* Ombres : décalage et flou réels, lueurs à base de bleu roi et de cyan, jamais de halo à zéro décalage. */
   --shadow-card: 0 1px 0 0 color-mix(in srgb, var(--color-fg) 4%, transparent) inset,
