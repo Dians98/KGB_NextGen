@@ -6,6 +6,10 @@ import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { site } from "@/config/site";
+import { MotionProvider } from "@/components/motion/motion-provider";
+import { SiteFooter } from "@/components/layout/site-footer";
+import { SiteHeader } from "@/components/layout/site-header";
+import { SkipLink } from "@/components/layout/skip-link";
 import { fontVariables } from "../fonts";
 import "../globals.css";
 
@@ -30,7 +34,14 @@ export default async function LocaleLayout({ children }: LayoutProps<"/[locale]"
   return (
     <html lang={locale} className={`${fontVariables} h-full`}>
       <body className="min-h-full flex flex-col">
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          <MotionProvider>
+            <SkipLink />
+            <SiteHeader />
+            {children}
+            <SiteFooter />
+          </MotionProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

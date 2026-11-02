@@ -12,6 +12,77 @@
   /* Filet décoratif ; line-strong (3,4:1 sur surface) pour les contours de champs. */
   --color-line: #1b2742;
   --color-line-strong: #56699a;
+  /* Texte sur bleu roi (5,3:1) ; royal-strong est le survol, plus sombre donc plus contrasté. */
+  --color-on-royal: #ffffff;
+  --color-royal-strong: #1749d6;
+  /* Couleurs des drapeaux du sélecteur de langue, hors charte de marque. */
+  --color-flag-blue: #1d3a8f;
+  --color-flag-red: #d6283a;
+  --color-flag-white: #f4f6fb;
+
+  /* Échelle typographique : display max 3,75rem, titres équilibrés par le CSS de base. */
+  --text-display: clamp(2.5rem, 1.6rem + 3.6vw, 3.75rem);
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: -0.025em;
+  --text-title: clamp(1.75rem, 1.3rem + 1.8vw, 2.5rem);
+  --text-title--line-height: 1.15;
+  --text-title--letter-spacing: -0.02em;
+  --text-heading: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --text-heading--line-height: 1.3;
+  --text-heading--letter-spacing: -0.01em;
+  --text-lead: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem);
+  --text-lead--line-height: 1.55;
+  --text-body: 1rem;
+  --text-body--line-height: 1.65;
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.5;
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.4;
+  --text-caption--letter-spacing: 0.01em;
+
+  /* Espacements de mise en page. */
+  --spacing-header: 4.5rem;
+  --spacing-anchor: 5.5rem;
+  --spacing-gutter: clamp(1.25rem, 0.6rem + 3.2vw, 5rem);
+  --spacing-section: clamp(4rem, 2.5rem + 6vw, 7.5rem);
+  --spacing-block: clamp(2rem, 1.4rem + 2.4vw, 3.5rem);
+  --container-page: 80rem;
+  --container-prose: 40rem;
+
+  /* Rayons. */
+  --radius-control: 0.5rem;
+  --radius-card: 0.75rem;
+  --radius-pill: 999px;
+
+  /* Ombres : décalage et flou réels, lueurs à base de bleu roi et de cyan, jamais de halo à zéro décalage. */
+  --shadow-card: 0 1px 0 0 color-mix(in srgb, var(--color-fg) 4%, transparent) inset,
+    0 12px 32px -16px color-mix(in srgb, var(--color-bg) 90%, transparent);
+  --shadow-card-hover: 0 1px 0 0 color-mix(in srgb, var(--color-fg) 6%, transparent) inset,
+    0 20px 40px -18px color-mix(in srgb, var(--color-royal) 45%, transparent);
+  --shadow-button: 0 8px 24px -10px color-mix(in srgb, var(--color-royal) 70%, transparent);
+  --shadow-button-hover: 0 12px 28px -10px color-mix(in srgb, var(--color-royal) 85%, transparent);
+  --shadow-panel: 0 24px 48px -20px color-mix(in srgb, var(--color-bg) 95%, transparent);
+
+  /* Mouvement : durées de 150 à 500 ms, sorties exponentielles. */
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 400ms;
+  --duration-max: 500ms;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+
+  --animate-menu-in: menu-in var(--duration-base) var(--ease-out-expo) both;
+
+  @keyframes menu-in {
+    from {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 @theme inline {
@@ -33,12 +104,42 @@ body {
   background: var(--color-bg);
   color: var(--color-fg);
   font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: var(--text-body);
+  line-height: var(--text-body--line-height);
   -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display), system-ui, sans-serif;
+  text-wrap: balance;
+}
+
+p,
+li {
+  text-wrap: pretty;
 }
 
 :focus-visible {
   outline: 2px solid var(--color-cyan);
   outline-offset: 3px;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-royal) 55%, transparent);
+  color: var(--color-fg);
+}
+
+input,
+textarea {
+  caret-color: var(--color-cyan);
+}
+
+/* Barre de défilement aux couleurs de la charte. */
+html {
+  scrollbar-color: var(--color-line-strong) var(--color-bg);
+  scrollbar-width: thin;
 }
 
 @media (prefers-reduced-motion: reduce) {

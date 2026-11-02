@@ -6,10 +6,16 @@
   },
   "Common": {
     "skipToContent": "Aller au contenu",
-    "contactCta": "Parler de votre projet"
+    "contactCta": "Parler de votre projet",
+    "seeProjects": "Voir nos projets",
+    "opensInNewTab": "(s'ouvre dans un nouvel onglet)",
+    "inProgress": "En cours",
+    "delivered": "Livré",
+    "planned": "À venir"
   },
   "Nav": {
     "label": "Navigation principale",
+    "menu": "Menu",
     "home": "Accueil",
     "services": "Services",
     "projects": "Projets",
@@ -22,8 +28,12 @@
     "en": "English"
   },
   "Footer": {
+    "navLabel": "Navigation du pied de page",
     "location": "Maurice",
-    "rights": "Tous droits réservés."
+    "copyright": "© {year} {name}. Tous droits réservés.",
+    "linkedin": "LinkedIn",
+    "whatsapp": "WhatsApp",
+    "brn": "BRN : {brn}"
   },
   "NotFound": {
     "title": "Page introuvable",
@@ -31,6 +41,102 @@
     "back": "Retour à l'accueil"
   },
   "Placeholder": {
-    "title": "Site en cours de construction"
+    "title": "Site en cours de construction",
+    "text": "Les sections arrivent. En attendant, le contact reste à un clic."
+  },
+  "Hero": {
+    "title": "Vos outils métier, conçus, construits et suivis par une seule équipe.",
+    "subtitle": "Applications web et mobiles, automatisation avec n8n et l'IA, configuration d'Odoo. Depuis Maurice, pour les entreprises de l'océan Indien et d'ailleurs.",
+    "primaryCta": "Parler de votre projet",
+    "secondaryCta": "Voir nos projets",
+    "emblemAlt": "Emblème de KGB NextGen Solutions : les lettres KGB et un profil de tête parcouru de circuits"
+  },
+  "Services": {
+    "title": "Ce que nous construisons",
+    "intro": "Quatre métiers, un seul interlocuteur : l'outil et les processus qu'il sert avancent ensemble.",
+    "web": {
+      "title": "Applications web full-stack",
+      "text": "Interfaces en React, Next.js et TypeScript, back-end en Node.js ou FastAPI, base PostgreSQL. Du tableau de bord interne au site public."
+    },
+    "mobile": {
+      "title": "Applications mobiles et PWA",
+      "text": "Applications React Native et PWA pour iOS et Android, pensées pour une connexion lente, avec un mode hors ligne quand le métier l'exige."
+    },
+    "automation": {
+      "title": "Automatisation et IA",
+      "text": "Nous relions vos outils (CRM, formulaires, bases de données) avec n8n et ajoutons l'IA là où elle fait gagner du temps : tri, résumé, extraction de documents."
+    },
+    "odoo": {
+      "title": "Odoo et ERP",
+      "text": "Paramétrage d'Odoo pour vos processus : CRM, comptabilité, stock et ventes, connecté à vos outils existants."
+    }
+  },
+  "Projects": {
+    "title": "Projets en cours",
+    "intro": "Deux projets réels, livrés étape par étape.",
+    "viewProject": "Voir le projet",
+    "visitSite": "Voir le site en ligne",
+    "ifspa": {
+      "name": "IFSPA",
+      "client": "Institut de formation paramédicale · Toamasina, Madagascar",
+      "summary": "Gestion de l'écolage et site vitrine d'un institut paramédical : inscriptions, encaissements en espèces ou Mobile Money, reçus, suivi des impayés.",
+      "delivered": "Site vitrine en ligne et écrans de l'application validés par le client.",
+      "next": "Mise en service de l'application : encaissement, reçus, impayés, mode hors ligne."
+    },
+    "heaven": {
+      "name": "HAEVEN",
+      "client": "Studio de design d'intérieur · Maurice et Estonie",
+      "summary": "Site vitrine bilingue d'un studio créatif : services de design d'intérieur, boutique et univers artistique.",
+      "delivered": "Accueil et page Services conçus et développés, en français et en anglais.",
+      "next": "Boutique, portfolio, univers, puis mise en ligne."
+    }
+  },
+  "Team": {
+    "title": "L'équipe",
+    "intro": "Une petite équipe, des interlocuteurs que vous connaissez par leur nom.",
+    "kevin": {
+      "role": "Fondateur & Directeur",
+      "bio": "Plus de 15 ans dans l'IT à Maurice, du support à la direction des opérations. Il pilote les projets et suit chaque client.",
+      "point1": "Opérations et pilotage par indicateurs",
+      "point2": "Certifié AWS SysOps et Siemens Teamcenter",
+      "point3": "Ex-Accenture, ex-LINKBYNET",
+      "photoAlt": "Portrait de Kevin GOOLJAR",
+      "link": "Profil LinkedIn de Kevin GOOLJAR"
+    },
+    "diano": {
+      "role": "Lead Developer",
+      "bio": "Plus de 3 ans à concevoir et livrer des applications web et mobiles, des automatisations n8n et des configurations Odoo.",
+      "stack": "React · Next.js · TypeScript · Node.js · FastAPI · PostgreSQL · n8n · Odoo",
+      "photoAlt": "Portrait de Diano ANDRIANTSALAMA",
+      "link": "Portfolio de Diano ANDRIANTSALAMA"
+    }
+  },
+  "Contact": {
+    "title": "Parlons de votre projet",
+    "intro": "Décrivez votre besoin en quelques lignes : ce que vous faites aujourd'hui, ce qui vous fait perdre du temps. Nous revenons vers vous pour en parler.",
+    "whatsapp": "WhatsApp",
+    "linkedin": "LinkedIn"
+  },
+  "ContactForm": {
+    "name": "Nom",
+    "email": "Email",
+    "company": "Entreprise (facultatif)",
+    "message": "Votre projet",
+    "messageHint": "20 caractères minimum.",
+    "submit": "Envoyer la demande",
+    "sending": "Envoi…",
+    "success": "Merci, votre demande est partie. Nous vous répondons par email.",
+    "error": "L'envoi n'a pas abouti. Réessayez dans un instant.",
+    "rateLimited": "Trop d'envois en peu de temps. Réessayez dans quelques minutes.",
+    "invalid": "Certains champs sont à corriger.",
+    "honeypot": "Ne pas remplir ce champ",
+    "errors": {
+      "nameRequired": "Indiquez votre nom.",
+      "nameTooLong": "100 caractères au maximum.",
+      "emailInvalid": "Cette adresse email n'est pas valide.",
+      "companyTooLong": "150 caractères au maximum.",
+      "messageTooShort": "Décrivez votre projet en 20 caractères au moins.",
+      "messageTooLong": "5 000 caractères au maximum."
+    }
   }
 }
