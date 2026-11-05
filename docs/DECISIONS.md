@@ -121,4 +121,4 @@ Tant qu'un point n'est pas tranché, on utilise l'emplacement provisoire indiqu�
 - **Services** : Docker et l'administration open source sont intégrés à la carte Web (texte + étiquette Docker), sans carte supplémentaire ; on garde quatre cartes.
 - **Projets** : titre « Nos récents projets » / « Our recent projects ».
 - **Kevin** : « Ancien d'Accenture, ancien de Linkbynet » / « Former Accenture, former Linkbynet ».
-- **Contact** : téléphone de l'entreprise **+230 553 66 553**, joignable aussi sur WhatsApp ; affiché sous l'accroche de la section Contact (lien d'appel + lien WhatsApp), lien WhatsApp aussi dans le pied de page, numéro dans les données structurées.
+- **Contact** : téléphone de l'entreprise **+230 553 66 553**, joignable aussi sur WhatsApp ; affiché sous l'accroche de la section Contact (lien d'appel, avec le logo officiel WhatsApp juste à côté du numéro), lien WhatsApp aussi dans le pied de page, numéro dans les données structurées.

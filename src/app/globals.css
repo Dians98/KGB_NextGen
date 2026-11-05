@@ -20,6 +20,8 @@
   --color-royal-strong: #1749d6;
   /* Erreurs de formulaire : 8,6:1 sur fond et surface ; l'erreur n'est jamais signalée par la couleur seule. */
   --color-danger: #ff9a9a;
+  /* Vert officiel de WhatsApp, réservé à son logo (hors charte, comme les drapeaux). */
+  --color-whatsapp: #25d366;
   /* Couleurs des drapeaux du sélecteur de langue, hors charte de marque. */
   --color-flag-blue: #1d3a8f;
   --color-flag-red: #d6283a;

@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import { ContactForm } from "@/components/contact/contact-form";
 import { Reveal } from "@/components/motion/reveal";
 import { Button } from "@/components/ui/button";
-import { ChatIcon, PhoneIcon } from "@/components/ui/icons";
+import { PhoneIcon, WhatsAppIcon } from "@/components/ui/icons";
 import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { site } from "@/config/site";
@@ -17,11 +17,11 @@ export function Contact() {
       <div className="grid gap-block lg:grid-cols-12 lg:gap-x-16">
         <Reveal className="lg:col-span-5 lg:self-start lg:sticky lg:top-anchor">
           <SectionHeading id="contact-titre" title={t("title")} description={t("intro")} />
-          {/* Téléphone et WhatsApp juste sous l'accroche : le contact direct reste à portée sans le formulaire. */}
+          {/* Numéro juste sous l'accroche, avec le logo WhatsApp à côté : appel ou message en un clic. */}
           {site.phone || whatsappDigits || site.companyLinkedin ? (
             <ul className="mt-8 flex flex-col gap-3">
               {site.phone ? (
-                <li>
+                <li className="flex items-center gap-3">
                   <a
                     href={`tel:${site.phone.replace(/\s/g, "")}`}
                     aria-label={t("call", { number: site.phone })}
@@ -32,22 +32,17 @@ export function Contact() {
                     </span>
                     {site.phone}
                   </a>
-                </li>
-              ) : null}
-              {whatsappDigits ? (
-                <li>
-                  <a
-                    href={`https://wa.me/${whatsappDigits}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${t("whatsappLabel", { number: site.whatsapp ?? "" })} ${common("opensInNewTab")}`}
-                    className="group inline-flex min-h-11 items-center gap-3 rounded-control text-body font-medium text-muted transition-colors duration-(--duration-base) hover:text-fg"
-                  >
-                    <span className="flex size-10 items-center justify-center rounded-control border border-line-strong bg-surface text-cyan transition-colors duration-(--duration-base) group-hover:border-cyan">
-                      <ChatIcon width={18} height={18} />
-                    </span>
-                    {t("whatsapp")}
-                  </a>
+                  {whatsappDigits ? (
+                    <a
+                      href={`https://wa.me/${whatsappDigits}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${t("whatsappLabel", { number: site.whatsapp ?? "" })} ${common("opensInNewTab")}`}
+                      className="flex size-11 items-center justify-center rounded-pill text-whatsapp transition-transform duration-(--duration-base) ease-out-expo hover:scale-110"
+                    >
+                      <WhatsAppIcon width={26} height={26} />
+                    </a>
+                  ) : null}
                 </li>
               ) : null}
               {site.companyLinkedin ? (
