@@ -117,7 +117,7 @@ Tant qu'un point n'est pas tranché, on utilise l'emplacement provisoire indiqu�
 | Photo de Kevin en noir et blanc : on la garde telle quelle ou on la recolore aux couleurs de la marque ? | Diano | gardée telle quelle |
 
 ### Mises à jour du 2026-11-05 (demandes de Diano)
-- **Marque** : « NextGen Solutions » est mis en avant plutôt que « KGB ». Hero : emblème KGB réduit, « NextGen Solutions » en grand sur une seule ligne, sans « Ltd » (« NextGen » en cyan). En-tête : le nom « NextGen Solutions » suit l'emblème dès 640 px. Le nom légal reste « KGB NextGen Solutions Ltd » (pied de page, métadonnées).
+- **Marque** : « NextGen Solutions » est mis en avant plutôt que « KGB ». Hero : emblème KGB réduit, « NextGen Solutions » en grand sur une seule ligne, sans « Ltd » (« NextGen » en cyan). Le nom légal reste « KGB NextGen Solutions Ltd » (pied de page, métadonnées).
 - **Services** : Docker et l'administration open source sont intégrés à la carte Web (texte + étiquette Docker), sans carte supplémentaire ; on garde quatre cartes.
 - **Projets** : titre « Nos récents projets » / « Our recent projects ».
 - **Kevin** : « Ancien d'Accenture, ancien de Linkbynet » / « Former Accenture, former Linkbynet ».

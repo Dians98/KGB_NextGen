@@ -19,11 +19,7 @@ export function SiteHeader() {
           className="-ml-1 flex min-h-11 items-center gap-2.5 rounded-control px-1 font-display text-lg font-semibold text-fg"
         >
           <Logo priority />
-          {/* Le nom « NextGen Solutions » accompagne l'emblème dès que la place le permet. */}
-          <span className="hidden leading-tight sm:inline">
-            <span className="text-cyan">{site.brand.lead}</span> {site.brand.rest}
-          </span>
-          <span className="sr-only sm:hidden">{site.shortName}</span>
+          <span className="sr-only">{site.shortName}</span>
         </Link>
 
         <nav aria-label={t("Nav.label")} className="hidden lg:block">
