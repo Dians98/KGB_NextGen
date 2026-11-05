@@ -59,11 +59,11 @@
   },
   "Services": {
     "title": "Nos services",
-    "intro": "Cinq métiers, un seul interlocuteur : l'outil et les processus qu'il sert avancent ensemble.",
+    "intro": "Quatre métiers, un seul interlocuteur : l'outil et les processus qu'il sert avancent ensemble.",
     "web": {
       "title": "Applications web full-stack",
-      "text": "Interfaces, back-end et base de données, du tableau de bord interne au site public.",
-      "tags": "Next.js · TypeScript · Node.js · FastAPI · PostgreSQL"
+      "text": "Interfaces, back-end et base de données, du tableau de bord interne au site public. Déploiement avec Docker et administration de vos serveurs open source.",
+      "tags": "Next.js · TypeScript · Node.js · FastAPI · PostgreSQL · Docker"
     },
     "mobile": {
       "title": "Applications mobiles et PWA",
@@ -97,11 +97,6 @@
       "title": "Odoo et ERP",
       "text": "Paramétrage d'Odoo pour vos processus, connecté à vos outils existants.",
       "modules": "CRM · Comptabilité · Stock · Ventes"
-    },
-    "devops": {
-      "title": "Docker et administration open source",
-      "text": "Conteneurisation de vos applications avec Docker, installation et maintenance de vos outils open source sur vos serveurs.",
-      "tags": "Docker · Open source"
     }
   },
   "ProjectPage": {

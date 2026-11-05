@@ -61,9 +61,8 @@ export function Hero() {
             style={delay(0.5)}
           >
             <div aria-hidden="true" className="hero-veil pointer-events-none absolute -inset-x-8 -inset-y-6 -z-10" />
-            <p className="font-display text-title font-bold text-fg lg:text-display">
-              <span className="text-cyan">{site.brand.lead}</span> {site.brand.rest}{" "}
-              <span className="text-heading font-semibold text-muted lg:text-title">{site.brand.suffix}</span>
+            <p className="font-display text-title font-bold whitespace-nowrap text-fg lg:text-[2.75rem] lg:leading-tight">
+              <span className="text-cyan">{site.brand.lead}</span> {site.brand.rest}
             </p>
             <p lang="en" className="font-mono text-small text-muted">
               {site.tagline}

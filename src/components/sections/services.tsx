@@ -2,11 +2,11 @@ import type { ComponentType, ReactNode, SVGProps } from "react";
 import { useTranslations } from "next-intl";
 import { PointerGlow } from "@/components/motion/pointer-glow";
 import { Reveal } from "@/components/motion/reveal";
-import { CodeIcon, ModulesIcon, ServerIcon, SmartphoneIcon, WorkflowIcon } from "@/components/ui/icons";
+import { CodeIcon, ModulesIcon, SmartphoneIcon, WorkflowIcon } from "@/components/ui/icons";
 import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
 
-type ServiceKey = "web" | "mobile" | "automation" | "odoo" | "devops";
+type ServiceKey = "web" | "mobile" | "automation" | "odoo";
 
 const FLOW_STEPS = ["trigger", "n8n", "ai", "result"] as const;
 
@@ -16,8 +16,8 @@ const split = (value: string) =>
     .map((item) => item.trim())
     .filter(Boolean);
 
-// Grille à deux colonnes : chaque carte se termine par du concret (technologies, flux n8n, modules Odoo).
-// La cinquième carte (Docker) occupe toute la largeur pour ne pas laisser de trou.
+// Grille 2 × 2 : chaque carte se termine par du concret (technologies, flux n8n, modules Odoo).
+// Docker et l'administration open source sont rattachés à la carte Web (demande de Diano, 2026-11-05).
 export function Services() {
   const t = useTranslations("Services");
 
@@ -59,10 +59,6 @@ export function Services() {
               </li>
             ))}
           </ul>
-        </ServiceCard>
-
-        <ServiceCard serviceKey="devops" Icon={ServerIcon} delay={0.32} className="md:col-span-2">
-          <Chips items={split(t("devops.tags"))} />
         </ServiceCard>
       </ul>
     </Section>

@@ -13,7 +13,7 @@ export const site = {
   shortName: "KGB NextGen",
   tagline: "Intelligence driven. Future ready.",
   // Nom mis en avant à la place de « KGB » (demande de Diano, 2026-11-05). Nom propre : non traduit.
-  brand: { lead: "NextGen", rest: "Solutions", suffix: "Ltd" },
+  brand: { lead: "NextGen", rest: "Solutions" },
   siteUrl: resolveSiteUrl(),
   countryCode: "MU",
   email: null as string | null,

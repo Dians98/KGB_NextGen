@@ -60,7 +60,7 @@ export async function HomeJsonLd() {
           services("mobile.title"),
           services("automation.title"),
           services("odoo.title"),
-          services("devops.title"),
+          "Docker",
         ],
         founder: { "@id": ids.kevin },
         employee: [{ "@id": ids.kevin }, { "@id": ids.diano }],

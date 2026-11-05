@@ -59,11 +59,11 @@
   },
   "Services": {
     "title": "Our services",
-    "intro": "Five disciplines, one point of contact: the tool and the processes it serves move forward together.",
+    "intro": "Four disciplines, one point of contact: the tool and the processes it serves move forward together.",
     "web": {
       "title": "Full-stack web applications",
-      "text": "Front end, back end and database, from internal dashboards to public websites.",
-      "tags": "Next.js · TypeScript · Node.js · FastAPI · PostgreSQL"
+      "text": "Front end, back end and database, from internal dashboards to public websites. Deployed with Docker, and we administer your open-source servers.",
+      "tags": "Next.js · TypeScript · Node.js · FastAPI · PostgreSQL · Docker"
     },
     "mobile": {
       "title": "Mobile apps and PWAs",
@@ -97,11 +97,6 @@
       "title": "Odoo and ERP",
       "text": "Odoo set up around your processes, connected to the tools you already use.",
       "modules": "CRM · Accounting · Inventory · Sales"
-    },
-    "devops": {
-      "title": "Docker and open-source administration",
-      "text": "Containerising your applications with Docker, installing and maintaining your open-source tools on your servers.",
-      "tags": "Docker · Open source"
     }
   },
   "ProjectPage": {

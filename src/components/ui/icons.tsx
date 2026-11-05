@@ -102,17 +102,6 @@ export function ModulesIcon(props: IconProps) {
   );
 }
 
-export function ServerIcon(props: IconProps) {
-  return (
-    <Icon {...props}>
-      <rect x="3" y="3" width="18" height="8" rx="2" />
-      <rect x="3" y="13" width="18" height="8" rx="2" />
-      <path d="M7 7h.01" />
-      <path d="M7 17h.01" />
-    </Icon>
-  );
-}
-
 export function PhoneIcon(props: IconProps) {
   return (
     <Icon {...props}>
