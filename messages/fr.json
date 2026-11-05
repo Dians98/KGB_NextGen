@@ -170,7 +170,6 @@
     "title": "Parlons de votre projet",
     "intro": "Décrivez votre besoin en quelques lignes : ce que vous faites aujourd'hui, ce qui vous fait perdre du temps. Nous revenons vers vous pour en parler.",
     "linkedin": "LinkedIn",
-    "call": "Appeler le {number}",
     "whatsappLabel": "Écrire sur WhatsApp au {number}"
   },
   "ContactForm": {

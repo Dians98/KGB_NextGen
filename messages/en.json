@@ -170,7 +170,6 @@
     "title": "Let's talk about your project",
     "intro": "Tell us in a few lines what you do today and what slows you down. We'll get back to you to talk it through.",
     "linkedin": "LinkedIn",
-    "call": "Call {number}",
     "whatsappLabel": "Message {number} on WhatsApp"
   },
   "ContactForm": {
