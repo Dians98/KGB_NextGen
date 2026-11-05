@@ -2,11 +2,11 @@ import type { ComponentType, ReactNode, SVGProps } from "react";
 import { useTranslations } from "next-intl";
 import { PointerGlow } from "@/components/motion/pointer-glow";
 import { Reveal } from "@/components/motion/reveal";
-import { CodeIcon, ModulesIcon, SmartphoneIcon, WorkflowIcon } from "@/components/ui/icons";
+import { CodeIcon, ModulesIcon, ServerIcon, SmartphoneIcon, WorkflowIcon } from "@/components/ui/icons";
 import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
 
-type ServiceKey = "web" | "mobile" | "automation" | "odoo";
+type ServiceKey = "web" | "mobile" | "automation" | "odoo" | "devops";
 
 const FLOW_STEPS = ["trigger", "n8n", "ai", "result"] as const;
 
@@ -16,7 +16,8 @@ const split = (value: string) =>
     .map((item) => item.trim())
     .filter(Boolean);
 
-// Grille 2 × 2 : chaque carte se termine par du concret (technologies, flux n8n, modules Odoo).
+// Grille à deux colonnes : chaque carte se termine par du concret (technologies, flux n8n, modules Odoo).
+// La cinquième carte (Docker) occupe toute la largeur pour ne pas laisser de trou.
 export function Services() {
   const t = useTranslations("Services");
 
@@ -59,6 +60,10 @@ export function Services() {
             ))}
           </ul>
         </ServiceCard>
+
+        <ServiceCard serviceKey="devops" Icon={ServerIcon} delay={0.32} className="md:col-span-2">
+          <Chips items={split(t("devops.tags"))} />
+        </ServiceCard>
       </ul>
     </Section>
   );
@@ -68,15 +73,16 @@ type ServiceCardProps = {
   serviceKey: ServiceKey;
   Icon: ComponentType<SVGProps<SVGSVGElement>>;
   delay: number;
+  className?: string;
   children: ReactNode;
 };
 
-function ServiceCard({ serviceKey, Icon, delay, children }: ServiceCardProps) {
+function ServiceCard({ serviceKey, Icon, delay, className, children }: ServiceCardProps) {
   const t = useTranslations("Services");
   const titleId = `service-${serviceKey}`;
 
   return (
-    <Reveal as="li" delay={delay} className="flex">
+    <Reveal as="li" delay={delay} className={["flex", className].filter(Boolean).join(" ")}>
       <PointerGlow className="flex w-full rounded-card">
         <article
           aria-labelledby={titleId}

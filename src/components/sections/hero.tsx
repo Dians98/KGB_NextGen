@@ -45,22 +45,26 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative order-1 mx-auto w-full max-w-72 sm:max-w-md lg:order-2 lg:ml-auto lg:max-w-xl">
+        {/* « NextGen Solutions » est le nom mis en avant ; l'emblème KGB passe au second plan. */}
+        <div className="relative order-1 mx-auto flex w-full max-w-md flex-col items-center lg:order-2 lg:ml-auto lg:max-w-xl lg:items-end">
           <div aria-hidden="true" className="hero-halo pointer-events-none absolute -inset-x-1/4 -inset-y-1/2" />
-          <div data-circuit-focus className="relative">
+          <div data-circuit-focus className="relative w-40 sm:w-52 lg:w-64">
             <Logo
               priority
               alt={t("emblemAlt")}
-              sizes="(min-width: 1024px) 36rem, 80vw"
+              sizes="(min-width: 1024px) 16rem, 13rem"
               className="relative h-auto w-full"
             />
           </div>
           <div
-            className="hero-rise relative isolate mt-8 flex flex-col items-center gap-1 text-center lg:items-end lg:text-right"
+            className="hero-rise relative isolate mt-6 flex flex-col items-center gap-2 text-center lg:items-end lg:text-right"
             style={delay(0.5)}
           >
             <div aria-hidden="true" className="hero-veil pointer-events-none absolute -inset-x-8 -inset-y-6 -z-10" />
-            <p className="font-display text-heading font-semibold text-fg">{t("brandLine")}</p>
+            <p className="font-display text-title font-bold text-fg lg:text-display">
+              <span className="text-cyan">{site.brand.lead}</span> {site.brand.rest}{" "}
+              <span className="text-heading font-semibold text-muted lg:text-title">{site.brand.suffix}</span>
+            </p>
             <p lang="en" className="font-mono text-small text-muted">
               {site.tagline}
             </p>

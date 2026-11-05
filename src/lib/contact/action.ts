@@ -23,7 +23,7 @@ export async function submitContact(_prev: ContactState, formData: FormData): Pr
     company: text(formData, "company"),
     message: text(formData, "message"),
   };
-  const locale = text(formData, "locale") === "en" ? "en" : "fr";
+  const locale = text(formData, "locale") === "fr" ? "fr" : "en";
 
   // Champ piège rempli : un robot. Faux succès, aucun envoi.
   if (text(formData, "website")) {

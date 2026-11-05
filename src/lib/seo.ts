@@ -15,7 +15,7 @@ export function absoluteUrl(path: string, locale: Locale): string {
   return new URL(getPathname({ href: path, locale }), site.siteUrl).toString();
 }
 
-// hreflang réciproques ; x-default pointe vers la version française (langue par défaut).
+// hreflang réciproques ; x-default pointe vers la version anglaise (langue par défaut).
 export function languageAlternates(path: IndexablePath): Record<string, string> {
   const languages: Record<string, string> = {};
   for (const locale of routing.locales) languages[locale] = absoluteUrl(path, locale);

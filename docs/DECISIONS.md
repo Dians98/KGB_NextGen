@@ -8,7 +8,7 @@ Validées par Diano le 2026-11-02 (séance de cadrage). Ce fichier fait foi ; un
 - Localisation affichée : **« Maurice »** seulement (pas d'adresse, BRN à ajouter quand Diano le fournit).
 
 ## Langues
-- **Français par défaut** sur `/`, **anglais** sur `/en`, via next-intl. Bouton de langue visible.
+- **Anglais par défaut** sur `/`, **français** sur `/fr`, via next-intl (inversé le 2026-11-05, demande de Diano). Bouton de langue visible.
 
 ## Structure
 - Une page principale à ancres : Accueil, Services, Projets, Équipe, Contact.
@@ -115,3 +115,10 @@ Tant qu'un point n'est pas tranché, on utilise l'emplacement provisoire indiqu�
 | BRN (numéro d'enregistrement) | Kevin | non affiché |
 | Fiche de Kevin (textes, « ex-Accenture, ex-LINKBYNET ») | Kevin | textes de `docs/profils/kevin-gooljar.md`, marqués « à valider » |
 | Photo de Kevin en noir et blanc : on la garde telle quelle ou on la recolore aux couleurs de la marque ? | Diano | gardée telle quelle |
+
+### Mises à jour du 2026-11-05 (demandes de Diano)
+- **Marque** : « NextGen Solutions » est mis en avant plutôt que « KGB ». Hero : emblème KGB réduit, « NextGen Solutions Ltd » en grand (« NextGen » en cyan). En-tête : le nom « NextGen Solutions » suit l'emblème dès 640 px. Le nom légal reste « KGB NextGen Solutions Ltd » (pied de page, métadonnées).
+- **Services** : cinquième carte « Docker et administration open source » (pleine largeur), intro « Cinq métiers ».
+- **Projets** : titre « Nos récents projets » / « Our recent projects ».
+- **Kevin** : « Ancien d'Accenture, ancien de Linkbynet » / « Former Accenture, former Linkbynet ».
+- **Contact** : téléphone de l'entreprise **+230 553 66 553**, joignable aussi sur WhatsApp ; affiché sous l'accroche de la section Contact (lien d'appel + lien WhatsApp), lien WhatsApp aussi dans le pied de page, numéro dans les données structurées.

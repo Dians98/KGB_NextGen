@@ -12,11 +12,15 @@ export const site = {
   name: "KGB NextGen Solutions Ltd",
   shortName: "KGB NextGen",
   tagline: "Intelligence driven. Future ready.",
+  // Nom mis en avant à la place de « KGB » (demande de Diano, 2026-11-05). Nom propre : non traduit.
+  brand: { lead: "NextGen", rest: "Solutions", suffix: "Ltd" },
   siteUrl: resolveSiteUrl(),
   countryCode: "MU",
   email: null as string | null,
   brn: null as string | null,
-  whatsapp: null as string | null,
+  // Numéro de l'entreprise donné par Diano (2026-11-05), joignable aussi sur WhatsApp.
+  phone: "+230 553 66 553" as string | null,
+  whatsapp: "+230 553 66 553" as string | null,
   companyLinkedin: null as string | null,
   team: {
     kevin: {

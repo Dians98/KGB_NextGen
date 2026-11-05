@@ -55,12 +55,11 @@
     "subtitle": "Web and mobile apps, automation with n8n and AI, Odoo setup. Based in Mauritius, working with companies across the Indian Ocean and beyond.",
     "primaryCta": "Talk about your project",
     "secondaryCta": "See our projects",
-    "emblemAlt": "KGB NextGen Solutions emblem: the letters KGB and a head profile traced with circuits",
-    "brandLine": "NextGen Solutions Ltd"
+    "emblemAlt": "KGB NextGen Solutions emblem: the letters KGB and a head profile traced with circuits"
   },
   "Services": {
     "title": "Our services",
-    "intro": "Four disciplines, one point of contact: the tool and the processes it serves move forward together.",
+    "intro": "Five disciplines, one point of contact: the tool and the processes it serves move forward together.",
     "web": {
       "title": "Full-stack web applications",
       "text": "Front end, back end and database, from internal dashboards to public websites.",
@@ -98,6 +97,11 @@
       "title": "Odoo and ERP",
       "text": "Odoo set up around your processes, connected to the tools you already use.",
       "modules": "CRM · Accounting · Inventory · Sales"
+    },
+    "devops": {
+      "title": "Docker and open-source administration",
+      "text": "Containerising your applications with Docker, installing and maintaining your open-source tools on your servers.",
+      "tags": "Docker · Open source"
     }
   },
   "ProjectPage": {
@@ -115,7 +119,7 @@
     "lightboxCounter": "{current} / {total}"
   },
   "Projects": {
-    "title": "Our projects",
+    "title": "Our recent projects",
     "intro": "Two real projects, delivered one step at a time.",
     "viewProject": "View the project",
     "visitSite": "Visit the live site",
@@ -157,7 +161,7 @@
       "bio": "Over 15 years in IT in Mauritius, from support to running operations. He leads the projects and follows every client.",
       "point1": "Operations and KPI-driven management",
       "point2": "AWS SysOps and Siemens Teamcenter certified",
-      "point3": "Formerly at Accenture and LINKBYNET",
+      "point3": "Former Accenture, former Linkbynet",
       "photoAlt": "Portrait of Kevin GOOLJAR"
     },
     "diano": {
@@ -171,7 +175,9 @@
     "title": "Let's talk about your project",
     "intro": "Tell us in a few lines what you do today and what slows you down. We'll get back to you to talk it through.",
     "whatsapp": "WhatsApp",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "call": "Call {number}",
+    "whatsappLabel": "Message {number} on WhatsApp"
   },
   "ContactForm": {
     "name": "Name",

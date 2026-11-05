@@ -1,9 +1,10 @@
 import { getTranslations } from "next-intl/server";
 import { site } from "@/config/site";
 import { currentLocale } from "@/i18n/current-locale";
+import { routing } from "@/i18n/routing";
 import { absoluteUrl } from "@/lib/seo";
 
-// Uniquement des faits visibles sur la page ; email, téléphone et BRN restent absents tant que non tranchés.
+// Uniquement des faits visibles sur la page ; email et BRN restent absents tant que non tranchés.
 
 type JsonLdData = Record<string, unknown>;
 
@@ -43,11 +44,12 @@ export async function HomeJsonLd() {
         "@id": ids.organization,
         name: site.name,
         alternateName: site.shortName,
-        url: absoluteUrl("/", "fr"),
+        url: absoluteUrl("/", routing.defaultLocale),
         logo: { "@type": "ImageObject", url: asset("/icon.png"), width: 512, height: 512 },
         slogan: site.tagline,
         description: hero("subtitle"),
         address: { "@type": "PostalAddress", addressCountry: site.countryCode },
+        ...(site.phone ? { telephone: site.phone.replace(/\s/g, "") } : {}),
         // Zones validées par Diano (2026-11-02).
         areaServed: [
           { "@type": "Country", name: "Mauritius" },
@@ -58,6 +60,7 @@ export async function HomeJsonLd() {
           services("mobile.title"),
           services("automation.title"),
           services("odoo.title"),
+          services("devops.title"),
         ],
         founder: { "@id": ids.kevin },
         employee: [{ "@id": ids.kevin }, { "@id": ids.diano }],
@@ -85,8 +88,8 @@ export async function HomeJsonLd() {
         "@type": "WebSite",
         "@id": ids.website,
         name: site.name,
-        url: absoluteUrl("/", "fr"),
-        inLanguage: ["fr", "en"],
+        url: absoluteUrl("/", routing.defaultLocale),
+        inLanguage: [...routing.locales],
         publisher: { "@id": ids.organization },
       },
     ],
