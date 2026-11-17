@@ -122,3 +122,6 @@ Tant qu'un point n'est pas tranché, on utilise l'emplacement provisoire indiqu�
 - **Projets** : titre « Nos récents projets » / « Our recent projects ».
 - **Kevin** : « Ancien d'Accenture, ancien de Linkbynet » / « Former Accenture, former Linkbynet ».
 - **Contact** : téléphone de l'entreprise **+230 553 66 553**, joignable aussi sur WhatsApp ; affiché sous l'accroche de la section Contact (logo officiel WhatsApp à gauche du numéro, le tout ouvre WhatsApp ; pas d'icône téléphone), lien WhatsApp aussi dans le pied de page, numéro dans les données structurées.
+
+### Mise à jour du 2026-11-17
+- **IFSPA** : vidéo de démonstration de l'application (fournie par Diano, données fictives) affichée avant les captures, comme pour HAEVEN. Source dans `videos/ifspa-application/enregistrement/brut.mp4` (non versionnée) ; versions web 1280 px avec le son (`public/projets/ifspa/video-accueil.*`), affiche tirée de la dernière image.

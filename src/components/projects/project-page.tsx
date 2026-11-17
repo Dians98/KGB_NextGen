@@ -45,7 +45,7 @@ export function ProjectPage({ slug }: ProjectPageProps) {
   const project = getProject(slug);
   const name = t(`${slug}.name`);
 
-  // Seul HAEVEN a une vidéo ; IFSPA ne montre que les captures de l'application.
+  // Vidéo avant les captures : visite de l'accueil pour HAEVEN, démonstration de l'application pour IFSPA.
   const video = project.video ? (
     <ProjectVideo video={project.video} description={t(`${slug}.videoDescription` as "heaven.videoDescription")} />
   ) : undefined;

@@ -125,6 +125,7 @@
       "delivered": "L'application de gestion de l'écolage : encaissement en espèces ou par Mobile Money, reçus thermiques, relevés, suivi des impayés avec export, et encaissement hors ligne.",
       "coverAlt": "Tableau de bord de l'application de gestion de l'écolage d'IFSPA, avec données fictives",
       "context": "IFSPA est un institut de formation paramédicale à Toamasina, à Madagascar. Le projet est une application de gestion de l'écolage : elle encaisse en espèces ou par Mobile Money (MVola, Orange, Airtel), imprime des reçus thermiques, produit des relevés et suit les impayés avec export ; l'écran d'encaissement fonctionne hors ligne.",
+      "videoDescription": "Vidéo de démonstration de l'application IFSPA, avec données fictives : encaissement d'une mensualité au guichet et impression du reçu, affectation du paiement aux échéances les plus anciennes, encaissement hors ligne, puis tableau de bord du recouvrement.",
       "shots": {
         "app-tableau-de-bord": "Tableau de bord de l'application : effectif, taux de recouvrement et derniers paiements (données fictives).",
         "app-encaissement-mobile-money": "Écran d'encaissement d'une mensualité par Mobile Money, avec choix de l'opérateur (données fictives).",

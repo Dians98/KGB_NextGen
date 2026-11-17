@@ -51,7 +51,8 @@ const shot = (slug: string, file: string, width: number, height: number, group: 
   key: file,
 });
 
-// IFSPA : seule l'application de gestion est présentée (pas le site vitrine).
+// IFSPA : seule l'application de gestion est présentée (pas le site vitrine) ; une vidéo de démonstration
+// de l'application (fournie par Diano, 2026-11-17) passe avant les captures.
 const ifspaShots: Shot[] = [
   shot("ifspa", "app-tableau-de-bord", 1440, 1327, "app"),
   shot("ifspa", "app-encaissement-mobile-money", 1440, 1532, "app"),
@@ -68,7 +69,7 @@ export const projects: Project[] = [
     slug: "ifspa",
     status: "done",
     cover: ifspaShots[0],
-    video: null,
+    video: homeVideo("ifspa"),
     shots: ifspaShots,
   },
   {
