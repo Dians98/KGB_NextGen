@@ -1,12 +1,12 @@
 "use client";
 
 import { useReducedMotion } from "motion/react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { ProjectVideo as ProjectVideoData } from "@/content/projects";
 
 type ProjectVideoProps = {
   video: ProjectVideoData;
-  /** Description de ce que montre la vidéo (elle est muette et sans texte ajouté). */
+  /** Description de ce que montre la vidéo, pour les lecteurs d'écran. */
   description: string;
 };
 
@@ -39,6 +39,17 @@ export function ProjectVideo({ video, description }: ProjectVideoProps) {
     return () => observer.disconnect();
   }, [reduceMotion]);
 
+  // Repli sur le MP4 si le WebM ne se décode pas : on recharge avec la seule source restante.
+  const [mp4Only, setMp4Only] = useState(false);
+  useEffect(() => {
+    const element = ref.current;
+    if (!mp4Only || !element) return;
+    element.load();
+    // La pause causée par l'erreur n'est pas celle du visiteur.
+    userPaused.current = false;
+    if (visible.current && !reduceMotion) element.play().catch(() => {});
+  }, [mp4Only, reduceMotion]);
+
   const descriptionId = `${video.id}-description`;
 
   return (
@@ -62,9 +73,13 @@ export function ProjectVideo({ video, description }: ProjectVideoProps) {
         onPause={() => {
           if (visible.current) userPaused.current = true;
         }}
+        onError={() => {
+          // Le navigateur ne passe pas tout seul à la source suivante quand la première échoue au décodage.
+          if (!mp4Only && ref.current?.currentSrc.endsWith(".webm")) setMp4Only(true);
+        }}
         className="block aspect-video h-auto w-full bg-bg"
       >
-        {video.webm ? <source src={video.webm} type="video/webm" /> : null}
+        {video.webm && !mp4Only ? <source src={video.webm} type="video/webm" /> : null}
         <source src={video.mp4} type="video/mp4" />
       </video>
       <p id={descriptionId} className="sr-only">
