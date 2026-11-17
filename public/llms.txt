@@ -1,0 +1,28 @@
+# KGB NextGen Solutions Ltd
+
+> Software development company based in Mauritius. KGB NextGen Solutions builds custom web and mobile applications, automates business processes with n8n and AI, and sets up Odoo ERP. It works with businesses in Mauritius, Madagascar and beyond, in English and French.
+
+Tagline: "Intelligence driven. Future ready."
+
+## Services
+
+- Full-stack web applications: front end, back end and database, from internal dashboards to public websites (Next.js, TypeScript, Node.js, FastAPI, PostgreSQL). Deployed with Docker, with open-source server administration.
+- Mobile apps and PWAs: React Native apps and progressive web apps for iOS and Android, built for slow connections, with an offline mode when the job calls for it.
+- Automation and AI: connecting business tools with n8n workflows (trigger, n8n, AI, result) and adding AI where it saves time: sorting, summarising, extracting data from documents.
+- Odoo and ERP: Odoo set up around a company's processes (CRM, accounting, inventory, sales), connected to the tools it already uses.
+
+## Projects
+
+- [IFSPA tuition management app](https://www.kgb-nextgen.com/projets/ifspa): completed. Tuition management application for a paramedical training institute in Toamasina, Madagascar: cash and Mobile Money payments, thermal receipts, statements, overdue tracking with export, offline payment entry.
+- [HAEVEN website](https://www.kgb-nextgen.com/projets/heaven): in progress. Bilingual website for an interior design studio based in Mauritius.
+
+## Team
+
+- Kevin GOOLJAR, Founder & Director: more than 15 years in IT in Mauritius, from support to operations management.
+- Diano ANDRIANTSALAMA, Lead Developer: web and mobile applications, n8n automation, Odoo configuration.
+
+## Contact
+
+- Website: https://www.kgb-nextgen.com (English), https://www.kgb-nextgen.com/fr (French)
+- Phone and WhatsApp: +230 553 66 553
+- Contact form: https://www.kgb-nextgen.com/#contact

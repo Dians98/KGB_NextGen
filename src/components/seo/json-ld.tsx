@@ -27,7 +27,9 @@ const ids = {
   diano: asset("/#diano-andriantsalama"),
 };
 
-const presentLinks = (...links: (string | null)[]) => links.filter((link): link is string => Boolean(link));
+const SERVICE_KEYS = ["web", "mobile", "automation", "odoo"] as const;
+
+const presentLinks =(...links: (string | null)[]) => links.filter((link): link is string => Boolean(link));
 
 export async function HomeJsonLd() {
   const hero = await getTranslations("Hero");
@@ -40,10 +42,11 @@ export async function HomeJsonLd() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
+        // ProfessionalService précise le métier (prestataire de services) tout en restant une Organization.
+        "@type": ["Organization", "ProfessionalService"],
         "@id": ids.organization,
         name: site.name,
-        alternateName: site.shortName,
+        alternateName: [site.shortName, `${site.brand.lead} ${site.brand.rest}`],
         url: absoluteUrl("/", routing.defaultLocale),
         logo: { "@type": "ImageObject", url: asset("/icon.png"), width: 512, height: 512 },
         slogan: site.tagline,
@@ -60,8 +63,35 @@ export async function HomeJsonLd() {
           services("mobile.title"),
           services("automation.title"),
           services("odoo.title"),
+          // Technologies affichées sur la page (étiquettes des cartes Services).
+          "Next.js",
+          "TypeScript",
+          "Node.js",
+          "FastAPI",
+          "PostgreSQL",
+          "React Native",
+          "n8n",
+          "Odoo",
           "Docker",
         ],
+        // Les quatre services visibles sur la page, avec leur texte : les assistants IA peuvent les citer tels quels.
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: services("title"),
+          itemListElement: SERVICE_KEYS.map((key) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: services(`${key}.title`),
+              description: services(`${key}.text`),
+              provider: { "@id": ids.organization },
+              areaServed: [
+                { "@type": "Country", name: "Mauritius" },
+                { "@type": "Country", name: "Madagascar" },
+              ],
+            },
+          })),
+        },
         founder: { "@id": ids.kevin },
         employee: [{ "@id": ids.kevin }, { "@id": ids.diano }],
         ...(companySameAs.length ? { sameAs: companySameAs } : {}),
